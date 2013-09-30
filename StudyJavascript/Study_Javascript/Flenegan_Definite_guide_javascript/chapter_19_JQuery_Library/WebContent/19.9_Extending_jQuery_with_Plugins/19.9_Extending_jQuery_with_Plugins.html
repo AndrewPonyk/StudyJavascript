@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+
+<div id="debug">debug info:</div>
+<script type="text/javascript">
+
+
+	////////////////////////////////////////
+	//simmmply jQuery plugin
+	jQuery.fn.changeToRed=function(){
+		//alert("from jquery :"+this.text());
+		this.css({"background-color":"red"});
+		this.append(".");
+	};
+	
+	//using of this simple plugin
+	$("div[id!=debug]").changeToRed();
+	////////////////////////////////////////////
+	
+	
+	
+	
+	var x=10;
+	var y=100;
+	
+	
+	//debug plugin
+	jQuery.fn.println=function(){
+		var msg=Array.prototype.join.call(arguments," ");
+		
+		this.append(msg +"<br/>");
+		
+		
+		return this ; // for method chaining
+	};
+	
+	
+	$("#debug").println("x=",x,"y=",y);
+	
+	
+	
+	alert("end");
+	
+</script>
+
+</body>
+</html>

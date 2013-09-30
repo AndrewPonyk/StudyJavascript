@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		canvas{
+			background-color: #fafafd;
+		}
+	</style>
+</head>
+<body>
+	<h4>There are 15 graphics properties on the CanvasRenderingContext2D</h4>
+		<pre>
+		Table 21-1. Graphics attributes of the Canvas API
+	Property Meaning
+	fillStyle -the color, gradient, or pattern for fills
+	font -the CSS font for text-drawing commands
+	globalAlpha- transparency to be added to all pixels drawn
+	globalCompositeOperation -how to combine new pixels with the ones underneath
+	lineCap -how the ends of lines are rendered
+	lineJoin -how vertexes are rendered
+	lineWidth -the width of stroked lines
+	miterLimit -maximum length of acute mitered vertexes
+	textAlign -horizontal alignment of text
+	textBaseline -vertical alignment of text
+	shadowBlur -how crisp or fuzzy shadows are
+	shadowColor -the color of drop shadows
+	shadowOffsetX -the horizontal offset of shadows
+	shadowOffsetY -the vertical offset of shadows
+	strokeStyle -the color, gradient, or pattern for lines
+	
+	
+</pre>
+
+<pre>
+		// Set the graphics attributes specified by the properties of the object o.
+	// Or, if no argument is passed, return the current attributes as an object.
+	// Note that this does not handle the transformation or clipping region.
+	CanvasRenderingContext2D.prototype.attrs = function(o) {
+	    if (o) {
+	        for(var a in o)       // For each property in o
+	            this[a] = o[a];   // Set it as a graphics attribute
+	        return this;          // Enable method chaining
+	    }
+	    else return {
+	        fillStyle: this.fillStyle, font: this.font,
+	        globalAlpha: this.globalAlpha,
+	        globalCompositeOperation: this.globalCompositeOperation,
+	        lineCap: this.lineCap, lineJoin: this.lineJoin,
+	        lineWidth: this.lineWidth, miterLimit: this.miterLimit,
+	        textAlign: this.textAlign, textBaseline: this.textBaseline,
+	        shadowBlur: this.shadowBlur, shadowColor: this.shadowColor,
+	        shadowOffsetX: this.shadowOffsetX, shadowOffsetY: this.shadowOffsetY,
+	        strokeStyle: this.strokeStyle
+	    };
+	};
+</pre>
+
+<canvas id="lines" width="300px" height="300px" >no support</canvas>
+
+	<script type="text/javascript">
+	
+	CanvasRenderingContext2D.prototype.attrs = function(o) {
+	    if (o) {
+	        for(var a in o)       // For each property in o
+	            this[a] = o[a];   // Set it as a graphics attribute
+	        return this;          // Enable method chaining
+	    }
+	    else return {
+	        fillStyle: this.fillStyle, font: this.font,
+	        globalAlpha: this.globalAlpha,
+	        globalCompositeOperation: this.globalCompositeOperation,
+	        lineCap: this.lineCap, lineJoin: this.lineJoin,
+	        lineWidth: this.lineWidth, miterLimit: this.miterLimit,
+	        textAlign: this.textAlign, textBaseline: this.textBaseline,
+	        shadowBlur: this.shadowBlur, shadowColor: this.shadowColor,
+	        shadowOffsetX: this.shadowOffsetX, shadowOffsetY: this.shadowOffsetY,
+	        strokeStyle: this.strokeStyle
+	    };
+	};
+	
+		
+		
+	
+		var canvas=document.getElementById("lines");
+		var context=canvas.getContext("2d");
+	
+		context.attrs({"lineWidth":"6"});
+		
+		
+		context.beginPath();
+		context.moveTo(200,200);
+		context.lineTo(0,0);
+		context.stroke();
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	
+	<h5>We cannot make request to other domain using Ajax</h5>
+	<pre>
+	
+			<h3>XMLHttpRequest in IE6 </h3>
+		Microsoft introduced the XMLHttpRequest object to the world in IE5, and in IE5 and
+		IE6 it is available only as an ActiveX object. The now-standard XMLHttpRequest() con-structor is not supported before IE7, but it can be emulated like this:
+		// Emulate the XMLHttpRequest() constructor in IE5 and IE6
+		if (window.XMLHttpRequest === undefined) {
+		    window.XMLHttpRequest = function() {
+		        try {
+		            // Use the latest version of the ActiveX object if available
+		            return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+		        }
+		        catch (e1) {
+		            try {
+		                // Otherwise fall back on an older version
+		                return new ActiveXObject("Msxml2.XMLHTTP.3.0");
+		            }
+		            catch(e2) {
+		                // Otherwise, throw an error
+		                throw new Error("XMLHttpRequest is not supported");
+		            }
+		        }
+		    };
+		}
+	
+	</pre>
+	
+	
+	
+	<hr>
+	
+	<div id="div1" style="color:#0ff;font-size:1.6em"> </div>
+	
+	<script type="text/javascript">
+		
+	
+	// properties of XMLHttpRequest
+	/*
+	statusText
+	Instantiate_XMLHttpRequest.html:9
+	timeout
+	Instantiate_XMLHttpRequest.html:9
+	upload
+	Instantiate_XMLHttpRequest.html:9
+	withCredentials
+	Instantiate_XMLHttpRequest.html:9
+	onreadystatechange
+	Instantiate_XMLHttpRequest.html:9
+	onload
+	Instantiate_XMLHttpRequest.html:9
+	onerror
+	Instantiate_XMLHttpRequest.html:9
+	onloadstart
+	Instantiate_XMLHttpRequest.html:9
+	onloadend
+	Instantiate_XMLHttpRequest.html:9
+	onprogress
+	Instantiate_XMLHttpRequest.html:9
+	onabort
+	Instantiate_XMLHttpRequest.html:9
+	ontimeout
+	Instantiate_XMLHttpRequest.html:9
+	open
+	Instantiate_XMLHttpRequest.html:9
+	send
+	Instantiate_XMLHttpRequest.html:9
+	abort
+	Instantiate_XMLHttpRequest.html:9
+	getAllResponseHeaders
+	Instantiate_XMLHttpRequest.html:9
+	getResponseHeader
+	Instantiate_XMLHttpRequest.html:9
+	setRequestHeader
+	Instantiate_XMLHttpRequest.html:9
+	overrideMimeType
+	Instantiate_XMLHttpRequest.html:9
+	dispatchEvent
+	Instantiate_XMLHttpRequest.html:9
+	addEventListener
+	Instantiate_XMLHttpRequest.html:9
+	removeEventListener
+	Instantiate_XMLHttpRequest.html:9
+	UNSENT
+	Instantiate_XMLHttpRequest.html:9
+	OPENED
+	Instantiate_XMLHttpRequest.html:9
+	HEADERS_RECEIVED
+	Instantiate_XMLHttpRequest.html:9
+	LOADING
+	Instantiate_XMLHttpRequest.html:9
+	DONE
+	*/
+		var request=new XMLHttpRequest();
+		
+		
+		request.onreadystatechange=function()
+		  {
+			
+			
+		  if (request.readyState==4 && request.status==200)
+		    {
+			alert("ready");	
+	  	  document.getElementById("div1").innerHTML=(request.responseXML);
+				//alert(request.responseText);
+			var root=request.responseXML.firstChild;
+			
+			for(var i=0;i<root.childNodes.length;i++){
+				console.log(i);
+				console.log(root.childNodes[i].childNodes[0].textContent+"=>"+root.childNodes[i].childNodes[1].textContent);
+			}
+			
+			
+		    	
+		    }
+		  }
+		//request.overrideMimeType("text/plain;Charset-UTF8"); // page 501 // doesn't work  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		request.open("GET","getHymnOfUkraine.php",false);
+		request.send();
+		
+		
+		
+		
+		
+		function ajaxRequest(){
+			
+		}
+		
+		
+		
+		
+		
+		alert("end")
+	</script>
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		function setContentInOpenerWindow(){
+			//!!!!window.opener.document - is undefined in Chrome if using file:/// 
+			// BUT IF WE ARE USING http:// - everything is good
+			
+			alert('.');
+			window.opener.document.getElementById('div1').innerHTML='...............';
+		
+		}
+		
+		
+	</script>
+	
+	<button onclick="setContentInOpenerWindow()">Change content of id=div1 in parent</button>
+
+</body>
+</html>

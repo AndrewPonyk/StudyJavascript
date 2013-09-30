@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<h5>
+	
+		jQuery defines nine simple effects methods to hide and show elements. They can be
+divided into three groups based on the kind of effect they perform:
+	</h5>
+	<pre>
+				fadeIn(), fadeOut(), fadeTo()
+		These are the simplest effects: fadeIn() and fadeOut() simply animate the CSS
+		opacity property to show or hide an element. Both accept optional duration and
+		callback arguments. fadeTo() is slightly different: it expects a target opacity argu-
+		ment and animates the change from the element’s current opacity to this target.
+		For the fadeTo() method, the duration (or options object) is required as the first
+		argument and the target opacity is required as the second argument. The callback
+		function is an optional third argument.
+	
+			show(), hide(), toggle()
+		The fadeOut() method listed above makes elements invisible but retains space for
+		them in the document layout. The hide() method, by contrast, removes the ele-
+		ments from the layout as if the CSS display property was set to none. When invoked
+		with no arguments, hide() and show() simply hide or show the selected elements
+		immediately. With a duration (or options object) argument, however, they animate
+		the hiding or showing process. hide() shrinks an element’s width and height to 0
+		at the same time that it reduces the element’s opacity to 0. show() reverses the
+		process.
+		toggle() changes the visibility state of the elements it is invoked on: if they are
+		hidden, it calls show(), and if they are visible, it calls hide(). As with show() and
+		hide(), you must pass a duration or options object to toggle() to get an animated
+		effect. Passing true to toggle() is the same as calling show() with no arguments
+		and passing false is the same as calling hide() with no arguments. Note also that
+		if you pass two or more function arguments to toggle() it registers event handlers,
+		as described in §19.4.1.
+		
+				slideDown(), slideUp(), slideToggle()
+		slideUp() hides the elements in the jQuery object by animating their height to 0
+		and then setting the CSS display property to “none”. slideDown() reverses the
+		process to make a hidden element visible again. slideToggle() toggles the visibility
+		of an item using a slide up or slide down animation. Each of the three methods
+		accepts  the  optional  duration  and  callback  arguments  (or  the  options  object
+		argument).
+	</pre>
+
+	<script type="text/javascript">
+	
+	// we must set duration in show() method !!!!!!!!!
+		$("h5").fadeOut().fadeIn().hide("slow").show("slow");
+	
+	
+		alert("end");
+	</script>
+</body>
+</html>

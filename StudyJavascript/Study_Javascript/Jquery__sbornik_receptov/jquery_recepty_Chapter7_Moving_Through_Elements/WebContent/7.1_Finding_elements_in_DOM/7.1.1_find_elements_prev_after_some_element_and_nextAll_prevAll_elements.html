@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>7.1.1_find_elements_prev_after_some_element_and_nextAll_prevAll_elements.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+            
+                    $("#main").next().css("border-color","red");
+                    $("#main").prev().css("border-color","green");
+                    $("#main").prevAll().css("background-color","grey");
+                    $("#main").prevAll("p").css("border-width","5px");
+                    $("#main").prevAll().each(function(){
+                    	alert($(this).text());
+                    });
+                 
+            }); 
+        </script>
+        <style>
+          p {
+          	 border:2px solid black; 
+           }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+	7.1.1_find_elements_prev_after_some_element_and_nextAll_prevAll_elements.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1) next(), prev(),nextAll(),prevAll() - using methods <br> 
+           2) nextAll(), prevAll() -Get all preceding/following   SIBLINGS of each element in the set of matched elements, OPTIONALLY FILTERED by a selector.<br>
+          
+        </div>
+        <br>
+        
+      
+		<div >
+			<p>First p 	<span>First span</span></p>
+		
+			<p>Second p</p>
+			<p>Third p</p>
+        	<div id="main"> main div  </div>
+        	<p>Fourth p</p>
+        </div>
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

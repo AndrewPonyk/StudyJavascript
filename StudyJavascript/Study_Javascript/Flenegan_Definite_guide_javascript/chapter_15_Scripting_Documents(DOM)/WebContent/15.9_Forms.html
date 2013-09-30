@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		
+		
+	
+		function showShippingMethods() {
+			
+			var methods=document.forms.shipping.method;
+			var city=document.forms.shipping.city;
+			
+			alert(methods[0].checked); // getting radio - value !!!
+			alert(city.value);
+		}
+		
+		
+		//var shippingForm=document.forms.shipping; // there is not form yet , browser must draw it =)
+		
+		
+		/*  shippingForm.onsubmit=function(form){
+			alert('before submit');
+			return true;
+		} ; */
+		alert('end');
+	</script>
+	
+</head>
+<body>
+	<pre>
+		As described in §14.7, §15.2.2, and §15.2.3, however, a form element with a name or
+	id  attribute  can  be  selected  in  a  number  of  other  ways.  A  formwith  a
+	name="address" attribute can be selected in any of these ways:
+	window.address            // Brittle: do not use
+	document.address          // Only works for forms with name attribute
+	document.forms.address    // Explicit access to a form with name or id
+	document.forms[n]         // Brittle: n is the form's numerical position
+	
+	 Every form has onsubmit event , and onreset event
+	</pre>
+	
+	
+	<form name="shipping">
+	  <fieldset><legend>Shipping Method</legend>
+	   	<input name="city" value="" />
+	    <label><input type="radio" name="method" value="1st">First-class</label>
+	    <label><input type="radio" name="method" value="2day">2-day Air</label>
+	    <label><input type="radio" name="method" value="overnite">Overnight</label>
+	  	<select name="country" >
+	  		<option selected="selected" value="Ukraine">Ukraine</option>
+	  		<option selected="selected" value="Usa">Usa</option>
+	  	</select>
+	  </fieldset>
+	  
+	  
+	  <button type="submit">Submit</button>
+	</form>
+	
+	
+	<button onclick="showShippingMethods()" >ShowShippingMethods</button>
+	<button  onclick="addCountry()">Add COuntry </button>
+	
+	<script type="text/javascript">
+	
+	function addCountry(){
+		var zaire=new Option("zaire","zaire",false,false);
+		var countries=document.forms.shipping.country;
+		countries.add(zaire);
+	}
+	
+	var shippingForm=document.forms.shipping; // there is not form yet , browser must draw it =)
+	 
+	
+	  shippingForm.onsubmit=function(form){
+		alert('before submit');
+		alert(this.city.value); // we have this in onreset and onsubmit
+		return false;
+	} ; 
+	</script>
+</body>
+</html>

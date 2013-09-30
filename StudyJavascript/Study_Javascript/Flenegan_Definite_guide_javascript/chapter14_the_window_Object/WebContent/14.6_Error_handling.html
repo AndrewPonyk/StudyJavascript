@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+		window.onerror=function(msg,url,line){
+			if(onerror.num++<onerror.max){
+				alert("ERROR "+msg+" "+url+" "+line);
+				return;
+			}
+		}
+	
+		alert('end');
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

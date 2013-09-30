@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var o={x:1,y:10,z:100};
+		
+		//alert( Object.keys(o).length); // 3
+		
+		
+		for(var item in o){
+			console.log(o[item]);
+		}
+		
+		
+		// Multidimensional arrays 
+		var table =new Array(10);
+		for(var i=0;i<10;i++)
+			table[i]=new Array(10);
+		
+		table[0][0]=10000;
+		//alert(table[0][0]);
+		
+		
+		// A lot of Array methods
+		// join
+		var mas=[1,2,2];
+		alert(mas.join(","));
+		
+		// Another sort, reverse , concat
+		// concat - connects arrays
+		
+		// pop and push - for stack
+		
+		
+		alert('end');
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	
+	
+	function openGoogleInOtherWindow(){
+			var w = window.open("temp.html", "_blank","width=900,height=350,menubar=yes");
+
+			w.alert('i am google');
+			// w is  window object of new window
+			// w.close() - will close google =)
+		}
+	
+	
+	
+		/* var w = window.open("temp.html", "smallwin",
+		"width=400,height=350,status=yes,resizable=no");
+		*/
+		function sayHello(){
+			alert('hello');
+		}
+		
+		alert('end');
+		
+	</script>
+	
+		Typically,
+		calls to the open()method are successful only if they occur in response to a user action
+		such as clicking on a button or a link.
+	
+	<div id='div1'>content</div>
+	
+	<button onclick="openGoogleInOtherWindow()"> Open Google</button>
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var p={x:1};
+		var o=Object.create(p);
+		alert(o.x);
+		alert(p.isPrototypeOf(o));
+		
+		alert(Object.prototype.isPrototypeOf(p));
+		
+		
+		//defines a function that returns the
+		//class of any object you pass it.
+		function classof(o) {
+			if (o === null) return "Null";
+			if (o === undefined) return "Undefined";
+			return Object.prototype.toString.call(o).slice(8,-1);
+			}
+		
+		
+		alert(classof(o));
+		
+		
+		/* The extensibleattribute of an object specifies whether new properties can be added to
+		the object or not */
+		//To determine whether an object is extensible, pass it to  Object.isExtensible()
+		
+		//To make an object nonextensible, pass it to Object.preventExtensions()
+		
+		// Create a sealed object with a frozen prototype and a nonenumerable property
+		var o = Object.seal(Object.create(Object.freeze({x:1}),
+			{y: {value: 2, writable: true}}));
+		alert('end');
+	</script>
+</body>
+</html>

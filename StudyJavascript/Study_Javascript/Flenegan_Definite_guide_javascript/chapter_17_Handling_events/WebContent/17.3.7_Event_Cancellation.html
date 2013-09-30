@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<pre>
+			function cancelHandler(event) {
+		    var event = event || window.event;  // For IE
+			   
+			  <b> /* Do something to handle the event here */</b> 
+			   
+			    // Now cancel the default action associated with the event
+			    if (event.preventDefault) event.preventDefault();  // Standard technique
+			    if (event.returnValue) event.returnValue = false;  // IE
+			    return false;        // For handlers registered as object properties
+			}
+	</pre>
+	<hr>
+	<pre>
+		<h3>Propagation (exmaple button is inside div , we click button and => button.click , div.click -invocation)</h3>
+		<h3>Cancel propagation</h3>
+			We  can  also  cancel  the  propagation  of  events.  In  browsers  that  support
+		addEventListener(), the event object has a stopPropagation() method that you can
+		invoke to prevent the continued propagation of the event. If there are other handlers
+		defined on the same object, the rest of those handlers will still be invoked, but no event
+		handlers on any other object will be invoked after stopPropagation() is called. The
+		event.stopPropagation() method can be called at any time during event propagation. It works
+		during the capturing phase, at the event target itself, and during the bubbling phase.
+		Prior to IE9, IE does not support the stopPropagation() method. Instead, the IE event
+		object has a property named window.event.cancelBubble. Set this property to true to prevent any
+	</pre>
+	
+	<hr>
+	Example
+	
+	
+	<div id="div1" style="background-color: #999">
+	div1 with button
+	<button id="button1" >Button with onclick event</button>
+	</div>
+	
+	<script type="text/javascript">
+		
+	
+	
+	
+	function buttonclick(e){
+			e=e||window.event;
+			
+			alert("button");
+			//alert(e.button); // ne duge pracuje ))
+			
+			if(e.stopPropagation)
+			e.stopPropagation();
+			
+			
+			//alert(e.cancelBubble);
+			if(!e.cancelBubble)
+				e.cancelBubble=true;
+			
+			
+		};
+		
+		function divclick(){
+			alert("div");
+		};
+	
+		var div1=(document.getElementById("div1"));
+		var button1=(document.getElementById("button1"))
+		div1.onclick=divclick;
+		button1.onclick=buttonclick;
+		
+		
+		
+		
+		
+		
+		// !!!!!!!!!!!
+/* 		document.oncontextmenu=function(){
+			alert("context");
+		} */
+		
+		
+		
+		alert("end");
+	</script>
+</body>
+</html>

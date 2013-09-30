@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>10.3.1_get_Current_TIME.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );			
+
+
+					alert( $.now()/1000);
+           			
+					// and here is pure JS
+                 		var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate()
+						var year = currentTime.getFullYear()
+						var hours = currentTime.getHours()
+						var minutes = currentTime.getMinutes()
+						
+						alert(year+":"+month+":"+day+" " +hours+":"+minutes );	
+            
+            });
+        </script>
+        <style>
+
+			span{
+				text-decoration:underline;
+			}
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+10.3.1_get_Current_TIME.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1) $.now() - get current time (miliseconds from 1 January 1970) <br>
+           
+           </div>
+        <br>
+ 
+ 
+ 
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

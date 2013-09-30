@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.6.js"> </script>
+</head>
+<body>
+	
+	<input type="text" name="number" id="number"  size="50"><br>
+	<input type="button" value="Get Power2" onclick="getPower2($('#number'),$('#number'))"/>
+
+	<h4>Ajax options (in $.ajax - method)
+		<ul>
+			<li>type</li>
+			<li>url</li>
+			<li>data</li>
+			<li>dataType</li>
+			<li>contentType</li>
+			<li>timeout</li>
+			<li>cache</li>
+			<li>ifModified</li>
+			<li>global</li>
+		</ul>
+	
+	</h4>
+
+	<h4>AJax Callbacks  (using $.ajax -mehtod):
+		<ul>
+			<li>context	</li>
+			<li>beforeSend</li>
+			<li>success</li>
+			<li>error</li>
+			<li>complete</li>
+		</ul>
+	</h4>
+	<script type="text/javascript">
+		
+		function getPower2(elementvalue,resultElement){
+			var request=$.ajax({
+				"url":"getPower2.php?"+"number="+elementvalue.val(),
+				"cache":true,
+				"success":function(data){
+					elementvalue.val(elementvalue.val()+"="+data);
+					//alert(request.readyState); // here it will be 4 , because it is success 
+					for(var item in request){
+						console.log(item);
+					}
+				},
+				"beforeSend":function(){
+					alert("beforeSend -mehtod");
+				}
+			}
+						
+			);
+		}
+	
+		alert("end");
+	</script>
+</body>
+</html>

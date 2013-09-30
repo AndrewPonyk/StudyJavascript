@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		.red{
+			background-color: red;
+			display:inline;
+			font-size:2em;
+		}
+		
+		.blue{
+			background-color: blue;
+			display:inline;
+			
+		}
+	</style>
+
+</head>
+<body>
+	<p id="p1">
+		<a id="google" href="http://google.com">google</a>
+		<a href="http://facebook.com">facebook</a>
+		
+	</p>
+	
+	<script type="text/javascript">
+		google=document.getElementById('google');
+	
+		
+		alert('end');
+	</script>
+	
+	<button onclick="document.getElementById('google').className='red'">ChangeGoogleBackground </button>
+	<button onclick="document.getElementById('google').setAttribute('class','red')">ChangeGoogleBackground using Element.setAttribute</button>
+	<button onclick="document.getElementById('google').href='http://google.com.ua'">ChangeGoogleLink </button>
+	<br/>
+	<span style="font-weight: bold;width:40%;display:block">
+	Element.attr=attrValue and Element.setAttribute('attr','attrValue')<br/><br/>
+	two important differences between these methods(setAttribute and getAttribute) and the
+property-based API described above. First, attribute values are all treated as strings.
+getAttribute() never returns a number, boolean, or object. Second, these methods use
+standard attribute names, even when those names are reserved words in JavaScript. For
+HTML elements, the attribute names are case insensitive.</span>
+</body>
+</html>

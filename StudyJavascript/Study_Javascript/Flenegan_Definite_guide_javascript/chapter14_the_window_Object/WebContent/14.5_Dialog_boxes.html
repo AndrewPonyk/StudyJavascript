@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>We use it file in showModalDialog</title>
+
+  <script type="text/javascript">
+        function UpdateFields (newFore, newSur) {
+            var forename = document.getElementById ("forename");
+            var surname = document.getElementById ("surname");
+            forename.value = newFore;
+            surname.value = newSur;
+        }
+
+        function ShowModal () {
+            var forename = document.getElementById ("forename");
+            var surname = document.getElementById ("surname");
+
+            var sharedObject = {}; // we will send it to modalwindow
+            sharedObject.forename = forename.value;
+            sharedObject.surname = surname.value;
+            
+            if (window.showModalDialog) {
+                var retValue = showModalDialog ("modal.html", sharedObject, "dialogWidth:200px; dialogHeight:200px; dialogLeft:300px;");
+                if (retValue) {
+                    UpdateFields (retValue.forename, retValue.surname);
+                }
+            }
+            else {
+                    // for similar functionality in Opera, but it's not modal!
+                var modal = window.open ("modal.html", null, "width=200,height=200,left=300,modal=yes,alwaysRaised=yes", null);
+                modal.dialogArguments = sharedObject;
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+	<script type="text/javascript">
+		// window  object provide three methods for displaying simple dialog boxes : alert, prompt, confirm
+		
+		/*do{
+		var name=window.prompt('What is your name');
+		var correct = window.confirm('You entered '+name +' click Ok to proceed or cancel to re-enter')
+		}while(!correct);
+		alert('Hello '+name);*/
+		
+		
+		// these methods alert , prompt  ,confirm - are not using today (maybe only for Debugging)
+		
+		// the method showModalDialog - is using today( display a modal dialog containing HTML , and allows arguments to be passed)
+		
+	
+	
+		
+		alert(window.showModalDialog);
+		alert('end');
+	</script>
+	
+	    Forename: <input type="text" id="forename" value="Alan"/><br/>
+	    Surname: <input type="text" id="surname" value="Smith"/>
+	    <br/><br/>
+	    <button onclick="ShowModal ()">Edit the fields with a modal dialog!</button>
+</body>
+
+
+
+
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function loadasync(url){
+			var head=document.getElementsByTagName("head")[0];
+			var s=document.createElement("script");
+			s.src=url;
+			head.appendChild(s);
+		}
+	
+		
+		
+		
+		alert('end');
+	</script>
+	<input type="text"  name="number"  />
+	
+	<button onclick="loadasync('factorial.js')">Load Math Library  =)</button>
+	<button  name="shodFactorial" onclick="alert(factorial(document.getElementsByName('number')[0].value));" >ShowFactorial</button> 
+</body>
+</html>

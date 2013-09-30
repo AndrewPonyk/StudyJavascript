@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 2 ways or creating objects  : new and Object.create
+		
+		// Def . Prototype - every js object has a second js object (or null) associated with it,
+		//                   this second object is known as Prototype , and the first object
+		//					 inherits properties from prototype
+		//                    Object - hasn't prototype =)
+		
+		var obj =Object.create(null); // 
+		
+		 // obj2 inherits two properties 
+		var obj2=Object.create({"x":10,"y":20});
+		
+		alert(obj2.x);
+		
+		//function for inheritance
+		function inherit(p) {
+			if(p==null) throw TypeError();
+			if(Object.create)
+				return Object.create(p);
+			var t=typeof p;
+			if(t!=="object" && t!=="function") throw TypeError();
+			function f(){};
+			f.prototype=p;
+			return new f();
+		}
+		
+		
+		for(item in obj2){
+			alert(obj2[item]+" = "+item);
+		}
+		
+		
+		alert('end');
+		
+		
+	</script>
+</body>
+</html>

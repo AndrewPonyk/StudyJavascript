@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Digital clock=)</title>
+		<script type="text/javascript">
+			function displayTime() {
+				var elt=document.getElementById("clock");
+				var now=new Date();
+				elt.innerHTML=now.toLocaleTimeString();
+				//setTimeout(displayTime,1000); // from
+			}
+			window.
+			window.onload=displayTime;
+			setInterval(displayTime,1000); // repeat after each second
+		</script>
+		<style type="text/css">
+			#clock{
+				font:bold 24pt sans;
+				padding:10px;
+				border:solid black 2px;
+				/*border-radius:10px;*/
+			}
+		</style>
+	</head>	
+	<body>
+		<h1>Digital Clock</h1>
+		<span id="clock"></span>
+	</body>
+</html>

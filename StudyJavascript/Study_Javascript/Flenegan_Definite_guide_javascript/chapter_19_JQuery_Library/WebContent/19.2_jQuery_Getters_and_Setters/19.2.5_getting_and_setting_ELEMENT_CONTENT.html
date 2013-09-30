@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<h3>text() and html() - methods (as textContent and innerHTML)</h3>
+
+	<div id="div1"> 
+		sadofjaoshjdgah slkdf<b>sdoifjo</b>
+		
+	</div>
+	
+	<script type="text/javascript">
+		var n=10;
+	
+		function kvadrat(n){
+			return n*n;
+		}
+		
+		alert("end");
+	</script>
+	
+	
+	<button onclick="  alert( $('#div1').text() ) ">	display div1 text</button>
+	<button onclick="  alert( $('#div1').html() ) ">	display div1 html</button>
+	
+	
+	
+	<button onclick="  alert( $('#div1').text(kvadrat(n)) ) ">Set div1 text</button>
+	
+</body>
+</html>

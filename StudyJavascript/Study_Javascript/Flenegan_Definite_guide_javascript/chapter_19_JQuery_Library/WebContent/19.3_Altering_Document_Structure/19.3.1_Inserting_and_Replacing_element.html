@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<div id="div1">
+		<ul id="ul1">
+			<li>11111</li>
+			<li>2222222</li>
+			<li>33333333</li>
+		</ul>
+		
+	</div>
+
+
+<hr>
+<pre>
+	Operation $(target).method(content) $(content).method(target)
+insert content at end of target <b> append()</b> appendTo()
+insert content at start of target <b>prepend()</b> prependTo()
+insert content after target <b>after()</b> insertAfter()
+insert content before target <b>before()</b> insertBefore()
+replace target with content replaceWith() replaceAll()
+
+</pre>
+<hr>
+<b>
+	Interesting way to compare Objects -//Object.toJSON(user1) == Object.toJSON(user2)
+</b>
+
+<hr>
+<pre>
+Another type of insertion into an HTML document involves wrapping a new element
+(or elements) around one or more elements. jQuery defines three wrapping functions.
+wrap()wraps each of the selected elements. wrapInner()wraps the contents of each
+selected element. And  wrapAll()wraps the selected elements as a group. These methods
+are usually passed a newly created wrapper element or a string of HTML used to create
+a wrapper. The HTML string can include multiple nested elements, if desired, but there
+must be a single innermost element. If you pass a function to any of these methods, it
+will be invoked once in the context of each element (with the element index as its only
+argument) and should return the wrapper string, Element, or jQuery object. Here are
+some examples:
+// Wrap all <h1> elements with <i> elements
+$("h1").wrap(document.createElement("i")); // Produces &le;i>&le;h1>...&le;/h1>&le;/i>
+// Wrap the content of all &le;h1> elements. Using a string argument is easier.
+$("h1").wrapInner("&le;i/>"); // Produces &le;h1>&le;i>...&le;/i>&le;/h1>
+// Wrap the first paragraph in one anchor and div
+$("body>p:first").wrap("<a name='lead'><div class='first'></div></a>");
+// Wrap all the other paragraphs in another div
+$("body>p:not(:first)").wrapAll("<div class='rest'></div>");
+
+</pre>
+<pre>
+	jQuery objects have method <b>clone()	</b> , so we can add elements multiply times only cloning it
+</pre>
+	<script type="text/javascript">
+	
+		var ul1=$("#ul1");
+		
+		 var templi=$("<li>",{
+			 css:{
+				 backgroundColor:"red"
+			 },
+			 text:"4444"
+		 });
+		 
+		 var templi1=$("<li>",{
+			 css:{
+				 backgroundColor:"red"
+			 },
+			 text:"4444"
+		 });
+		//templi.text("444444444444");
+		
+			
+		
+			
+			/// works
+/* 		var img=$("<img/>",{
+			css:{
+				width:"100px",
+				height:"100px",
+				borderWidth:5
+			}
+		}); */
+		
+		
+		ul1.prepend(templi);
+		
+		ul1.prepend(templi.clone(true));
+		
+		
+		
+		var uls=$("#ul1>li");
+		alert(uls.length);
+		
+		uls.each(function(){alert($(this).text()==templi.text())});  // very important to understand $(this)
+		
+		
+		//Object.toJSON(user1) == Object.toJSON(user2) // 
+	//		alert( JSON.stringify(user, ["name", "age"]) );
+
+		
+			
+			
+			
+		
+		alert("end");
+	</script>
+</body>
+</html>

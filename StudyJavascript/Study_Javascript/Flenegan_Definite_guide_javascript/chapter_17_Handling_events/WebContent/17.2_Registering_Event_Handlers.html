@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+</head>
+<body>
+		
+	<div>
+	<h3>Registering event handlers THEORY</h3>
+	
+		There are two basic ways to register event handlers. The first, from the early days of
+		the Web, is to set a property on the object or document element that is the event target.
+		The second, newer and more general, technique is to pass the handler to a method of
+		the object or element
+		<h4>1)17.2.1  Setting Event Handler Properties</h4>
+		<h4>2)17.2.2  Setting Event Handler Attributes</h4>
+		<h4>3)17.2.3  addEventListener()</h4>
+	</div>	
+	
+	<form action="http://google.com" id="shipping_address">
+		 <label>Shipping Address</label><input type="text" id="address" name="address" />	
+		
+		<input type="submit" value="submit address">  
+		</form>
+	<hr>
+	<button id="button1">To this button add Listeners with addEventListner</button>
+	<hr>
+	<pre>
+	Handlers are invoked with the target as their this value even when registered using
+addEventListener(). Unfortunately, however, this is not true for attachEvent(): han-dlers registered with attachEvent() are invoked as functions, and their this value is the
+global (Window) object. You can work around this with code like this:</pre>
+	
+	<pre>
+	
+			/*
+		 * Register the specified handler function to handle events of the specified
+		 * type on the specified target. Ensure that the handler will always be 
+		 * invoked as a method of the target.
+		 */
+		function addEvent(target, type, handler) {
+		    if (target.addEventListener)
+		        target.addEventListener(type, handler, false);
+		    else 
+		        target.attachEvent("on" + type,
+		                           function(event) {
+		                               // Invoke the handler as a method of target,
+		                               // passing on the event object
+		                               return handler.call(target, event);
+		                           });
+		}
+	</pre>
+	
+	
+	<hr>
+	<pre>
+	17.3.7  Event Cancellation
+§17.3.4 explained that the return value of event handlers registered as properties can
+be used to cancel the browser’s default action for the event. In browsers that support
+addEventListener(), you can also cancel the default action for an event by invoking the
+preventDefault() method of the event object. In IE prior to IE9, however, you do the
+same by setting the returnValue property of the event object to false. The following
+code shows a dummy event handler that uses all three cancellation techniques:
+function cancelHandler(event) {
+    var event = event || window.event;  // For IE
+    /* Do something to handle the event here */
+    // Now cancel the default action associated with the event
+    if (event.preventDefault) event.preventDefault();  // Standard technique
+    if (event.returnValue) event.returnValue = false;  // IE
+    return false;        // For handlers registered as object properties
+}
+	
+	</pre>
+	<script type="text/javascript">
+		window.onload=function(){
+			var elt=document.getElementById("shipping_address");
+				elt.onsubmit=function(){
+					return this.address.value.search("Ukraine")==0; // accept only Ukrainian addresses		
+				};
+		};
+	
+		var addressInput=document.getElementById("address");
+		
+		// textInput event - new in DOM 3
+		   if (addressInput.addEventListener) {    // all browsers except IE before version 9
+               //Opera ?
+			   addressInput.addEventListener ("input", OnInput, false);
+                   // Google Chrome and  Safari
+               addressInput.addEventListener ("textInput", OnTextInput, false);
+                   // Internet Explorer from version 9
+               addressInput.addEventListener ("textinput", OnTextInput, false);
+           };
+           
+           if (addressInput.attachEvent) { // Internet Explorer and Opera
+        	   addressInput.attachEvent ("onpropertychange", OnPropChanged);   // Internet Explorer
+           };
+           
+           
+           // Google Chrome, Safari and Internet Explorer from version 9
+           function OnTextInput (event) {
+               alert ("The following text has been entered: " + event.data);
+           }
+               // Firefox, Google Chrome, Opera, Safari from version 5, Internet Explorer from version 9
+           function OnInput (event) {
+               alert ("The new content: " + event.target.value);
+           }
+               // Internet Explorer
+           function OnPropChanged (event) {
+               if (event.propertyName.toLowerCase () == "value") {
+                   alert ("The new content: " + event.srcElement.value);
+               }
+           }
+		
+		
+		var f1=function(){
+			alert("f1");
+		};
+		
+		var f2=function(){
+			alert("f2");
+		};
+              
+		var button1=document.getElementById("button1");
+		if(button1.addEventListener){
+		button1.addEventListener("click",f1,false);
+		button1.addEventListener("click",f2,false);  // in all browsers including IE9 "click"
+		}
+		
+		
+		if(button1.attachEvent){
+			button1.attachEvent("onclick",f1);
+			button1.attachEvent("onclick",f2); // in ie<=8	 attachEvent , and "onclick"
+			
+		}
+		
+		if(button1.removeEventListener)
+		button1.removeEventListener("click",f2,false);
+		
+		 if(button1.detachEvent){
+			button1.detachEvent("onclick",f2);// in ie<=8	 detachEvent , and "onclick"
+		
+		} 
+		alert("end");
+ 	</script>
+ 	
+ 	
+</body>
+</html>

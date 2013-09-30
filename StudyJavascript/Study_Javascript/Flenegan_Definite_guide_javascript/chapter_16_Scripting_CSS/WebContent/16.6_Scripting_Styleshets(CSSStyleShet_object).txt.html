@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>CSSStyleSheet Object	</title>
+</head>
+<style>
+	.bigred{
+		color:red;
+		font-weight:bold;
+	}
+</style>
+
+<style>
+	.bigred{
+		text-transform:uppercase;
+	}
+</style>
+<body>
+	<div class="bigred">
+		sdoaifjoasid o big red
+	</div>
+
+<script>
+	
+	alert(document.styleSheets); // stylesheets collection
+	
+	alert(document.styleSheets[0].disabled);
+	
+	document.styleSheets[0].disabled=true; // disable <style> element with index 0 
+	
+	//we can add rules to CSSStylesheet Object
+	document.styleSheets[1].insertRule(" .bigred{color:green}" ,0); // ie has methods addRule and removeRule
+	
+	alert('end');	
+</script>
+</body>
+</html>

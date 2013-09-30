@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+		<input type="text" name="zipcode" id="zipcode" >
+	</form>
+
+	<script type="text/javascript">
+	
+		var zipcodeinput=document.getElementById("zipcode");
+		zipcodeinput.onkeypress=function(event){
+			event=event||window.event;
+			alert("keypress "+event.keyCode);  // Firefox charCode
+			alert("keypress "+event.charCode);  // Firefox charCode
+			
+			// now convert to string inputed
+			alert(String.fromCharCode(event.keyCode));
+			
+			
+		};
+	
+	
+		alert("end");
+	</script>
+</body>
+</html>

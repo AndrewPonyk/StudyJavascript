@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var o={
+				x:10,
+				
+				get val(){ return this.x},
+				set val(value){ this.x=value }
+		}
+		
+		o.val=100;
+		alert(o.val);
+		alert(o.hasOwnProperty("val"));
+		alert('end');	
+		
+		
+	</script> 
+	
+</body>
+</html>

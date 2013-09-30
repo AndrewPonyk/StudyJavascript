@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var scope="global";
+		
+		function chechscope(){
+			var scope="local";
+			function f(){return scope};
+			return f;
+		}
+		
+		// f is binded to  it's scope // ce logichno =)
+		alert(chechscope()()); // local !!!!!!!! closure 
+		
+		
+		
+		alert('end');
+	</script>
+</body>
+</html>

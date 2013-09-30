@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		alert('begin');
+		
+		alert("toString" in Object);
+		
+		function constr(){
+			this.x=10;
+			this.say=function (){alert('say')};
+		};
+		
+		var o=new constr();
+		alert(o.x);
+		alert("instanceof " +(o  instanceof constr));
+		o.say();
+	</script>
+</body>
+</html>

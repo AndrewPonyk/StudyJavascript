@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Cross origin messaging (postMessage method)</h3>
+		<iframe height="500" width="500" src="twitter.html" id="twitter">
+		</iframe>
+	<script type="text/javascript">
+		var twitter=document.getElementById("twitter");
+		
+		 
+		
+		// if we postMessage without timeout , it will not work , because there is not event handler in child window yet
+		//two posibilities : 1)set timeout  2)make some "button" and after clicking on button  make postMessage 
+		setTimeout("twitter.contentWindow.postMessage('find something on twitter','*')",2000);
+		
+	
+		window.addEventListener("message",function (e){
+ 			//alert("on index");
+ 		});
+		
+	</script>
+</body>
+</html>

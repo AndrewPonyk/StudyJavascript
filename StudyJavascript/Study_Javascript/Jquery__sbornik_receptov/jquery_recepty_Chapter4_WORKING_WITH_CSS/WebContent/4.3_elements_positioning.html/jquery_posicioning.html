@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery Positioning</title>
+ <script src="../jquery-1.6.js" type="text/javascript"></script> 
+
+	<script type="text/javascript">
+	
+		$(function(){
+		var p=$("#div1").position();
+		var o=$("#div1").offset();
+		
+		alert("Position:"+p.left+";"+p.top);
+		alert("Offset:"+o.left+";"+o.top);
+		});
+		
+	</script>
+</head>
+<body style="margin:0px">
+
+	<div style="position:relative;top:100px;left:100px">
+	
+	sdofiasoifj
+	<div id="div1">000</div>
+	</div>
+	
+	
+	<h4>
+	If the parent element is not positioned, that is, if its CSS position is static, then both methods return the same results. Let' see an example.
+	</h4>
+</body>
+</html>

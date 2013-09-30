@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="resources" style="font-size:0.8em">
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays<br>
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/ArrayBuffer<br>
+	https://developer.mozilla.org/en-US/docs/Code_snippets/StringView<br>
+	
+	</div>
+	<h3>Typed Arrays and Arrays buffer</h3>
+	<div id="div1" style="border:1px solid black">
+	<pre>
+			Typed Arrays, &lt;canvas>, and Core JavaScript
+		Typed arrays are an essential part of the WebGL 3D graphics API for the &lt;canvas>
+		element, and browsers have implemented them as part of WebGL. WebGL is not cov-
+		ered in this book, but typed arrays are generally useful and are covered here. You may
+		recall from Chapter 21 that the Canvas API defines a getImageData() method that re-
+		turns an ImageData object. The data property of an ImageData is an array of bytes. The
+		HTML standard calls this a CanvasPixelArray, but it is essentially the same as the
+		Uint8Array described here, except for the way it handles values outside of the range 0
+		to 255.
+		Note that these types are not part of the core language. A future version of the JavaScript
+		language is likely to include support for typed arrays like these, but at the time of this
+		writing, it is unclear whether the language will adopt the API described here or will
+		create a new API.
+	
+	</pre>
+	<hr>
+	<pre>	
+				Typed arrays are array-like objects (§7.11) that differ from regular arrays in some
+		important ways:
+		• The elements of a typed array are all numbers. The constructor used to create the
+		typed array determines the type (signed or unsigned integers or floating point) and
+		size (in bits) of the numbers.
+		• Typed arrays have a fixed length.
+		• The elements of a typed array are always initialized to 0 when the array is created.
+	</pre>
+	<hr>
+	<pre>
+				There are eight kinds of typed arrays, each with a different element type. You can create
+		them with the following constructors:
+		Constructor Numeric type
+		Int8Array() signed bytes
+		Uint8Array() unsigned bytes
+		Int16Array() signed 16-bit short integers
+		Uint16Array() unsigned 16-bit short integers
+		Int32Array() signed 32-bit integers
+		Uint32Array() unsigned 32-bit integers
+		Float32Array() 32-bit floating-point value
+		Float64Array() 64-bit floating-point value: a regular JavaScript number
+	
+	</pre>
+	
+	
+	<hr>
+	<h3>Exaples</h3>
+	<pre>
+		var bytes = new Uint8Array(1024);       // One kilobyte of bytes
+for(var i = 0; i < bytes.length; i++)   // For each element of the array
+    bytes[i] = i & 0xFF;                // Set it to the low 8 bits of index
+var copy = new Uint8Array(bytes);       // Make a copy of the array
+var ints = new Int32Array([0,1,2,3]);   // A typed array holding these 4 ints
+	</pre>
+	<hr>
+	
+	<pre>
+		JavaScript square-bracket notation allows you to get and set individual elements
+typed array. But typed arrays also define methods for setting and querying entire reg
+of the array. The set() method copies the elements of regular or typed arrays in
+typed array:
+var bytes = new Uint8Array(1024)         // A 1K buffer
+var pattern = new Uint8Array([0,1,2,3]); // An array of 4 bytes
+bytes.set(pattern);      // Copy them to the start of another byte array
+bytes.set(pattern, 4);   // Copy them again at a different offset
+bytes.set([0,1,2,3], 8); // Or just copy values direct from a regular array
+	
+	</pre>
+	<hr>
+	<pre>
+		The fact that the subarray() method returns a new view of an existing array reveals
+something important about typed arrays: they are all views on an underlying chunk of
+bytes known as an ArrayBuffer. Every typed array has three properties that relate to the
+underlying buffer:
+last3.buffer                // => returns an ArrayBuffer object
+last3.buffer == ints.buffer // => true: both are views of the same buffer
+last3.byteOffset            // => 14: this view starts at byte 14 of the buffer
+last3.byteLength            // => 6: this view is 6 bytes (3 16-bit ints) long
+		
+		
+	</pre>
+	<hr>
+	<pre><b>
+	
+		Typed arrays allow you to view the same sequence of bytes in chunks of 8, 16, 32, or
+64 bits. This exposes the “endianness”: the order in which bytes are arranged into longer
+words. For efficiency, typed arrays use the native endianness of the underlying hard-
+ware. On little-endian systems, the bytes of a number are arranged in an ArrayBuffer
+from least significant to most significant. On big-endian platforms, the bytes are ar-
+ranged from most significant to least significant. You can determine the endianness of
+the underlying platform with code like this:
+// If the integer 0x00000001 is arranged in memory as 01 00 00 00, then
+// we're on a little endian platform. On a big-endian platform we'd get
+// get bytes 00 00 00 01 instead.
+var little_endian = new Int8Array(new Int32Array([1]).buffer)[0] === 1;
+	</b>
+	
+	
+	<b></b>
+	
+		var typedInt32=new Int32Array(10);
+		typedInt32[8]=10;
+		//there is also method set
+		
+		
+		
+		typedInt32.buffer[0]=100;
+		typedInt32.buffer[1]=1; // now typedInt32[0] equals 356 , int32 use 4 bytes 
+	</pre>
+	<hr>
+	<pre>
+		<h2>ArrayBuffer - buffer for bytes , ant it can be a base for array</h2>
+		var buffer=new ArrayBuffer(22);
+		var intonbuffer=new Float64Array(buffer);
+		alert(intonbuffer.length); // 2 - because in 22 bytes we can allocate only 2 Float64
+	</pre>
+	<hr>
+	
+	<pre>
+		<b>DataView </b> class, which defines methods for reading and writing values
+from an ArrayBuffer with explicitly specified byte ordering:
+var data;                     // Assume this is an ArrayBuffer from the network
+var view = DataView(data);    // Create a view of it
+var int = view.getInt32(0);   // Big-endian 32-bit signed int from byte 0
+int = view.getInt32(4,false); // Next 32-bit int is also big-endian
+int = view.getInt32(8,true)   // Next 4 bytes as a little-endian signed int
+view.setInt32(8,int,false);   // Write it back in big-endian format
+DataView defines eight get methods for each of the eight typed array formats. They
+have names like getInt16(), getUint32(), and getFloat64(). The first argument is the
+byte offset within the ArrayBuffer at which the value begins. All of these getter methods,
+other than getInt8() and getUint8(), accept an optional boolean value as their second
+argument. If the second argument is omitted or is false, big-endian byte ordering is
+used. If the second argument is true, little-endian ordering is used.
+DataView defines eight corresponding set methods that write values into the under-lying ArrayBuffer. The first argument is the offset at which the value begins. The second
+argument  is  the  value  to  write. 
+	
+	</pre>
+		</div>
+
+	<script type="text/javascript">
+	
+		
+		var typedInt32=new Int32Array(10);
+		typedInt32[8]=10;
+		//there is also method set
+		
+		//alert(typedInt32.buffer); //ArrayBuffer
+		//alert(typedInt32); // Int32Array
+		
+		typedInt32.buffer[0]=100;
+		typedInt32.buffer[1]=1; // now typedInt32[0] equals 356 , int32 use 4 butes 
+		
+		
+		//alert(typedInt32.length); //10
+		
+		
+		
+		
+		console.log(typedInt32[0]);
+		
+		
+		var subarray=typedInt32.subarray(0,5);
+		alert(subarray.length);
+		
+		//subarray dont make copy , it only return view(reference) of array
+		subarray[2]=1000;
+		//change value in subarray , and the value is changed in array
+		alert(typedInt32[2]);
+		
+		
+		var buffer=new ArrayBuffer(22);
+		var intonbuffer=new Float64Array(buffer);
+		alert(intonbuffer.length);
+		
+	</script>
+</body>
+</html>

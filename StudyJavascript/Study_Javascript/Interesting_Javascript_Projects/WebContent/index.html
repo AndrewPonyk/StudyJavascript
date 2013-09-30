@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vincenty's formulae</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function rads(x){
+			return Math.PI*x/180;
+		};
+	
+		//49°51′N	24°01′E//lviv
+		//50°27′N	30°31′E // kyiv => 50.45;30.5
+		// 49 47 , 23 09  // mostuska
+		
+		//data
+		var a=6378137.0;
+		var f=1/298.257223563;
+		var b= (1 - f)*a;	
+		
+		var phi1=rads(49.82); //lviv
+		var phi2=rads(50.45); //kyiv
+		
+		//var phi1=rads(49.47); //mostuska
+		//var phi2=rads(49.49); //lviv
+		
+	
+		
+		var U1=Math.atan( (1-f) *Math.tan(phi1) );
+	
+		var U2=Math.atan( (1-f) *Math.tan(phi2) );
+		
+		var L1=rads(24);//lviv
+		var L2=rads(30.5); // kyiv
+		//var L1=rads(23.09); //mostuska
+		//var L2=rads(24);	// lviv
+	
+		
+		
+		var L=L2-L1;
+		var lambda=L;
+		
+		  var lambda0;
+		for(var i=0;i<10;i++){
+			
+			lambda0=lambda;
+		//! Inverse probleb
+		var sinb=Math.sqrt( 
+				Math.pow( (Math.cos(U2)*Math.sin(lambda))  ,2) +
+				Math.pow( (Math.cos(U1)*Math.sin(U2) -Math.sin(U1)*Math.cos(U2)*Math.cos(lambda) ),2)     
+				);
+		
+		
+		
+		var cosb=Math.sin(U1)*Math.sin(U2)+Math.cos(U1)*Math.cos(U2)*Math.cos(lambda);
+
+		
+		var sigma=Math.atan(sinb/cosb);
+		
+	        
+		sinalfa=(Math.cos(U1)*Math.cos(U2)*Math.sin(lambda))/sinb;
+	
+		
+		cos2alfa=1-sinalfa*sinalfa; 
+		
+		cos2bm=cosb- ( 2*Math.sin(U1)*Math.sin(U2)/cos2alfa );
+		
+		var C=(f/16)*cos2alfa*(4+f*(4-3*cos2alfa) );
+		
+		lambda=L+(1-C)*f*sinalfa*
+		(sigma +C*sinb *( cos2bm +C*cosb*(-1+2*cos2bm*cos2bm)) );
+		
+		var Ukv=cos2alfa * ( (a*a-b*b)/(b*b) ); 
+		
+		var A=1+ (Ukv/16384)*(4096 + Ukv *(-768 +Ukv*(320-175*Ukv)) );
+		
+		var B= (Ukv/1024)* ( 256 +Ukv*(-128 +Ukv*(74-47*Ukv) ) );
+		
+		var deltab=B*sinb * ( cos2bm+0.25 *B * (cosb*(-1 +2*cos2bm*cos2bm )  -(1/6)*B*cos2bm *(-3+4*sinalfa*sinalfa) *(-3+4*cos2bm*cos2bm)  )     );
+
+		  var change = Math.abs((lambda - lambda0) / lambda);
+
+		 
+		  
+          if ((i > 1) && (change < 0.0000000000001))
+          {
+               converged = true;
+               break;
+          }
+			
+		}
+		
+		
+		var s=b*A*(sigma-deltab);
+		console.log("s="+s);
+		
+
+		alert(s);
+
+
+	</script>
+</body>
+</html>

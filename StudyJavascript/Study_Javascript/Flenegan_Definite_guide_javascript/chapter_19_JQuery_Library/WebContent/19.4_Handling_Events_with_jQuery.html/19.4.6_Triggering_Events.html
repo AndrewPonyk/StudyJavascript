@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p>
+	$("#my_form").submit();    // Act as if the user clicked the Submit button
+	</p>
+	
+	
+	<br>
+	<p>
+		$("button").trigger("click.ns1");  // Trigger click handlers in a namespace
+		$("button").trigger("click");  
+	
+	</p>
+	
+	<h4>We can add extra parameters to Event in trigger method
+	<br>
+	// Add an extra property to the event object when triggering an event
+$('#button1').trigger({type:'click', synthetic:true});
+// This handler tests that extra property to distinguish real from synthetic
+$('#button1').click(function(e) { if (e.synthetic) {...}; });
+	</h4>
+	<script type="text/javascript">
+	
+		
+	
+		alert("end");
+	</script>	
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//window.location === document.location // always true
+		
+		
+		//alert(window.location);
+		//alert(document.location);
+		
+		
+		
+		function urlArgs() {
+			var args={};
+			var query=window.location.search.substring(1);   // window.location.search  - everything starts from ? 
+			var pairs=query.split("&");
+			
+			for(var i=0;i<pairs.length;i++	){
+					var pos=pairs[i].indexOf('=');
+					if(pos==-1) continue;
+					var name=pairs[i].substring(0,pos);
+					var value=pairs[i].substring(pos+1);
+					
+					
+					//The decodeURIComponent() function decodes a URI component.
+					////alert(decodeURIComponent('%3E')); // return >
+					value = decodeURIComponent(value);
+					args[name]=value;
+					
+			}
+			//alert(args['a']);
+			return args;
+		};
+		
+		
+		var args=urlArgs();
+		
+		
+		  for(var item in args){
+			console.log(item+"=>"+args[item]);
+		}  
+		
+		  
+		  function readSomeBooks(){
+			  window.location='http://oreilly.com';//read some books
+		  }
+		
+		  
+		  // window.location.search   - important property
+		  
+		  
+		alert('end');
+	</script>
+	
+	
+	<button onclick="readSomeBooks()">ReadSomeBooks</button>
+</body>
+</html>

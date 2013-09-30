@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<div id="jqueryMethods">
+		<h3>some jquery usefull methods </h3>
+		<h2>each,map,index,length,is</h2>
+	</div>
+
+	<div id ="fourWays">
+	<pre>
+		<h2>4 ways to use jQuery </h2>
+		
+				The jQuery()function (a.k.a. $()) is the most important one in the jQuery library. It is
+		heavily overloaded, however, and there are four different ways you can invoke it.
+		
+				The<b> first </b>, and most common, way to invoke $()is to pass a CSS selector (a string) to
+		it. When called this way, it returns the set of elements from the current document that
+		match the selector. jQuery supports most of the CSS3 selector syntax, plus some ex-tensions of its own. Complete details of the jQuery selector syntax are in  §19.8.1. If
+		3. When this chapter was written, the current version of jQuery was 1.4.2. As the book goes to press,
+		jQuery 1.5 has just been released. The changes in jQuery 1.5 mostly involve the Ajax utility function,
+		and they will be mentioned in passing in §19.6.
+		19.1 jQuery Basics | 525
+		Client-Side
+		JavaScript
+		you pass an element or a jQuery object as the second argument to $(), it returns only
+		matching descendants of the specified element or elements. This optional second ar-gument value defines the starting point (or points) for the query and is often called the
+		context.
+		
+		The<b> second </b>way to invoke $()is to pass it an Element or Document or Window object.
+		Called like this, it simply wraps the element, document, or window in a jQuery object
+		and returns that object. Doing this allows you to use jQuery methods to manipulate
+		the element rather than using raw DOM methods. It is common to see jQuery programs
+		call $(document)or $(this), for example. jQuery objects can represent more than one
+		element in a document, and you can also pass an array of elements to $(). In this case,
+		the returned jQuery object represents the set of elements in your array.
+		
+		The<b> third</b> way to invoke  $()is to pass it a string of HTML text. When you do this,
+		jQuery creates the HTML element or elements described by that text and then returns
+		a jQuery object representing those elements. jQuery does not automatically insert the
+		newly created elements into the document, but the jQuery methods described in
+		§19.3allow you to easily insert them where you want them. Note that you cannot pass
+		plain text when you invoke $()in this way, or jQuery will think you are passing a CSS
+		selector. For this style of invocation, the string you pass to  $()must include at least
+		one HTML tag with angle brackets.
+				var img = $("<img/>", // Create a new <img> element
+		{ src:url, // with this HTML attribute,
+		css: {borderWidth:5}, // this CSS style,
+		click: handleClick // and this event handler.
+		});
+		
+		
+				Finally, the<b> fourth</b> way to invoke  $()is to pass a function to it. If you do this, the function
+		you pass will be invoked when the document has been loaded and the DOM is ready
+		to be manipulated. This is the jQuery version of the  onLoad()function from  Exam-ple 13-5. It is very common to see jQuery programs written as anonymous functions
+		defined within a call to jQuery():
+		jQuery(function() { // Invoked when the document has loaded
+		// All jQuery code goes here
+		});
+		</pre>
+	</div>
+	<hr>
+	
+	<div id="noConflict">
+		<pre>
+		<b>
+					jQuery.noConflict(); // Restore $ to its original state
+			jQuery(function($) { // Use $ as a local alias for the jQuery object
+			// Put all your jQuery code here
+			});
+			</b>
+		</pre>
+	
+	</div>
+	
+	 <script type="text/javascript">
+		var divs=$("div");
+		
+		//alert(divs.jquery);// jquery version
+		
+		alert(divs.length);// we can also use divs.size()
+		
+		/* divs.each(function(){ // alert id of each element
+			
+			alert(this.innerHTML);
+		});
+ */		
+ 
+ 		var ids=divs.map(function(){return this.id;}).toArray().sort();
+ 
+ 		alert(ids[0]+","+ids[1]);
+ 
+ 		$(window).scroll(function(e){ // when window is scrolling
+ 		
+ 			console.log($(this).scrollTop()); /// $(this) !!!!!!!!!!!!!!!!!!!!!!!!! -selector
+ 			
+ 			
+ 		});
+		alert("end");
+	</script>
+</body>
+</html>

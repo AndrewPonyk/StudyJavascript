@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="background-color: #c0c;line-height: 13px" contenteditable="true">
+			Click to edit this div
+	</div>
+	<pre>	
+				Documents
+		also define a few other properties of interest:
+		cookie
+		A special property that allows JavaScript programs to read and write HTTP cook-ies. This property is covered in Chapter 20.
+		domain
+		A property that allows mutually trusted web servers within the same Internet
+		domain to collaboratively relax same-origin policy security restrictions on inter-actions between their web pages (see §13.6.2.1).
+		lastModified
+		A string that contains the modification date of the document.
+		location
+		This property refers to the same Location object as the location property of the
+		Window object.
+		referrer
+		The URL of the document containing the link, if any, that brought the browser to
+		the current document. This property has the same content as the HTTP Referer
+		header, but it is spelled with a double r.
+		title
+		The text between the &lt;title> and &lt;/title> tags for this document.
+		URL
+		The URL of the document as a read-only String rather than as a Location object.
+		The value of this property is the same as the initial value of location.href, but it
+		is not dynamic like the Location object is. If the user navigates to a new fragment
+		identifier  within  the  document,  for  example,  location.href  will  change,  but
+		document.URL will not.
+		<b>referrer</b> is one of the most interesting of these properties: it contains the URL of the
+		document from which the user linked to the current document. You might use this
+		property with code like this:
+	</pre>
+	<hr/>
+	<h2>The document.write() Method	</h2>
+	<pre>
+		
+			It is important to understand that you can use the write() method to output HTML to
+		the current document only while that document is being parsed. That is, you can call
+		document.write() from within top-level code in &lt;script> elements only because these
+		scripts  are  executed  as  part  of  the  document  parsing  process.  If  you  place  a
+		document.write() call within a function definition and then call that function from an
+		event handler, it will not work as you expect—in fact, it will erase the current document
+		and the scripts it contains! (You’ll see why shortly.) For similar reasons, you should
+		not use document.write() in scripts that have the defer or async attributes set.
+	</pre>
+	
+	<hr/>
+	<h2>15.10.3  Querying Selected Text</h2>
+	<pre>
+		It is sometimes useful to be able to determine what text the user has selected within a
+		document. You can do that with a function like this:
+		
+			function getSelectedText() {
+		    if (window.getSelection)       // The HTML5 standard API
+		        return window.getSelection().toString();
+		    else if (document.selection)   // This is the IE-specific technique.
+		        return document.selection.createRange().text;
+		}
+	</pre>
+	
+	
+	<script type="text/javascript">
+		
+	function getSelectedText() {
+	    if (window.getSelection)       // The HTML5 standard API
+	        return window.getSelection().toString();
+	    else if (document.selection)   // This is the IE-specific technique.
+	        return document.selection.createRange().text;
+	}
+	function CopyToClipboard(text) {
+	    Copied = text.createTextRange();
+	    Copied.execCommand("Copy");
+	    alert('copied');
+	}
+	
+	alert("document.referred="+document.referrer); 
+		
+		alert('end');
+	</script>
+	
+	<button onclick="CopyToClipboard(getSelectedText());">Copy Selected Text to Clipboard</button>
+</body>
+</html>

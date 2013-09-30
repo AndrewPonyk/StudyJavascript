@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+	<pre>
+	
+		19.4.4  Advanced Event Handler Registration
+	We’ve seen that jQuery defines quite a few simple methods for registering event han-
+	dlers. Each of these simply invoke the single, more complex method bind() to bind a
+	handler for a named event type to each of the elements in the jQuery object. Using
+	bind() directly allows you to use advanced event registration features that are not
+	available through the simpler methods.
+	4
+	In its simplest form, bind() expects an event type string as its first argument and an
+	event handler function as its second. The simple event registration methods use this
+	form of bind(). The call $('p').click(f), for example, is equivalent to:
+	$('p').bind('click', f);
+	</pre>
+
+
+	<div  style="border:1px solid black">
+		div1 sdfiojoasd
+	 </div>
+
+	<button id="button1"> Custome event </button>
+	
+	<script type="text/javascript">
+		
+		$("div").bind("mouseover mouseleave",function(){
+			alert("event binded");
+		})
+	
+		
+		var button1=$("#button1");
+		
+		button1.bind("customEvent",function(){
+			alert("custom event");
+		})
+		
+		button1.trigger("customEvent");
+		
+		alert("end");
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	
+	<div id="div1" >
+		div1
+	</div>
+	<script type="text/javascript">
+	
+		function replace(e,dx,dy){
+			//alert('replacing');
+			var styles=window.getComputedStyle(e,null);
+			//alert(styles.fontSize); // dont work in eclipse browser ((
+					
+					/* e.style.position="relative";
+					e.style.left=(styles.left+dx)+"px";
+					e.style.top=(styles.top+dy)+"px"; */
+					
+	
+					
+					var fontSize=parseInt(  e.style.fontSize?e.style.fontSize:0 );
+					//alert(parseInt(  e.style.fontSize?e.style.fontSize:0 ));
+					e.style.fontSize=(fontSize+10)+"px";
+		
+			var parced=parseInt("10weorij");
+			alert(parced); // 10 - interesting work of parseInt method
+		
+		};
+	 
+		/*// IIIIIIIIIIIEEEEEEEEEEEEEEEEE doesn't support getComputedStyle
+		function getStyle(el,styleProp)
+		{
+			var x = document.getElementById(el);
+			if (x.currentStyle)
+				var y = x.currentStyle[styleProp];
+			else if (window.getComputedStyle)
+				var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp);
+			return y;
+		}*/
+	 
+		alert('end');
+	</script>		
+	
+	<button onclick="replace(document.getElementById('div1'),4,5)">Replace div1</button>
+</body>
+</html>

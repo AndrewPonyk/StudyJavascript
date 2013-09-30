@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>8.2.2_bind_event_handler_which_execute_only_ONLCE.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+        
+                    
+                    
+                
+                    $("#div1").one("click",function(){
+                    	alert("click Handler");
+                    });
+                    
+                    
+                    
+                    
+
+                
+            }); 
+            
+            
+            
+            
+        </script>
+        <style>
+
+			span{
+				text-decoration:underline;
+			}
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+8.2.2_bind_event_handler_which_execute_only_ONLCE.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1) one() - this method bind event , which handler will be executed only once (when we first time trigger this event) <br>
+           </div>
+        <br>
+        
+   		
+   		<div id="div1">
+   			DIV1
+   		</div>
+ 
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

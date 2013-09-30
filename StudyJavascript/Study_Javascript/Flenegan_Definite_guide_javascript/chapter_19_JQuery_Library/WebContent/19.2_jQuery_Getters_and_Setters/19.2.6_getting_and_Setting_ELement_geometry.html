@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+
+<style type="text/css">
+
+	.red{
+		background-color:red;
+		   overflow: scroll;
+	}
+	
+	.green{
+		background-color:green;
+		overflow: scroll;
+	}
+</style>
+</head>
+<body>
+	
+	<pre>
+		 Note the unfortunate naming mismatch for
+these methods: offset() returns the absolute position of an element, in document co-ordinates.
+ And position() returns the offset of an element relative to its offsetParent().
+	</pre>
+	
+	<pre>
+				// Scroll the window by n pages. n can be fractional or negative
+		function page(n) {      
+		    var w = $(window);                  // Wrap the window in a jQuery object
+		    var pagesize = w.height();          // Get the size of a page
+		    var current = w.scrollTop();        // Get the current scrollbar position
+		    w.scrollTop(current + n*pagesize);  // Set new scrollbar position
+		}
+	
+	</pre>
+	
+	
+	<pre>
+			If you have a layout like this, however:
+ &le;div style="position: absolute; top: 200; left: 200;">
+     &le;div id="sub">&le;/div>
+ &le;/div>
+
+Then the offset for sub will be 200:200, but its position will be 0:0.
+	
+	</pre>
+	<div id="parent"> 
+	111111111111
+	
+	<div id="div1" class="red" >
+		div1 
+	</div>
+	
+	<div id="div2" class="green">
+		div2
+	</div>
+	</div>
+	<script type="text/javascript">
+	
+		var div1=$("#div1");
+		var div2=$("#div2");
+	
+		
+		var pos=div1.offset();
+		var posposition=div1.offsetParent($("#parent"));
+	
+		alert("div1 "+pos.top+" "+pos.left);
+		alert("div1 "+posposition.top+" "+posposition.left);
+		
+		
+
+		function page(n) {      
+		    var w = $(window);                  // Wrap the window in a jQuery object
+		    var pagesize = w.height();          // Get the size of a page
+		    var current = w.scrollTop();        // Get the current scrollbar position
+		    w.scrollTop(10);  // Set new scrollbar position
+			
+		}
+	
+		alert("end");
+	</script>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div style="position:absolute;bottom:50px;right:10px;"> go to top</div>
+	<button onclick="page(0)">Scroll page </button>
+</body>
+</html>

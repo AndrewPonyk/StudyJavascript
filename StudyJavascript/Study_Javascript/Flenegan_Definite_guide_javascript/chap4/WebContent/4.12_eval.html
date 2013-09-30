@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		eval("var x=10;");
+		eval( "function say(){ alert('say');}" ); // create a global function say
+		
+		say();
+		
+		var geval=eval;           /// direct and indirect eval (direct change local variables , indirect -global varibles)
+		var x="global",y="blobal";
+		function f(){
+			var x="local";
+			eval("x+='changed';");
+			return x;
+		}
+		
+		function g(){
+			var y="local";
+			geval("y+='changed';");
+			return y;
+		}
+		
+		
+		alert(f()+ "  "+x); //localchanged global
+		alert(g()+ "  "+y);	//local globalchnaged
+		
+		alert(typeof g=="function")
+		alert('end');
+	</script>
+</body>
+</html>

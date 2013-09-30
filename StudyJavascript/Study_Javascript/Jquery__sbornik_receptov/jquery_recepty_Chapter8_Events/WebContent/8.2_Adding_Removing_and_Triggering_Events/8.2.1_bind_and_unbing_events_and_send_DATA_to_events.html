@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>8.2.1_bind_and_unbing_events_and_send_DATA_to_events.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+        
+                    
+                    
+                    var d={
+                    		value:100
+                    }
+                    
+                    
+                    $("#div1").bind("click",d,function(e){
+                    	alert(e.data.value);
+                    });
+                
+                    setTimeout(function(){
+                    
+                    	$("#div1").unbind("click");
+                    	alert("Event Unbinded from #div1")
+                    },10000);
+            }); 
+            
+            
+            
+            
+        </script>
+        <style>
+
+			span{
+				text-decoration:underline;
+			}
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+8.2.1_bind_and_unbing_events_and_send_DATA_to_events.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1) bind() , unbind() - methods in jQuery to add or remove event listeners<br>
+           2) we can pass some data to event listener $("#div1").bind("click",data,function(e){/* here is object e.data*/})<br> 
+		   3) possible values of "eventType": 
+		  <pre>
+			   blur,focus,focusin,focusout,
+			   load,resize,scroll,unload,
+			   click,dbclick,mousedown,mouseup,mousemove,mouseover,mouseout,mouseenter,mouseleave,
+			   change,select,submit,keydown,keyup,error
+		  </pre> 	
+           </div>
+        <br>
+        
+   		
+   		<div id="div1">
+   			DIV1
+   		</div>
+ 
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>2.4.3_get_value_from_radio_checkbox_select.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+                 
+                 $("#getSingle").click(function(){
+                	 var single=$("#single").val();
+                	 alert(single);
+                 });
+                 
+                 
+               	$("#getMultiple").click(function(){
+               		var multiple=$("#multiple").val();
+               		alert(multiple.join(","));
+               	});
+               	
+               	
+               	$("#getCheckbox").click(function(){
+               		var checkbox=$("#c:checked").val();
+               		checkbox=checkbox|| "off";
+               		alert(checkbox);
+               	});
+    
+               	
+               	$("#getRadio").click(function(){
+               		
+               		var radio=$("input:radio[name=r]:checked").val();
+               		alert(radio);
+               	})
+               	
+                }) 
+            }); 
+        </script>
+        <style>
+            table td{
+                border:1px solid black;
+            }
+            
+            .yellow{
+                color:yellow;
+                font-weight:bold;
+            }
+            .blue{
+                color:blue;
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+ 2.4.3_get_value_from_radio_checkbox_select.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+           1)  &ltselect> is easy  var single=$("#single").val(); - getting selected item<br>
+           2)  &ltselect multiple="multiple">  selector : 	var multiple=$("#multiple").val(); alert(multiple.join(",")); - getting selected items<br>
+           3)  be carefull with checkboxes : var checkbox=$("#c:checked").val(); checkbox=checkbox|| "off";  - without this if checkbox is not selected the value will be undefined <br>
+           4)  with radio is easy	var radio=$("input:radio[name=r]:checked").val(); - get value of selected radio
+        </div>
+        
+       
+       <select id="single">
+       		<option value="s1">Single1</option>
+       		<option value="s2">Single2</option>
+       		<option value="s3">Single3</option> 
+       </select>
+       
+       <select id="multiple" multiple="multiple">
+       		<option value="m1">Multitple1</option>
+       		<option value="m2">Multitple2</option>
+       		<option value="m3">Multitple3</option> 
+       		<option value="m4">Multitple4</option> 
+       		<option value="m5">Multitple5</option> 
+       		<option value="m6">Multitple6</option> 
+       		<option value="m7">Multitple7</option> 
+       		<option value="m8">Multitple8</option> 
+       		<option value="m9">Multitple9</option> 
+       		<option value="m10">Multitple10</option> 
+       		<option value="m11">Multitple11</option> 
+       </select>
+       
+       <input type="checkbox" name="c"  id="c"  >
+
+		<input type="radio" name="r" value="radio1" checked="checked">        
+		<input type="radio" name="r" value="radio2">        
+        
+       <br>
+       <button id="getSingle"> select #single</button>
+       <button id="getMultiple">select #multiple</button>
+       <button id="getCheckbox">checkbox</button>
+       <button id="getRadio"> radio</button>
+       
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

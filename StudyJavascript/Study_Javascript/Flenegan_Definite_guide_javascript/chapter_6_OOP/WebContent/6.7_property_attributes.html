@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//"use strict"
+		var obj={x:1};
+	
+		
+		var propertyDescriptor=Object.getOwnPropertyDescriptor(obj,"x");
+		//alert(propertyDescriptor.value); // true
+		//alert(propertyDescriptor.writable);/* true  */
+		//alert(propertyDescriptor.enumerable);// true
+		//alert(propertyDescriptor.configurable);// true
+		
+		
+		Object.defineProperty(
+				obj, 'x', {
+					value:10,
+				    enumerable:false,
+				    writable:true,
+				    configurable:false
+				});
+	
+		alert(obj.x);
+		
+		// Now modify the property x so that it is read-only  (i can redefine from true  to false , but not vice versa)
+		//Object.defineProperty(obj, 'x', { writable: false });
+		
+		obj.x=1000; // dont change the value (and in strict mode TypeError)
+		
+		
+		
+		alert(obj.x);
+		
+		
+		 function myobj(){
+			this.x=100;
+		}
+		
+
+			
+		
+		
+		var p = Object.defineProperties({}, {
+			x: { value: 1, writable: true, enumerable:true, configurable:true }, 
+			y: { value: 1, writable: true, enumerable:true, configurable:true },
+			r: { 
+			get: function() { return Math.sqrt(this.x*this.x + this.y*this.y) },
+			enumerable:true,
+			configurable:true
+			}
+			});
+		
+		
+		Object.defineProperty(Object.prototype,
+				"extend", // Define Object.prototype.extend
+				{
+				writable: true,
+				enumerable: false, // Make it nonenumerable
+				configurable: true,
+				value: function(o) { // Its value is this function
+				// Get all own props, even nonenumerable ones
+				var names = Object.getOwnPropertyNames(o);
+				// Loop through them
+				for(var i = 0; i < names.length; i++) {
+				// Skip props already in this object
+				if (names[i] in this) continue;
+				// Get property description from o
+				var desc = Object.getOwnPropertyDescriptor(o,names[i]);
+				// Use it to create property on this
+				Object.defineProperty(this, names[i], desc);
+				}
+				}
+				});
+		
+		alert('end');
+	</script>
+</body>
+</html>

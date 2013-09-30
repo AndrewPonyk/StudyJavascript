@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+<meta charset="UTF-8">
+<title>Using PieJS</title>
+	<script type="text/javascript" src="pie.js"> </script>
+</head>
+<body>
+	This is a red square: <svg width="10" height="10">
+    <rect x="0" y="0" width="10" height="10" fill="red"/>
+    </svg>
+
+
+	
+	<script type="text/javascript">
+		var data=[10,20,30];
+		
+		var chart=pieChart(data,300,300,100,100,100,["blue","red","green"],["1","2","3"],250,100);
+		document.body.appendChild(chart);
+
+		
+			function repaintPie(){
+
+				var mas=(document.getElementById("data").value).split(",").map(function(x){return parseInt(x);});
+		
+				
+				for(var i=0;i<mas.length;i++){
+					console.log(mas[i]+(typeof mas[i]));
+				}
+				
+			
+				var colormas=(document.getElementById("colors").value).split(",");
+				
+				//var chart=pieChart(mas,300,300,100,100,100,colormas,colormas,250,100);
+				var chart=pieChart(mas,300,300,100,100,100,colormas,colormas,220,100);
+				document.body.appendChild(chart);
+			}
+		
+		</script>
+	
+	<div style="border:1px solid black" id="conrolPie">
+		<input type="text"  id="data"/>
+		<input type="text" id="colors"/>
+		<button onclick="repaintPie()">Draw Pie</button>
+	</div>
+</body>
+</html>

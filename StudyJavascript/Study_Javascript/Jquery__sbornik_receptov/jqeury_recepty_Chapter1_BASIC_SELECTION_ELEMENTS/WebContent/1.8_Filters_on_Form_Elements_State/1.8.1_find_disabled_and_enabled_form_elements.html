@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1.8.1_find_disabled_and_enabled_form_elements.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                    alert("ok");
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+         
+                   
+                    $(":enabled").val("enabled");
+                    $(":disabled").val("disabled");
+                        
+                }) 
+            }); 
+        </script>
+        <style>
+            table td{
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+     1.8.1_find_disabled_and_enabled_form_elements.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+             1)    $(":enabled").val("enabled");   $(":disabled").val("disabled");   - find disabled and enabled elements
+           
+        </div>
+        
+        
+        <form action="http://google1.com" method="get" style="background:#ffd">
+            <label style="display: inline-block;width:60px">login</label>
+            <input type="text" name="login" size="20"><br>
+            
+            <label style="display: inline-block;width:60px">password</label>
+            <input type="password" size="20" name="password"><br>
+
+            
+            <label style="display: inline-block;width:60px">some text</label>
+            <textarea disabled="disabled" ></textarea>
+                        <input style="display: block;" type="submit" value="submit"/>
+        </form>
+        
+        
+        <h2>big text</h2>
+        <h3>another big text</h3>
+        
+
+        <div id="blacksquare" style="background-color:black;width:60%;height:200px;">
+            
+        </div>
+
+         <h3>
+             
+            Hiding an Element - display:none or visibility:hidden
+
+            Hiding an element can be done by setting the display property to "none" or the visibility property to "hidden". However, notice that these two methods produce different results:
+            <br><br>
+            visibility:hidden hides an element, but it will still take up the same space as before. The element will be hidden, but still affect the layout.
+         </h3>
+        <table id="table1">
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>column n</td><td></td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+        </table>
+        
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

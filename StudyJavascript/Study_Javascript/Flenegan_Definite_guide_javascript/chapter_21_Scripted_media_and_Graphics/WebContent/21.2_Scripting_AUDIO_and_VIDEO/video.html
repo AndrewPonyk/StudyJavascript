@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cloud Atlas Trailer</title>
+</head>
+<body>
+	
+	<h4>video and audio api are similar =)  look in audio.html for describing api</h4>
+	
+	<video  id="CloudAtlas" controls preload="auto">
+			<!-- Firefor and chrome -->
+		 <source src="CloudAtlas.mp4" type='video/webm; codecs="vp8, vorbis"'/> 
+		
+		<!-- Ie and Safari -->
+		<source src="CloudAtlas.mp4" type='video/mp4; codecs="avc1.43E01E, mp4a.40.2'/> 
+	</video>
+
+	<div id="videoControls">
+		<button onclick="document.getElementById('CloudAtlas').currentTime=document.getElementById('seconds').value">Seek(seconds)</button>
+		<input type="text" id="seconds"/> 
+	</div>
+	<br>
+	<span>&lt;video> properties :</span>
+	<div id="videoProperties" style="border:1px solid black">
+		
+	</div>
+
+	<script type="text/javascript">
+		
+		var video=document.getElementById("CloudAtlas");
+		var videoProprties=document.getElementById("videoProperties");
+		
+		for(var item in video){
+			console.log(item);
+			
+			videoProprties.innerHTML=videoProprties.innerHTML+item+"<br>";
+		};
+		
+		//here ve can start  play video
+		//video.play();
+		
+	
+		alert("end");
+	</script>
+</body>
+</html>

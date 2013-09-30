@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<input id="textinput" style="display:block"	/>
+	<textarea rows="15" cols="35" id="textareainput"></textarea>
+
+
+
+	<div>
+		<h3>Theory</h3>
+		<h4>keydown,keyup and keypress events</h4>
+		The <b>keydown</b> and <b>keyup</b> events are low-level keyboard events: they are triggered when-ever a key (even a modifier key) is pressed or released. When a keydown event generates
+		a printable character, an additional keypress event is triggered after the keydown but
+		before the keyup. (In the case of a key that is held down until it repeats, there may be
+		many keypress events before the keyup event.) The <b>keypress</b> event is a higher-level text
+		event, and its event object specifies the character that was generated, not the key that
+		was pressed
+		
+		
+		
+	</div>
+	<hr/>
+			 DOM Events
+		The DOM Level 3 Events specification has been under development by the W3C for
+		about a decade. At the time of this writing, it has undergone substantial revision to
+		bring it in line with current browser reality and it is finally in the “last call working
+		draft” stage of standardization. It standardizes many of the legacy events described
+		above and adds some new ones described here. These new event types are not yet widely
+		supported, but browser vendors are expected to implement them once the standard
+		is final.
+		As noted above, the DOM Level 3 Events specification standardizes the focusin and
+		focusout events as bubbling alternatives to the focus and blur events and standardizes
+		the mouseenter and mouseleave events as nonbubbling alternatives to mouseover and
+		mouseout. This version of the standard also deprecates a number of event types that
+		were defined by Level 2 but never widely implemented. Browsers are still allowed to
+		generate events like DOMActivate, DOMFocusIn, and DOMNodeInserted, but these
+		are no longer required, and they are not documented in this book.
+		3
+		What is new in the DOM Level 3 Events specification is standardized support for two-dimensional mouse wheels via the wheel event and better support for text input events
+		with a textinput event and with a new KeyboardEvent object that is passed as the
+		argument to handlers for keydown, keyup, and keypress events
+		A handler for a wheel event receives an event object with all the usual mouse event
+		properties, and also deltaX, deltaY, and deltaZ properties that report rotation around
+		three different mouse wheel axes. (Most mouse wheels are one or two dimensional and
+		do not use deltaZ.) See §17.6 for more on mousewheel events
+		<br/> <br/>
+		<h4>textInput - Browser support: Ie9 ,chrome ,safari</h4> 
+		<div>
+			<pre>
+			
+			How to register:
+In HTML: 
+This event cannot be registered in HTML.
+
+In JavaScript: 
+object.addEventListener ("textInput", handler, useCapture);</pre>
+		</div>
+		DOM Level 3 Events defines the keypress event described above, but deprecates it in
+favor of a new event named textinput. Rather than a hard-to-use numeric keyCode value,
+the event object passed to a textinput event handler has a data property that specifies
+the string of text that was entered. The textinput event is not a keyboard-specific event:
+it is triggered whenever text input occurs, whether via the keyboard, cut-and-paste,
+drag-and-drop, and so on. The specification defines an inputMethod property on the
+event object and a set of constants representing different kinds of text input (keyboard,
+paste or drop, handwriting or voice recognition, and so on). At the time of this writing,
+Safari  and  Chrome  support  a  version  of  this  event  using  the  mixed-case  name
+textInput. Its event object includes the data property but not the inputMethod property.
+§17.8 includes an example that makes use of this textInput event.
+
+	<script type="text/javascript">
+		
+	
+	
+	
+		var input=document.getElementById("textinput");
+		var textarea=document.getElementById("textareainput");
+		
+		//alert(input+" "+textarea	);
+	
+		if(input.addEventListener)
+		input.addEventListener("click",function(){alert("hello"	);});
+		
+		if(input.attachEvent)
+			input.attachEvent("textInput",function(){alert("iee")});
+		
+		  input.onkeypress=function(){
+			alert("keypress");
+		};  
+		
+		
+	
+		alert('end');
+	</script>
+</body>
+</html>

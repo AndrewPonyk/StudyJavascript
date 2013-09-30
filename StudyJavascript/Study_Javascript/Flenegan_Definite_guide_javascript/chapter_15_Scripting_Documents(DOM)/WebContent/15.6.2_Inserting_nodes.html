@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	th {
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+	insertBefore() and appendChild() - methods for inserting
+
+	
+	<div id="usefulLinks">
+		<h1 style="padding:2px;margin:2px">Useful links</h1>
+
+			sdf
+			<br/>
+			<a href="http://google.com">Google</a>
+		<a href="http://vk.com">Vk.com</a>		
+
+	</div>
+		
+	
+	
+
+	<script type="text/javascript">
+		// Insert the child node into parent so that it becomes child node n
+		function insertAt(parent, child, n) {
+		    if (n < 0 || n > parent.childNodes.length) throw new Error("invalid index");
+		    else if (n == parent.childNodes.length) parent.appendChild(child);
+		    else parent.insertBefore(child, parent.childNodes[n]);
+		}	
+	
+		
+		function appendLink(url){
+			var element=document.createElement("a");
+			element.href=url;
+			element.textContent=" "+url.replace("http://","");	
+			//var userfulLinks=docume
+			usefulLinks.appendChild(element);
+		}
+	
+		
+		
+		// now we will sort Table content
+		
+		// Sort the rows in first <tbody> of the specified table according to
+		// the value of nth cell within each row. Use the comparator function
+		// if one is specified. Otherwise, compare the values alphabetically.
+		function sortrows(table,n,comparator) {
+			var tbody=table.tBodies[0]; // 
+			var rows=tbody.getElementsByTagName("tr");
+			rows=Array.prototype.slice.call(rows,1); // ?? skip head 
+			
+			for(var i=0;i<rows.length;i++){
+				
+				console.log(rows[i].innerHTML);
+			//	tbody.appendChild(rows[i]); // adding existing element will replace existing element
+			};
+			
+			var r1=rows.sort(function(row1,row2){
+				
+				var cell1=row1.getElementsByTagName("td")[n];
+				var cell2=row2.getElementsByTagName("td")[n];
+				
+				var val1=cell1.textContent;
+				var val2=cell2.textContent;
+				
+				// if comparator is defined
+				if(comparator) return comparator(val1,val2);
+				
+				if(val1<val2) return -1;
+				else return 1;
+			});
+			
+			for(var i=0;i<r1.length;i++){
+				console.log(r1[i].innerHTML);
+				tbody.appendChild(rows[i]); // adding existing element will replace existing element
+			};
+		};
+		
+		function makeSortable(table) {
+			var headers=table.getElementsByTagName("th");
+			alert(headers.length);
+			for(var i=0;i<headers.length;i++){		 
+
+				// zamukannia , bez niogo ne vujde , bo treba fiksuvatu i
+				(function(n){
+					 	headers[i].onclick=function(){
+						sortrows(table,n);
+					};		
+				 }(i)); 
+			
+			};
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		// teper povchumo DocumentFragment
+		//15.6.4  Using DocumentFragments
+		//A DocumentFragment is a special kind of Node that serves as a temporary container
+		//for other nodes. Create a DocumentFragment like this:
+		// Reverse the order of the children of Node n
+		function reverse(n) {
+		    // Create an empty DocumentFragment as a temporary container
+		    var f = document.createDocumentFragment();
+		    // Now loop backward through the children, moving each one to the fragment.
+		    // The last child of n becomes the first child of f, and vice-versa.
+		    // Note that appending a child to f automatically removes it from n.
+		    while(n.lastChild) f.appendChild(n.lastChild);
+		    // Finally, move the children of f all at once back to n, all at once.
+		    n.appendChild(f);
+		}
+			
+			
+		alert('end');
+	</script>
+	
+
+	
+	<input type="text" id="url"/>
+	<button onclick="appendLink(document.getElementById('url').value)">AddLink</button>
+	<br/>
+	
+		<table border="1" id="table1">	
+		
+		<th>first	</th><th>second</th><th>third</th>
+		<tr><td>5</td><td>82</td><td>9111</td></tr>
+		<tr><td>3</td><td>22</td><td>5222</td></tr>
+		<tr><td>8</td><td>333</td><td>4333</td></tr>
+	</table>
+	<button onclick="makeSortable(document.getElementById('table1'))">Sort Table make Sortable</button>
+	<button onclick="sortrows(document.getElementById('table1'),0,null)">Sort rows</button>
+
+</body>
+</html>

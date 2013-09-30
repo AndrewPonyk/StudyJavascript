@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>5.1.1_using_methods_data_and_removeData.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+    
+                    $("#addEmployee").click(function(){
+                    	alert("adding");
+                    
+                    	$("#employees").data($("#employeeName").val(),{
+                    		"employeeName": $("#employeeName").val(),
+                    		"employeePhone":$("#employeePhone").val(),
+                    		"employeeAddress":$("#employeeAddress").val()
+                    	});
+                    	
+                    	alert("Added "+$("#employeeName").val());
+                    });
+                    
+                    ////////
+                    $("#getEmployee").click(function(){
+                    	var employee=$("#employees").data($("#getEmployeeByName").val());
+                    	
+                    	$("#result").remove();
+                    	
+                    	if(!employee) {
+                    		alert("No results");
+                    		return;
+                    	}
+                    	
+                    	var tr=$("<tr id='result'>");
+                    	
+                    	
+                    	var employeeNameTD=$("<td>");
+                    	employeeNameTD.html(employee.employeeName);
+                    	var employeePhoneTD=$("<td>");
+                    	employeePhoneTD.html(employee.employeePhone);
+                    	var employeeAddressTD=$("<td>");
+                    	employeeAddressTD.html(employee.employeeAddress);
+                    	
+                    	tr.append(employeeNameTD);
+                    	tr.append(employeePhoneTD);
+                    	tr.append(employeeAddressTD);
+                    	
+                    
+                    	$("#results").append(tr);
+                    	
+                    });
+                    
+                }) 
+            }); 
+        </script>
+        <style type="text/css">
+            label{
+            	display:inline-block;
+            	width:120px;
+            	
+            }
+           
+            table  ,td{
+            	
+            	border:1px solid black;
+            }
+            table{
+            	border-collapse:collapse;
+            	width:80%;
+            	margin:5px auto;
+            	
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+ 5.1.1_using_methods_data_and_removeData.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            1) Using methods : data(key,value) , data(key) , removeData(value)<br/>
+            2) When we want to remove some elements from page  : $("selectro").remove () <br/>
+            3) We can save objects with data(key , value ) 
+        </div> 
+        
+       
+       <div id="employees"></div>
+       <br>
+       <form style="border :1px solid black;width:35%;float:left;">
+       		<label> Employee name</label>
+       		<input type="text" id="employeeName"  /><br/>
+       		<label> Employee Phone</label>
+       		<input type="text" id="employeePhone"  /><br/>
+       		<label> Employee Address</label>
+       		<input type="text" id="employeeAddress"  /><br/>  
+       		<input type="button" id="addEmployee" style="text-align:center;" value="Add Employee"/>
+       </form>
+       
+       <form style="border :1px solid black;width:35%;float:left;margin-left:1px">
+       		<label> Employee name</label>
+       		<input type="text" id="getEmployeeByName"  /><br/>
+       		<input type="button" id="getEmployee" style="text-align:center;" value="Get Employee"/>
+       		<table id="results">
+       			<tr> <td>Name</td><td>Phone</td><td>Address</td> </tr> 
+       		</table>
+       </form>
+       
+       
+       
+       <div style="clear:both"></div>
+       
+        
+       
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

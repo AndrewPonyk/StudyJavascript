@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+
+		
+		function longTimeRunningWithWorker(){
+			var w=new Worker("longTimeRunningFunction.js");
+			w.postMessage("1");
+			w.onmessage=function(e){
+				alert(e.data);
+			}
+		}
+		
+	
+	
+
+	</script>
+	
+	<button onclick="longTimeRunningWithWorker()">	longTimeRunningFunction</button>
+</body>
+</html>

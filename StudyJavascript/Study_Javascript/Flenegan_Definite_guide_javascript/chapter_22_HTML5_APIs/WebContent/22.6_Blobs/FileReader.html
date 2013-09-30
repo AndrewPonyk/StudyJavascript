@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FileReader</title>
+</head>
+<body>
+	<input  type="file"  id="files" onchange="readFile(this.files[0])"  multiple="multiple" name="files" size="100"/>
+
+	<div id="filesDiv" style="border:1px solid black">
+	Source (text):   <br>
+			
+	</div>
+	<div id="download" style="border:2px solid red">
+		You can download files :
+		
+	</div>
+	
+    <script type="text/javascript">
+	    String.prototype.replaceAll = function(search, replace){
+			  return this.split(search).join(replace);
+		};	
+		
+		//funny function get UTF-8 codes ))
+		function string_as_unicode_escape(input) {
+		    function pad_four(input) {
+		        var l = input.length;
+		        if (l == 0) return '0000';
+		        if (l == 1) return '000' + input;
+		        if (l == 2) return '00' + input;
+		        if (l == 3) return '0' + input;
+		        return input;
+		    }
+		    var output = '';
+		    for (var i = 0, l = input.length; i < l; i++)
+		        output += '\\u' + pad_four(input.charCodeAt(i).toString(16));
+		    return output;
+		};
+    	
+		
+	
+		var out=document.getElementById("filesDiv");
+		var donwload=document.getElementById("download");
+		
+		
+		
+		
+    	function readFile(f){
+    		var reader=new FileReader();
+    	
+    		reader.readAsText(f); // reader.readAsText(f,"UTF-8"); // the default is UTF-8 encoding
+    		
+    		reader.onload=function(){
+    			var text=reader.result;
+    			
+    			text=text.replace(/\n/g,"<br>");
+    			text=text.replace(/\t/g,"&nbsp;&nbsp;&nbsp;&nbsp;");
+    			text=text.replace(/ /g,"&nbsp;");
+    			
+    			var out=document.getElementById("filesDiv");
+    			out.innerHTML=out.innerHTML+f.name+";"+f.size+" bytes <br>"+text+"<br>"+"<hr>";
+    			var link=document.createElement("a");
+    			link.innerHTML="f.name";
+    			link.href="http://google.com";
+    			donwload.appendChild(link);
+    		}
+    		
+    		var reader1=new FileReader();
+    		reader1.readAsDataURL(f);
+    		reader1.onload=function(){
+    			var data=reader1.result;
+    			
+    		
+    			var link=document.createElement("a");
+    			link.innerHTML=f.name;
+    			link.href=data;
+    			donwload.appendChild(link);
+    		}
+    		
+    		var imgReader=new FileReader();
+    		imgReader.readAsDataURL(f);
+    		imgReader.onload=function(){
+    			var data=imgReader.result;
+    			
+    		
+    			var img=document.createElement("img");
+    			
+    			img.src=data;
+    			img.style.width="200px";
+    			donwload.appendChild(img);
+    		}
+    		
+    		
+    	}
+    	
+    	
+    </script>
+</body>
+</html>

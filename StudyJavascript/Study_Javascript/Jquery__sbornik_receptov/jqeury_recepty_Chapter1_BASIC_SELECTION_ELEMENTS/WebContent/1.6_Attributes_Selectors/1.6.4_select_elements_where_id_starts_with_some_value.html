@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> 1.6.4_select_elements_where_id_starts_with_some_value.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                    alert("ok");
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+         
+                    alert(   $("div[id^=black]").length ) ;
+                    
+                    $("div[id^=black]").each(function(){
+                        console.log( $(this).attr("id"));
+                    });
+                    
+                        
+                }) 
+            }); 
+        </script>
+        <style>
+            table td{
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title">Task</div>
+        <div class="task">
+      1.6.4_select_elements_where_id_starts_with_some_value.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            1)     $("div[id^=black]").length  - select element which id starts with 'black'   <br>
+            2)     $("div[id$=black]").length  - select element which id ends with 'black'   <br>
+           
+        </div>
+        
+        <h2>big text</h2>
+        <h3>another big text</h3>
+        
+
+        <div id="blacksquare" style="background-color:black;width:60%;height:200px;">
+            
+        </div>
+
+         <h3>
+             
+            Hiding an Element - display:none or visibility:hidden
+
+            Hiding an element can be done by setting the display property to "none" or the visibility property to "hidden". However, notice that these two methods produce different results:
+            <br><br>
+            visibility:hidden hides an element, but it will still take up the same space as before. The element will be hidden, but still affect the layout.
+         </h3>
+        <table id="table1">
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>column n</td><td></td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+        </table>
+        
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>
+

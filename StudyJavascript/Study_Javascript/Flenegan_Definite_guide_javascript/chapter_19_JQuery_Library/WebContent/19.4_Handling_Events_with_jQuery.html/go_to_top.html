@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+
+<body>
+	<a href="#top"><h2 >top of document	</h2></a>
+	<br>a
+	<br>b
+	<br>c
+	<br>d
+	<br>e
+	<br>f
+	<br>g
+	<br>a
+	<br>i
+	<br>j
+	<br>k
+	<br>l
+	<br>m
+	<br>b
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	v
+v
+
+<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<br>v
+	<a href="#top"><div id="div1" style="background:url(topArrowBig.png) no-repeat;width:50px;height:50px;position:fixed;right:50px;bottom:50px">  </div></a>
+	
+	<script type="text/javascript">
+	
+	var div1= $("#div1");	
+	div1.hide();
+		
+		$(window).scroll(function(event){
+			
+		
+		if( $(this).scrollTop()>100){
+			div1.fadeIn();
+		}
+		else{ 
+			div1.fadeOut();
+		}
+		
+
+		
+		});
+		
+		$('#div1').click(function () {
+			$("body").animate({
+				scrollTop: 0
+			}, 1200);
+			return false;
+		});
+		
+		
+		/* var a = 1, b = 2;
+		function f(c) {
+			alert(a); // a is undefined , if we comment var a=3; all will work
+			b = a;
+		    var a = 3;
+		    c = 4;
+		}
+		f(b); */
+		
+		var a=10;
+		alert("++a"+1);
+		alert("end");
+	</script>
+
+</body>
+
+</html>

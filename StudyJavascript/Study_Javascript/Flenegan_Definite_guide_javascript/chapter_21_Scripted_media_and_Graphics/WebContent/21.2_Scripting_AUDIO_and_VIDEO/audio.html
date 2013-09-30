@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Audio</title>
+</head>
+<body>
+	<div id="lenta_div" style="border:1px solid black;width:60%;">
+	<b>Лента за лентою</b>
+	<button onclick="lenta_za_lentoju.play()">&gt;</button>
+	<button onclick="volume(1,lenta_za_lentoju)">+</button>
+	<button onclick="volume(-1,lenta_za_lentoju)">-</button>
+	<button onclick="lenta_za_lentoju.pause()">Pause</button>
+	<button onclick="lenta_za_lentoju.currentTime=lenta_za_lentoju.duration;lenta_za_lentoju.loop=false">Stop</button>
+	<button onclick="lenta_za_lentoju.loop=true">0</button>
+	</div>
+	<br>
+	<br>
+	<hr>
+	The result is that for a website to guarantee HTML5 audio for all the above browsers, it has to make two formats available: 1)Vorbis(ogg) or WebM (Chrome, Opera, Mozilla) ;  and either MP3 or AAC(Ie or Safari).
+	<pre>
+	&lt;audio id="myaudio" controls>
+	    &lt;source src="myaudio.mp3" type="audio/mp3">
+	    &lt;source src="myaudio.ogg" type="audio/ogg">
+	    No audio support!
+	&lt;/audio>
+	<hr>
+		var <b>percent_loaded</b>=Math.floor(song.buffered.end(0)/song.duration*100);
+	<hr>
+	<span>HTMLAudioElement properties:</span>
+	<div id="audioProperties">
+	
+	</div>
+	
+
+	
+	</pre>
+	<script type="text/javascript">
+	
+		var lenta_za_lentoju=new Audio();
+		
+		if(lenta_za_lentoju.canPlayType("audio/mp3")) ; //alert("good");
+		
+		lenta_za_lentoju.src="partuzanu.mp3";
+		//lenta_za_lentoju.play();
+		lenta_za_lentoju.volume=0.1;
+		lenta_za_lentoju.autoPlay=true; // specifies whether the media should beting to play automatically when a sufficient amount has beet buffered
+		
+		//alert(lenta_za_lentoju); //HTMLAudioElement
+	
+		
+		
+		var audioProprties=document.getElementById("audioProperties");
+		
+		for(var item in lenta_za_lentoju){
+		//	console.log(item+ " _"+(typeof item));
+			
+			audioProprties.innerHTML=audioProprties.innerHTML+item+ " _"+(lenta_za_lentoju[item])+"<br>";
+		};
+		
+		
+		function volume(delta,audio){
+			
+			if(delta>0) audio.volume=audio.volume*2;
+			if(delta<0) audio.volume=audio.volume/2;
+			//audio.volume=0;
+			audio.play();
+		}
+		
+		
+	</script>
+	
+	
+</body>
+</html>

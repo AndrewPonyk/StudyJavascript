@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="whenReady.js"></script>
+</head>
+<body>
+	<h2>Drag timestamp from CLOCK</h2>
+	<span style="border:1px solid black;margin:4px; font-weight:bold" id="clock"> </span> <!-- the timestamp is displayed here -->
+	<br>
+	
+	<textarea rows="15" cols="35" id="textarea1"></textarea> <!-- We can drop timestamp here -->
+	
+	
+	<script type="text/javascript">
+	
+		function sayHello(){
+			alert("hello");
+			
+		};
+		
+		whenReady(sayHello);
+		whenReady(sayHello);
+	
+	
+		var clock=document.getElementById("clock");
+		var textarea1=document.getElementById("textarea1");
+		
+		textarea1.ondragover=function(event){
+			event=event||window.event;
+			textarea1.style.border="solid red 2px";
+		};
+		
+		textarea1.ondragleave=function(event){
+			event=event||window.event;
+			textarea1.style.border="solid black 2px";
+		};
+		textarea1.ondrop=function(event){
+			event=event||window.event;
+			textarea1.style.border="solid black 2px";
+		};
+		
+		
+		
+		var icon=new Image();
+		icon.src="summer.jpg";
+		
+
+		//
+		function displayTime(){
+			var now=new Date();
+			var hrs=now.getHours(),mins=now.getMinutes(),sec=now.getSeconds();
+			clock.innerHTML=hrs+":"+mins+":"+sec;
+		};
+		setInterval(displayTime,1000);
+
+
+		//make the clock draggable , we can do <span draggable=true...
+		clock.draggable=true;
+		
+		clock.ondragstart=function(event){
+			var event=event||window.event;
+			
+			// dataTransfer - is key to drag-and-drop API
+			var dt=event.dataTransfer;
+			dt.setData("Text",Date()+"\n");
+			
+			if(dt.setDragImage){
+				dt.setDragImage(icon,0,0);	
+			};
+			
+		}
+	
+		alert("end");
+	</script>
+</body>
+</html>

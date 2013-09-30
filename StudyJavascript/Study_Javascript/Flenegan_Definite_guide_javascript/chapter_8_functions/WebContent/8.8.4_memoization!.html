@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	function memoize(f){
+		var cache={};
+		
+		return function(){
+			var key=arguments[0];
+			//alert(key);
+			if(key in cache){
+				//alert('je v cache');
+				return cache[key];
+			
+			}	else{
+					//alert('nema');
+			 return cache[key]=f.apply(this,arguments);
+			}
+		};
+	}
+	
+		
+		function factorial(n){
+			if(n<=1) return n;
+			else return n*factorial(n-1);
+		}
+	
+	
+		var fac=memoize(function (n){return (n<=1)?1:n*fac(n-1);	});
+	
+			
+		//alert(fac(10));
+		for(var i=0;i<100;i++)
+			console.log(factorial(130));
+		
+		/* console.log(factorial(10));
+		console.log(factorial(120));
+		 */
+		
+		///////////////// usual factorial
+ 		 var start = new Date().getTime();
+
+		 for (i = 0; i < 10000; ++i) {
+		 	console.log(factorial(120));
+		 }
+
+		 var end = new Date().getTime();
+		 var time = end - start;
+		 alert('Execution time: ' + time);
+ 		 ///// endUsualFactorial
+
+		 var start = new Date().getTime();
+
+		 for (i = 0; i < 10000; ++i) {
+		 	console.log(fac(120));
+		 }
+
+		 var end = new Date().getTime();
+		 var time = end - start;
+		 alert('Execution time(memoization): ' + time);
+   
+	
+	
+ 
+ 		alert('end');
+
+		 
+		 
+		 </script>
+
+	<button onclick="alert(factorial(20));">factorial(usual)</button>
+</body>
+</html>

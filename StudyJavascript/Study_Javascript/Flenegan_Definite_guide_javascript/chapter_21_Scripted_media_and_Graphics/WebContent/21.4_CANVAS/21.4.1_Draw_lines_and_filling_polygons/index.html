@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lines and fill polygons</title>
+<style type="text/css">
+
+	canvas{
+		background-color: #fafafd;
+	}
+</style>
+</head>
+<body>
+	<canvas id="lines" width="300px" height="300px" >no support</canvas>
+	
+		<canvas id="polygons" width="300px" height="300px" >no support</canvas>
+	<script type="text/javascript">
+	
+		var canvas=document.getElementById("lines");
+		var context=canvas.getContext("2d");
+		
+		context.beginPath();
+		context.moveTo(100,100);
+		context.lineTo(200,200);
+		context.lineTo(100,200);
+
+		context.strokeStyle="#f00";
+		context.lineWidth="4";
+		context.stroke();
+		context.fill();
+	
+		
+		
+		canvas=document.getElementById("polygons");
+		context=canvas.getContext("2d");
+		//c - context
+		//n - sides
+		//x,y - center
+		// r- radius
+		//angle - pochatkova prokrutka
+		//rotate clockwise , unless the last argument is true
+		function polygon(c,n,x,y,r,angle,counterclockwise,fillColor){
+			angle=angle||0;
+			
+			counterclockwise=counterclockwise||false;
+			
+			c.beginPath();
+			c.moveTo(
+				x+r*Math.sin(angle),
+				y-r*Math.cos(angle)
+			);
+			
+			c.strokeStyle="#f00";
+			
+			var delta=2*Math.PI/n;
+			for(var i=1;i<n;i++){
+				angle+=delta;
+				
+				c.lineTo(
+				x+r*Math.sin(angle),
+				y-r*Math.cos(angle));
+			}
+			
+			
+			
+			c.closePath();	
+			c.stroke(); // call stroke AFTER closePath !!!!
+			c.fillStyle=fillColor;
+			c.fill();
+			
+			//alert("p");
+		}
+		
+		//context.beginPath();
+		polygon(context,4,200,200,50,Math.PI/4,true,"green");// square
+		polygon(context,4,200,200,30,Math.PI/4,true,"yellow");// square
+		polygon(context,3,100,100,30,0,true,"yellow");// square
+
+		
+		alert(context);
+	</script>
+</body>
+</html>

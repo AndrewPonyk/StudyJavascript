@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function NotNumberException() {}
+		function NotPositiveNumberException() {}
+	
+		// try some code
+		try {
+		    // some function/code that can throw
+		    if (isNaN(value))
+		        throw new NotNumberException();
+		    else
+		    if (value < 0)
+		        throw new NotPositiveNumberException();
+		}
+		catch (e if e instanceof NotNumberException) {
+		    alert("not a number");
+		}
+		catch (e if e instanceof NotPositiveNumberException) {
+		    alert("not a positive number");
+		}
+	</script>
+</body>
+</html>

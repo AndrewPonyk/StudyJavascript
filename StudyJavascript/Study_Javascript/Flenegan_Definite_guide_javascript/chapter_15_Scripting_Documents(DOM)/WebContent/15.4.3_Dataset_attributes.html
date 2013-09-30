@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="width:50%">	
+	
+	 As  noted  above,  you  can  use  the  <b>getAttribute()</b>  and
+	<b>setAttribute()</b> methods to read and write the values of <i> nonstandard </i> attributes. The
+price you pay, however, is that your document will not be valid HTML.
+
+	<p>
+		HTML5 provides a solution. In an HTML5 document, any attribute whose name is
+		lowercase and begins with the prefix “data-” is considered valid. These “dataset at-
+		tributes” will not affect the presentation of the elements on which they appear and they
+		define a standard way to attach additional data without compromising document
+		validity.
+	</p>
+	
+	<p>
+			HTML5 also defines a dataset property on Element objects. This property refers to an
+		object, which has properties that correspond to the data- attributes with their prefix
+		removed. Thus dataset.x would hold the value of the data-x attribute. Hyphenated
+		attributes map to camel-case property names: the attribute data-jquery-test becomes
+		the property dataset.jqueryTest.
+	</p>
+	
+	<p>
+	&lt;span class="sparkline" data-ymin="0" data-ymax="10">
+	1 1 1 2 2 3 4 5 5 4 3 5 6 7 7 4 2 1
+	&lt;/span>	
+		<br/>
+		<pre>
+	// Assumes the ES5 Array.map() method (or a work-alike) is defined
+		var sparklines = document.getElementsByClassName("sparkline");
+		for(var i = 0; i < sparklines.length; i++) {
+		    var dataset = sparklines[i].dataset;
+		    var ymin = parseFloat(dataset.ymin);
+		    var ymax = parseFloat(dataset.ymax);
+		    var data = sparklines[i].textContent.split(" ").map(parseFloat);
+			    drawSparkline(sparklines[i], ymin, ymax, data);  // Not yet implemented
+		}
+		</pre>
+	</p>
+	</div>
+	
+	
+	<span id="sparkline" class="sparkline" data-ymin="0" data-ymax="10">
+	1 1 1 2 2 3 4 5 5 4 3 5 6 7 7 4 2 1
+	</span>	
+	
+	<script type="text/javascript">
+
+		var sparkline=document.getElementById("sparkline");
+		alert(sparkline.getAttribute('data-ymax'));
+		
+		alert(sparkline.dataset.ymax); // dataset - for attributes data-*
+		
+		alert('end');
+	</script>
+</body>
+</html>

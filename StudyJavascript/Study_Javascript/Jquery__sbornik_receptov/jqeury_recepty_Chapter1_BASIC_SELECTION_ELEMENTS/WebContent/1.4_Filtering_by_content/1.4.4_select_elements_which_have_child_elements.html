@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> 1.4.4_select_elements_which_have_child_elements.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                    alert("ok");
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+              
+                       $("*:parent",document.body).fadeTo(4000,0.15);
+                       
+                       
+                       setTimeout(function(){
+	                    	alert("now display elements which are epmty (completely empty)");
+	                    	  $("*:not(:parent)",document.body).css("background-color","red");
+	                    	  
+	                    	  $("*:not(:parent)",document.body).parents(":not(body,html,div)").fadeTo(4000,0.93);
+	                    	  $("*:not(:parent)",document.body).fadeTo(4000,0.95);
+	                    	  
+	                    
+                       },5000); 
+                       
+                       
+                      
+                      // $("*:not(:parent)",document.body).attr("style","width:40%;height:30px;background-color:blue");
+                      // $("*:not(:parent)",document.body).fadeTo(4000,0.3);
+                       
+                     
+                }) 
+            }); 
+        </script>
+        <style>
+            table td{
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title">Task</div>
+        <div class="task">
+       1.4.4_select_elements_which_have_child_elements.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            1)    $("*:parent",document.body).fadeTo(4000,0.15); - all elements on page which have child nodes (nodes or text) <br>
+            2)    $("*:not(:has(*))",document.body).css("background-color","red"); - all elements on page which don't contains other elements (may contain text !!!)
+        </div>
+        
+        
+        <div id="divd" style="width:40%;height:30px;background-color:blue"></div>
+        
+        <table id="table1">
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>column n</td><td></td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+            <tr><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td><td>sdfsdf</td></tr>
+        </table>
+        
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>
+

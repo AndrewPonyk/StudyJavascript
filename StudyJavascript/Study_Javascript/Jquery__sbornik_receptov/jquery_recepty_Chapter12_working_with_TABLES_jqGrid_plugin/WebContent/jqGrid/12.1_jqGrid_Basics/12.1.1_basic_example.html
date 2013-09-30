@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqGrid Basic example</title>
+<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" /> 
+<link rel="stylesheet" type="text/css" href="ui.jqgrid.css" /> 
+<script type="text/javascript" src="jquery-1.6.js"> </script>
+<script type="text/javascript" src="jquery.jqGrid.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		
+		$("#example").jqGrid({ 
+		    datatype: "local", 
+		    height: 240, 
+		    colNames:['Id','Country Code','Region Code','City','Latitude','Longitude'], 
+		    rowNum:6,
+		    colModel:[ 
+		      {name:'id', width:50, sorttype:"int",resizable:false,editable:true}, 
+		      {name:'country_code', width:75, sorttype:"text",editable:true}, 
+		      {name:'region_code', width:75, sortable:false,editable:true}, 
+		      {name:'city', width:300, align:"left", sorttype:"text",editable:true}, 
+		      {name:'latitude', width:100, align:"center", sorttype:"float",editable:true}, 
+		      {name:'longitude', width:100, align:"right", sorttype:"float",editable:true} 
+		    ], 
+		    multiselect: true, 
+		    caption: "Cities" 
+		  });
+		
+		var mydata = [ 
+		              {id:"8039", country_code:"CH", region_code:"19", city:"Aadorf", 
+		          latitude:"47.4833", longitude:"8.9"}, 
+		              {id:"4286", country_code:"BE", region_code:"08", city:"Aalst", 
+		          latitude:"50.9333", longitude:"4.0333"}, 
+		              {id:"4287", country_code:"BE", region_code:"08", city:"Aalter", 
+		          latitude:"51.0833", longitude:"3.45"}, 
+		              {id:"7405", country_code:"CH", region_code:"01", city:"Aarau", 
+		          latitude:"47.3833", longitude:"8.05"}, 
+		              {id:"7936", country_code:"CH", region_code:"14", city:"Aarberg", 
+		          latitude:"47.05", longitude:"7.2833"}, 
+		              {id:"7406", country_code:"CH", region_code:"01", city:"Aarburg", 
+		          latitude:"47.3167", longitude:"7.9"}, 
+		              {id:"3564", country_code:"BE", region_code:"02", city:"Aarschot", 
+		          latitude:"50.9833", longitude:"4.8333"}, 
+		              {id:"4437", country_code:"BE", region_code:"09", city:"Aartrijke", 
+		          latitude:"51.1167", longitude:"3.0833"}, 
+		              {id:"3443", country_code:"BE", region_code:"01", city:"Aartselaar", 
+		          latitude:"51.1333", longitude:"4.3833"}, 
+		              {id:"7407", country_code:"CH", region_code:"01", city:"Aarwangen", 
+		          latitude:"47.2333", longitude:"7.75"} 
+		            ];
+		
+		$.each(mydata,function(i,val){
+							$("#example").addRowData(i+1,val);
+					   }
+		);
+		
+
+		
+
+	});
+</script>
+</head>
+<body>
+
+			<table id="example"> </table>		
+	
+
+		
+		<div id="methods">
+			<h3>Methods in jqGrid</h3>
+		</div>
+		
+	
+		
+		<div>
+			<br/>
+			getGridParam
+			<br/>
+			setGridParam
+			<br/>
+			getDataIDs
+			<br/>
+			setSelection
+			<br/>
+			resetSelection
+			<br/>
+			getRowData
+			<br/>
+			delRowData
+			<br/>
+			setRowData
+			<br/>
+			addRowData
+			<br/>
+			footerData
+			<br/>
+			showHideCol
+			<br/>
+			hideCol
+			<br/>
+			showCol
+			<br/>
+			remapColumns
+			<br/>
+			setGridWidth
+			<br/>
+			setGridHeight
+			<br/>
+			setCaption
+			<br/>
+			setLabel
+			<br/>
+			setCell
+			<br/>
+			getCell
+			<br/>
+			getCol
+			<br/>
+			clearGridData
+			<br/>
+			getInd
+			<br/>
+			bindKeys
+			<br/>
+			unbindKeys
+			<br/>
+			getLocalRow
+			<br/>
+			getColProp
+			<br/>
+			setColProp
+			<br/>
+			sortGrid
+			<br/>
+			clearBeforeUnload
+			<br/>
+			GridDestroy
+			<br/>
+			GridUnload
+			<br/>
+			setGridState
+			<br/>
+			filterToolbar
+			<br/>
+			destroyFilterToolbar
+			<br/>
+			destroyGroupHeader
+			<br/>
+			setGroupHeaders
+			<br/>
+			setFrozenColumns
+			<br/>
+			destroyFrozenColumns
+			<br/>
+			jqm
+			<br/>
+			jqmAddClose
+			<br/>
+			jqmAddTrigger
+			<br/>
+			jqmShow
+			<br/>
+			jqmHide
+			<br/>
+			jqDrag
+			<br/>
+			jqResize
+			<br/>
+			fmatter
+			<br/>
+			jqFilter
+			<br/>
+			searchGrid
+			<br/>
+			editGridRow
+			<br/>
+			viewGridRow
+			<br/>
+			delGridRow
+			<br/>
+			navGrid
+			<br/>
+			navButtonAdd
+			<br/>
+			navSeparatorAdd
+			<br/>
+			GridToForm
+			<br/>
+			FormToGrid
+			<br/>
+			editRow
+			<br/>
+			saveRow
+			<br/>
+			restoreRow
+			<br/>
+			addRow
+			<br/>
+			inlineNav
+			<br/>
+			showAddEditButtons
+			<br/>
+			editCell
+			<br/>
+			saveCell
+			<br/>
+			restoreCell
+			<br/>
+			nextCell
+			<br/>
+			prevCell
+			<br/>
+			GridNav
+			<br/>
+			getChangedCells
+			<br/>
+			setSubGrid
+			<br/>
+			addSubGridCell
+			<br/>
+			addSubGrid
+			<br/>
+			expandSubGridRow
+			<br/>
+			collapseSubGridRow
+			<br/>
+			toggleSubGridRow
+			<br/>
+			setTreeNode
+			<br/>
+			setTreeGrid
+			<br/>
+			expandRow
+			<br/>
+			collapseRow
+			<br/>
+			getRootNodes
+			<br/>
+			getNodeDepth
+			<br/>
+			getNodeParent
+			<br/>
+			getNodeChildren
+			<br/>
+			getFullTreeNode
+			<br/>
+			getNodeAncestors
+			<br/>
+			isVisibleNode
+			<br/>
+			isNodeLoaded
+			<br/>
+			expandNode
+			<br/>
+			collapseNode
+			<br/>
+			SortTree
+			<br/>
+			collectChildrenSortTree
+			<br/>
+			setTreeRow
+			<br/>
+			delTreeNode
+			<br/>
+			addChildNode
+			<br/>
+			groupingSetup
+			<br/>
+			groupingPrepare
+			<br/>
+			groupingToggle
+			<br/>
+			groupingRender
+			<br/>
+			groupingGroupBy
+			<br/>
+			groupingRemove
+			<br/>
+			groupingCalculations
+			<br/>
+			jqGridImport
+			<br/>
+			jqGridExport
+			<br/>
+			excelExport
+			<br/>
+			sortableColumns
+			<br/>
+			columnChooser
+			<br/>
+			sortableRows
+			<br/>
+			gridDnD
+			<br/>
+			gridResize
+			<br/>
+		</div>
+</body>
+</html>

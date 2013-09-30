@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	// method invokation
+		var calculator={
+		operand1:1,
+		operand2:2,
+		add:function(){
+			this.result=this.operand1+this.operand2;
+			return this.result;
+		}
+	};
+	
+	
+	alert(calculator.add());
+	alert( calculator['add']() ); // method is a property , so we can  do like this obj['methodname'](arg1,arg2)
+	
+	
+	
+	var o={
+		i:10,	
+		m:function(){
+			var self=this;
+			
+			f();
+			function f(){
+				alert(self.i); // we havent this in nested funcitons !!!!!!!!! 
+								// for this purpose we must use reference (self)
+			}
+		}	
+	};
+	
+	o.m();
+	
+	
+	// we can also call function as constructor
+	
+	alert('end');
+	</script>
+</body>
+</html>

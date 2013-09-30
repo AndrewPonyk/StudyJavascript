@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+ 
+ <button id="button1">button1</button>
+ 
+ <script type="text/javascript">
+ 	var button1=$("#button1");
+ 
+ 	button1.bind("myEvent",function(e){
+ 		alert("myEvent");
+ 	});
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	button1.trigger("myEvent"); // triggering event , here it is stupid , but in real work can be fine
+ 	
+ 	alert("end");
+ </script>
+</body>
+</html>

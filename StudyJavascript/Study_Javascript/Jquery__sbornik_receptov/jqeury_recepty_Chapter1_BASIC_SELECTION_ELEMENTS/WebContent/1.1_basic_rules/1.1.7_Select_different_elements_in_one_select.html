@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Select all Elements</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load
+             
+                $(".test,#div1").css("background-color","aqua");
+             
+            }); 
+        </script>
+        
+ 
+        <style>
+            .test{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title">Task</div>
+        <div class="task">
+            1.1.7 Select different elements in one select  
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            1) $(".test,#div1").css("background-color","aqua") - using comma <br>
+        </div>
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+
+               &lt!DOCTYPE html>
+&lthtml>
+    &lthead>
+        &ltmeta charset="UTF-8">
+        &lttitle>Select all Elements&lt/title>
+        &ltlink  rel="stylesheet" type="text/css" href="../style.css" />
+        &ltlink type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        &ltscript type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js">&lt/script>
+        &ltscript type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js">&lt/script>
+        &ltscript type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js">&lt/script>
+        
+        &ltscript type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();&lt/script>
+        &ltscript src="../jquery-1.6.js" type="text/javascript">&lt/script> 
+        &ltscript type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load
+             
+                $(".test,#div1").css("background-color","aqua");
+             
+            }); 
+        &lt/script>
+        
+ 
+        &ltstyle>
+            .test{
+                background-color: yellow;
+            }
+        &lt/style>
+    &lt/head>
+    &ltbody>
+        
+        &ltdiv class="task_title">Task&lt/div>
+        &ltdiv class="task">
+           1.1. 1.1.7 Select different elements in one select  
+            
+        &lt/div>
+        &lthr/>
+        &ltdiv class="notes">
+            Notes:&ltbr>
+            1) $(".test,#div1").css("background-color","aqua") - using comma &ltbr>
+        &lt/div>
+        &ltdiv id="my.Div" class="source_code">
+            &ltpre class="brush: js;">
+
+               
+            &lt/pre>
+            
+            
+        &lt/div>
+        
+        
+        &ltdiv id="div1">
+        	div with id = div1
+        
+        &lt/div>
+        &ltdiv class="test"> 
+            background is yellow ........
+        &lt/div>
+    &lt/body>
+&lt/html>
+            </pre>
+            
+            
+        </div>
+        
+        
+        <div id="div1">
+        	div with id = div1
+        
+        </div>
+        <div class="test"> 
+            background is yellow ........
+        </div>
+    </body>
+</html>

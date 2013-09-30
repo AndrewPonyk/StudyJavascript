@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>7.1.7_in_some_set_find_some_element.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+        
+           
+                 alert($("#parent22").find("div").length);
+                 
+                // $("#parent22").find("b").each(function(){$(this).text("-")});
+                   
+            }); 
+        </script>
+        <style>
+        .empty{
+        }
+          div{
+          	padding:10px 10px;
+          	border:1px solid black;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+	7.1.7_in_some_set_find_some_element.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1)  find() -element to find child elements in some element , we can use this mehtod for xml<br>
+           2) we can pass as argument only elements name (when we want to find elements by class for example use filter() method)  <br>
+           3) $("#parent22").find("div") - return all divs what are in #parent22 element
+        </div>
+        <br>
+        
+        
+        
+        <div id="parent1">
+        	<div id="parent22">
+		        <div id="main" class="empty">
+		        	main div
+		        </div>
+		        
+		        <div>
+		        	sibling of main
+		        </div>
+		        <span>
+		        	<b>sibling of main</b>
+		        </span>
+	        </div>
+        </div>
+        
+         <div id="parent2">
+        	<div id="parent2">
+		        <div id="main1" class="empty" >
+		        	main div1
+		        </div>
+		        
+		        <div>
+		        	sibling of main1
+		        </div>
+		        <span>
+		        	sibling of main1
+		        </span>
+	        </div>
+        </div>
+ 
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>10.3.2_parseJSON_with_jQuery.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+               
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );			
+
+					
+                    // json : only double quotes, no single quotes
+                    //   	  property names must be in double quotes
+                    var json='[ {"name":"A","age":10}, {"name":"P","age":20}, {"name":"G","age":30} ]';
+			
+					
+					
+					
+					var parsedData=$.parseJSON(json);
+					for(var i=0;i<parsedData.length;i++){
+						alert(parsedData[i].age);
+					}
+            });
+        </script>
+        <style>
+
+			span{
+				text-decoration:underline;
+			}
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+10.3.2_parseJSON_with_jQuery.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+            
+           1) $.parseJSON() - method to parse json <br>
+           
+           </div>
+        <br>
+ 
+ 
+ 
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

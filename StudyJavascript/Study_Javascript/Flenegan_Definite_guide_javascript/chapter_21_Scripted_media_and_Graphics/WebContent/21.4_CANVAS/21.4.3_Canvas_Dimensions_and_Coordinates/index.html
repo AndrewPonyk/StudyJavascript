@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>Make coordinates as an Algebra classes (context.scale(1,-1);)=) (zvuchajni)</h4>
+	<h5>Here using methods : translate, <b>scale</b></h5>
+		<canvas id="coordinates" width="600" height="600" style="background-color:#faaafa">no support</canvas>
+	<script type="text/javascript">
+	
+		var canvas=document.getElementById("coordinates");
+		var context=canvas.getContext("2d");
+		
+		
+		context.translate(300,300); // simply replace (0,0) point
+		//context.scale(0.5,0.5);
+		context.scale(1,-1);
+		context.beginPath();
+		context.moveTo(0,0);
+		context.lineTo(100,100);
+		context.moveTo(0,0);
+		context.lineTo(100,-200);
+		
+		context.stroke();
+		context.closePath();
+		
+	
+		
+	</script>
+</body>
+</html>

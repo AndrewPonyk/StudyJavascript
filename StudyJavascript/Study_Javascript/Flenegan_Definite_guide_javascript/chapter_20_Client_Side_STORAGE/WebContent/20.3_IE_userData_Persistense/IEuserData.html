@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+	
+		var memory=document.createElement("div");
+		memory.id="_memory";
+		memory.style.display="none";
+		memory.style.behavior="url(#default#userData)";//attach magic behavior
+	
+		
+		document.body.appendChild(memory);
+		
+		
+		memory.load("myStoredData");
+		var name=memory.getAttribute("username");
+		if(name){
+			alert("hello "+name);
+		}else{
+			name=prompt("input please name");
+			memory.setAttribute("username",name);
+			memory.save("myStoredData");
+			memory.expires=100000;
+		};
+		
+		function getUsername(){
+			var name=memory.getAttribute("username");
+			return name;
+		}
+		
+		
+		alert("end");
+	</script>
+	<button onclick="alert(getUsername())">Get Username</button>
+	
+</body>
+</html>

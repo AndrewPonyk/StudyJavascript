@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p id="p1">
+		<a href="http://google.com">google</a>
+		<a href="http://facebook.com">facebook</a>
+		<p id="p11"><a href="http://vk.com">vk.com</a>
+		</p>
+	</p>
+
+	<script type="text/javascript">
+		var paragraph=document.getElementById('p1');
+		
+		alert(paragraph);
+		
+		//alert(paragraph.childNodes.length); // childNodes - method of Node object(All is node , document- is node , element -is node , text -is node)
+		 					// alternative is Element methods -childElementCount firstElementChild , lastElementChild, nextElementSibling....
+		
+		
+		 					
+		 for(var i=0;i<paragraph.childNodes.length;i++){
+			//alert(paragraph.childNodes[i].nodeType);
+			if(paragraph.childNodes[i].nodeType==1) // Element -1 , Text-3 ,Comments - 8 ....and more
+				alert(paragraph.childNodes[i].innerHTML);
+		}
+	
+		
+	
+		alert(paragraph.getElementsByTagName("*").length); // or we can use paragraph.childern - returns only elements (not nodes)
+		//alert(paragraph.childElementCount);
+		
+		alert('end');
+	</script>
+</body>
+</html>

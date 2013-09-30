@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<div>	Drawing and filling Curves : arc, arcTo, bezierCurveTo, quadraticCurveTo</div>
+		<canvas id="curves" width="600" height="600" style="background-color:#aafafa"> 	</canvas>
+	<script type="text/javascript">
+	
+		var canvas =document.getElementById("curves");
+		var c=canvas.getContext("2d");
+		
+		c.beginPath();
+		c.arc(75,100,50,0,Math.PI*2,false);
+		c.stroke();
+		
+		c.beginPath();
+		c.arc(200,100,50,Math.PI*2,Math.PI/2,false);
+		c.stroke();
+		
+		c.beginPath();
+		c.moveTo(300,100);
+		
+		c.arc(300,100,50,Math.PI*2,Math.PI/2,false);
+		c.fill();
+		c.closePath();
+		
+		// cubic  bezier curver (2 control points) 
+		c.moveTo(100,300);
+		c.quadraticCurveTo(250,200,400,300);
+		c.stroke();
+		c.fillRect(250-3,200-3,6,6);
+		
+		
+		c.moveTo(100,400);
+		c.bezierCurveTo(200,300,300,500,400,400);
+		c.fillRect(200-3,300-3,6,6);
+		c.fillRect(300-3,500-3,6,6);
+		c.stroke();
+		c.closePath();
+	</script>
+</body>
+</html>

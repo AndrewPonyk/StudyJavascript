@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window.location.hash</title>
+	<style type="text/css">
+	
+		div{
+			background-color:#fbf;
+		}
+	</style>
+</head>
+<body>
+	<div id="gameScore" style="width:300px;height:30px;border:1px solid black"> </div>
+
+	<script type="text/javascript">
+	
+		
+		var gamescore=document.getElementById("gameScore");
+		
+		window.onhashchange=function(e){
+			//alert(e);
+			console.log("changed :"+ window.location.hash.substring(1));
+			gamescore.style.width=window.location.hash.substring(1)+"px";
+		    //gemescore.innerText=window.location.hash.substring(1)+"px";	
+			gamescore.innerHTML=window.location.hash.substring(1)+"px";
+		}
+	
+
+	
+		
+		
+		function changeScore(n){
+			var currentScore=parseInt(gamescore.style.width);
+			//gamescore.style.width=currentScore+n+"px";
+			window.location.hash=currentScore+n;		
+		}
+		//alert("end");
+	</script>
+	
+	<button onclick="changeScore(-10)">Decrease</button>
+	<button onclick="changeScore(10)">Increase</button>
+	
+</body>
+</html>

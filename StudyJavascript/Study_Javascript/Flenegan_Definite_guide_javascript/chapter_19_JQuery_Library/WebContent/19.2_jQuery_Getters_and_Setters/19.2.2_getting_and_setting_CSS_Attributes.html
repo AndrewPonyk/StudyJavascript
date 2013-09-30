@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../jquery-1.6.js"></script>
+</head>
+<body>
+	<a id="google" href="http://google.com"> gooogle</a>
+	
+	<h3>attr - method</h3>
+	<h4>to set or get attributes</h4>
+	<div>
+		<pre>
+				Some of the simplest, and most common, operations on jQuery objects are those that
+			get or set the value of HTML attributes, CSS styles, element content, or element
+			geometry. This section describes those methods. First, however, it is worth making
+			some generalizations about getter and setter methods in jQuery:
+			• Rather than defining a pair of methods, jQuery uses a single method as both getter
+			and setter. If you pass a new value to the method, it sets that value; if you don’t
+			specify a value, it returns the current value.
+			• When used as setters, these methods set values on every element in the jQuery
+			object, and then return the jQuery object to allow method chaining.
+			• When used as getters, these methods query only the first element of the set of
+			elements and return a single value. (Use map()if you want to query all elements.)
+			Since getters do not return the jQuery object they are invoked on, they can only
+			appear at the end of a method chain.
+			• When used as setters, these methods often accept object arguments. In this case,
+			each property of the object specifies a name and a value to be set.
+			• When used as setters, these methods often accept functions as values. In this case,
+			the function is invoked to compute the value to be set. The element that the value
+			is being computed for is the  thisvalue, the element index is passed as the first
+			argument to the function, and the current value is passed as the second argument.
+		
+		</pre>
+	</div>
+	<script type="text/javascript">
+		
+	
+		
+		var google=$("#google");
+	
+		google.css("color","red");
+			
+		google.css({color:"blue",fontSize:"19px"}); // font-size - we must put in "" or use fontSize !!!!!!!!
+			
+			google.removeAttr("id");
+		alert("end");
+	</script>
+</body>
+</html>

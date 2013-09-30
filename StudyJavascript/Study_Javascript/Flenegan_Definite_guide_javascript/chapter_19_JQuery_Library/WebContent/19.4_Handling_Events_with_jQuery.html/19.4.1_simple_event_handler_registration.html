@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<p>1 paragraph</p>
+	
+	<p>2 paragraph</p>
+	
+	<p>3 paragraph</p>
+	
+	<div id="div1">Toogle event</div>
+	
+	<input type="text" id="text1" value="text1"/>
+	<input type="text" id="text2"  value="text2"/>
+	
+	<h4>
+	
+				Focus and blur events do not
+		bubble, but the focusin and focusout events do,
+	</h4>
+	<hr>
+	<h4>The other special event registration method is toggle(). This method binds event han-dler functions to the click event. You specify two or more handler functions and jQuery
+invokes one of them each time a click event occurs. If you call  toggle(f,g,h), for ex-ample, the function  f()is invoked to handle the first click event,  g()is invoked to
+handle the second,  h()is invoked to handle the third, and  f()is invoked again to handle
+the fourth click event. Be careful when using  toggle(): as we’ll see in  §19.5.1, this
+method can also be used to show or hide (i.e., toggle the visibility of) the selected
+elements.</h4>
+	<script type="text/javascript">
+	
+		
+	
+		$("p").click(function(){
+			$(this).css("background-color","gray");
+			 $("#text2").focus();                        // set focus after clicking on p click
+		});
+		
+		$("p").click(function(){
+			alert("all p has two functions as handlers");
+		});
+		
+		
+		
+		$("#div1").toggle(function(){
+			$(this).css("background-color","red");
+		},
+		function(){
+			$(this).css("background-color","green");
+		},
+		function(){
+			$(this).css("background-color","aqua");
+		})
+		
+		
+		
+		alert("end");
+	</script>
+</body>
+</html>

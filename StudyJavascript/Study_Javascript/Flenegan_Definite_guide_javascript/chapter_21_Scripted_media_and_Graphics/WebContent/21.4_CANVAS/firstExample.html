@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	This is a red square : <canvas id="square" width=10 height=10>Your browser doesn't support canvas    </canvas>
+	<br>
+	This is a blue circle : <canvas id="circle" width=100 height=100>Your browser doesn't support canvas    </canvas>
+	<hr/>
+	<span>CANVAS Properties(methods ,properties...)</span>
+	<div id="canvasProperties" style="border:1px solid black; padding:0px 30px;line-height:1.4em">
+
+	</div>
+	<script type="text/javascript">
+	
+		var canvas=document.getElementById("square");
+		var context=canvas.getContext("2d");
+		context.fillStyle="#f00";
+		context.fillRect(0,0,10,10);
+		
+		canvas=document.getElementById("circle");
+		context=canvas.getContext("2d");
+		
+		context.beginPath();
+		context.moveTo(50,50);
+		context.lineTo(50,0);
+		context.arc(50,50,15,1.5*Math.PI,0);
+		context.fillStyle="#00f";
+		context.fill();
+		
+		
+		//alert(context);
+		alert("end");
+		
+		
+		var canvasProperties=document.getElementById("canvasProperties");
+		for(var item in context){
+			console.log(item);
+			canvasProperties.innerHTML=canvasProperties.innerHTML+item+" = "+context[item]+"<br>";
+			
+		}
+	</script>
+	
+	<hr>
+	CANVAS </b>arc</b> method
+	<img src="img_arc.gif" />
+	<div>
+	Center arc(<b>100,75</b>,50,0*Math.PI,1.5*Math.PI)<br>
+	Start angle  arc(100,75,50,<b>0</b>,1.5*Math.PI)<br>
+	End angle  arc(100,75,50,0,<b>1.5*Math.PI</b>)<br>
+	</div>
+</body>
+</html>

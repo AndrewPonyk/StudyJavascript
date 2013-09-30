@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<div id="links">
+		<a href="http://google.com"> google</a>
+		<a href="http://vk.com">vk.com</a>
+	
+	</div>
+
+	<script type="text/javascript">
+		
+		var links=$("#links");
+	
+		// append event listener only to existing links , to make live events use live method(or delegate method)
+	/* 	$("a").bind("click",function(event){
+			event.preventDefault();
+		}); */ 
+	
+		
+		
+		$("a").live("click",function(event){
+			event.preventDefault();
+		});
+		
+		var facebook=$("<a>",{href:"http://facebook.com",text:"facebook"});
+	
+		
+		facebook.appendTo(links);
+		
+		alert("end");
+	</script>
+	
+	<button onclick="$('a').die()">Die =) (kill all live events)</button>
+	
+	<hr>
+	<br><br>
+	<pre>
+	
+		 If we’ve used bind() to bind an
+event handler to all <a> elements in the document and then we create new document
+content with new <a> elements, those new elements will not have the same event han-dlers as the old ones and will not behave in the same way.
+jQuery addresses this issue with “live events.” To use live events, use the delegate()
+and undelegate() methods instead of bind() and unbind(). delegate() is usually in-voked on $(document) and is passed a jQuery selector string, a jQuery event type string,
+and a jQuery event handler function. It registers an internal handler on the document
+or window (or on whatever elements are in the jQuery object). When an event of the
+specified type bubbles up to this internal handler, it determines whether the target of
+the event (the element that the event occurred on) matches the selector string. If so, it
+invokes the specified handler function. So to handle mouseover events on both old and
+newly created <a> elements, you might register a handler like this:
+	</pre>
+</body>
+</html>

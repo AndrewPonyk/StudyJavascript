@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cookie</title>
+<style>
+	label{
+		display:inline-block;
+		width:140px;
+	}
+	.title{
+		font-size:1.4em;
+		font-weight: bold;
+	}
+	body{
+		background-color: #fef;
+	}
+	#cookies{
+		font-size:1.2em;
+		border:solid 2px black;
+	}
+</style>
+<script type="text/javascript" src="jquery-1.6.js"> </script>
+</head>
+<body>
+	<div id="settingCookie" style="border:1px dashed black;display:block;width:300px;margin:0 auto;padding:10px 5px;line-height:1.6em">
+		<span class="title">Setting cookie</span> <br>
+		<label>Cookie name</label>
+		<input type="text" name="cookieName"><br>
+		<label>Cookie value</label>
+		<input type="text" name="cookieValue"><br>
+		<label>Cookie max-age(sec)</label>
+		<input type="text" name="cookieMaxAge">
+		<label>Cookie path</label>
+		<input type="text" name="cookiePath">
+		<label>Cookie domain</label>
+		<input type="text" name="cookieDomain">
+		<button onclick="setCookieFromForm()" style="margin:0 40%">Set cookie</button>
+	</div>
+	<br>
+	<div id="gettingCookie" style="border:1px dashed black;display:block;width:300px;margin:0 auto;padding:10px 5px;line-height:2.0em">
+		<span class="title">Getting cookie</span> <br>
+		<label>Cookie name</label>
+		<input type="text" name="getCookieName"><br>
+			<button onclick="getCookie($('input[name=getCookieName]').val())" style="margin:0 40%">Get cookie</button>
+	</div>
+	
+	<span>Available cookies</span>
+	<div id= "cookies">
+		
+	</div>
+	<script type="text/javascript">
+	
+		 function setCookieFromForm(){
+			
+			
+			
+			setCookie($('input[name=cookieName]').val(),
+					$('input[name=cookieValue]').val(),
+					$('input[name=cookieMaxAge]').val(),
+					$('input[name=cookiePath]').val(),
+					$('input[name=cookieDomain]').val()
+					
+			
+			);
+		} 
+		
+		function setCookie (name, value, expires, path, domain, secure) {
+		      var cookie = name + "=" + escape(value) +
+		        ((expires) ? "; max-age=" + expires : "") +
+		        ((path) ? "; path=" + path : "") +
+		        ((domain) ? "; domain=" + domain : "") +
+		        ((secure) ? "; secure" : "");
+				alert(cookie);
+				document.cookie=cookie;
+		}
+		
+		
+		// возвращает cookie если есть или undefined
+			function getCookie(name) {
+			    var matches = document.cookie.match(new RegExp(
+			      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+			    ))
+			    alert(matches ? decodeURIComponent(matches[1]) : undefined );
+			    return matches ? decodeURIComponent(matches[1]) : undefined ;
+			};
+			
+			
+			
+			function refreshCookies(){
+				var cookie=document.cookie;
+				var cookieMas=cookie.split(";")
+				
+				$("#cookies").html("");
+				for(var i=0;i<cookieMas.length;i++){
+					$("#cookies").html($("#cookies").html()+"<br>"+cookieMas[i]);	
+				}
+				
+				console.log("refreshing available cookies ");
+				
+			}
+			
+			setInterval(refreshCookies,"1000");
+	
+		alert("end");
+	</script>
+	
+	
+</body>
+</html>

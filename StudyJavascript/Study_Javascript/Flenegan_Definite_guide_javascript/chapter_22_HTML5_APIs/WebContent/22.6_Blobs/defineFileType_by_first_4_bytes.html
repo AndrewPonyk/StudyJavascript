@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="file" name="file" onchange="typefile(this.files[0])" >
+	
+	
+
+	<script type="text/javascript">
+	
+		// slice - вирізка
+		/*var mas=[0,1,1,2,3,4];
+		var submas=mas.slice(0,2);
+		alert(submas); //[0,1]
+		alert(mas); // [0,1,1,2,3,4]
+		*/
+		
+		function typefile(file){
+			
+			/*
+				file(Blob) properties and functions  (in Mozilla 22):
+				size
+				type
+				slice
+				mozSlice
+				name
+				lastModifiedDate
+				mozFullPath
+			*/
+			
+			/*
+				FileReader properties and methods (in Mozilla 22)
+			readyState
+			result
+			error
+			onloadstart
+			onprogress
+			onload
+			onabort
+			onerror
+			onloadend
+			readAsArrayBuffer
+			readAsBinaryString
+			readAsText
+			readAsDataURL
+			abort
+			addEventListener
+			removeEventListener
+			dispatchEvent
+			EMPTY
+			LOADING
+			DONE
+			getInterface
+			
+			*/
+			
+			
+			var slice=file.slice(0,4);
+		
+			var reader=new FileReader();
+			reader.readAsArrayBuffer(slice);
+			reader.onload=function(e){
+				var buffer= reader.result; // result !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				
+				var view = new DataView(buffer);
+				var magic=view.getInt32(0,false); // false big-endian (big endian and little-endian - differenct look in Flanagan Javascript book)
+				alert(magic+";"+0x25504446);
+				switch(magic){
+				case 0x25504446 :alert("pdf file"); break;
+				case 0x504b0304 :alert("zip file"); break;
+				//and we can continue
+ 				}
+			}
+				
+			
+			
+			for(var item in reader){
+				console.log(item);
+			}
+		}
+	
+	</script>
+</body>
+</html>

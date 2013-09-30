@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		/* 
+		Object Methods
+As discussed earlier, all JavaScript objects (except those explicitly created without a
+prototype) inherit properties from  Object.prototype. These inherited properties are
+primarily methods, and because they are universally available, they are of particular
+interest to JavaScript programmers. We’ve already seen the  hasOwnProperty(),
+propertyIsEnumerable(), and  isPrototypeOf()methods. (And we’ve also already cov-ered quite a few static functions defined on the  Objectconstructor, such as
+Object.create()and  Object.getPrototypeOf().) This section explains a handful of uni-versal object methods that are defined on Object.prototype, but which are intended to
+be overridden by other, more specialized classes.
+138 | Chapter 6: Objects
+6.10.1 The toString() Method
+The  toString()method takes no arguments; it returns a string that somehow represents
+the value of the object on which it is invoked. JavaScript invokes this method of an
+object whenever it needs to convert the object to a string. This occurs, for example,
+when you use the +operator to concatenate a string with an object or when you pass
+an object to a method that expects a string.
+The default toString()method is not very informative (though it is useful for deter-mining the class of an object, as we saw in §6.8.2). For example, the following line of
+code simply evaluates to the string “[object Object]”:
+var s = { x:1, y:1 }.toString();
+Because this default method does not display much useful information, many classes
+define their own versions of toString(). For example, when an array is converted to a
+string, you obtain a list of the array elements, themselves each converted to a string,
+and when a function is converted to a string, you obtain the source code for the function.
+These customized versions of the toString()method are documented in the reference
+section. See  Array.toString(),  Date.toString(), and  Function.toString(), for
+example.
+§9.6.3describes how to define a custom toString()method for your own classes.
+
+6.10.2 The toLocaleString() Method
+In addition to the basic toString()method, objects all have a toLocaleString(). The
+purpose of this method is to return a localized string representation of the object. The
+default toLocaleString()method defined by Object doesn’t do any localization itself:
+it simply calls toString()and returns that value. The Date and Number classes define
+customized versions of toLocaleString()that attempt to format numbers, dates, and
+times according to local conventions. Array defines a  toLocaleString()method that
+works like toString()except that it formats array elements by calling their  toLocale
+String()methods instead of their toString()methods.
+
+6.10.3 The toJSON() Method
+Object.prototypedoes not actually define a  toJSON()method, but the
+JSON.stringify()method (see §6.9) looks for a  toJSON()method on any object it is
+asked to serialize. If this method exists on the object to be serialized, it is invoked, and
+the return value is serialized, instead of the original object. See  Date.toJSON()for an
+example.
+
+6.10 Object Methods | 139
+Core JavaScript
+
+6.10.4 The valueOf() Method
+The valueOf() method is much like the toString()method, but it is called when Java-Script needs to convert an object to some primitive type other than a string—typically,
+a number. JavaScript calls this method automatically if an object is used in a context
+where a primitive value is required. The default valueOf()method does nothing inter-esting, but some of the built-in classes define their own  valueOf()method (see
+Date.valueOf(), for example).  §9.6.3explains how to define a  valueOf()method for
+custom object types you define*/
+	alert('end');
+	</script>
+
+</body>
+</html>

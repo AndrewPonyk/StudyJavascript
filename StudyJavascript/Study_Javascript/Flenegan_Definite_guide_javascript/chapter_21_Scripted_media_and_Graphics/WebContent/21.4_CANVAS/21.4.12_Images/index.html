@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.6.js"></script>
+</head>
+<body>	
+	<h3>drawImage -nice method</h3>
+	<canvas id="images" width="500" height="500" style="border:1px solid black">no CANVAS support</canvas>
+	<img  src="vokzal.jpg" id="vokzal" width="400" />
+	<input type="text" id="scale" value="1"/> 
+	
+	<script type="text/javascript">
+		var canvas=document.getElementById("images");
+		var c=canvas.getContext("2d");
+		
+		var image=document.getElementById("vokzal");
+		
+		
+		//c.drawImage(image,0,0); // 3 argument version of drawImage
+		c.drawImage(image,0,0,100,100); // 5 argument version - make little image =)
+		
+		//9 argument version - get region from image , and put this region on canvas
+		/* c.drawImage(image,
+					2,400,52,450,
+					100,100,150,150); */
+		
+		
+	 	c.drawImage(image,
+				100,100,60,60,
+				100,100,60,60); 
+		
+		
+				//jQuery
+				/* 	$("#vokzal").mousemove(function(e){
+						//console.log(e);
+						//var offsetX=e.offsetX|| e.mozMovementX;
+						//var offsetY=e.offsetY|| e.mozMovementY;
+						// e.offsetY- works in opera , but not in Mozilla
+							
+    			var offset = $('#vokzal').offset(); 
+			    var x = e.pageX - offset.left;
+			    var y = e.pageY - offset.top;
+    			
+			    console.log('X: '+x+' Y: '+y); //you want this
+						 
+						
+						
+				 	c.drawImage(image,
+								x,y,150,150,
+								100,100,150,150); 
+					}); */
+					
+		image.addEventListener("mousemove",function(e){
+			 var x = e.pageX - this.offsetLeft;
+		   	 var y = e.pageY - this.offsetTop;
+			 var scale=$("#scale").val();	
+		   	 
+			 c.drawImage(image,
+					x,y,250/scale,250/scale,
+					100,100,250,250);  
+		});
+	</script>
+</body>
+</html>

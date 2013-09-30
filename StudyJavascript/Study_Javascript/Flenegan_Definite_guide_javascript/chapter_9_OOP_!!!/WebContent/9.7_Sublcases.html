@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//////////////////////////////////// Set from 9.6	
+	function Set(){
+		this.values={};
+		this.n=0;
+		this.add.apply(this,arguments);
+	}
+
+	Set.prototype.add=function(){
+		for(var i=0;i<arguments.length;i++){
+			var val =arguments[i];
+			var str=Set._v2s(val);
+			if(!this.values.hasOwnProperty(str)){
+				this.values[str]=val;
+				this.n++;
+			}
+		}
+	}
+	
+	Set.prototype.contains=function(value){
+		return this.values.hasOwnProperty(Set._v2s(value));
+	}
+	
+	
+	Set._v2s=function(val){
+		switch (val) {
+		case undefined: return 'u';
+		case null:         return 'n';
+		case true: return 't';
+		case false: return 'f';
+		
+		default : switch (typeof val) {
+		case 'number': return '#'+val;
+		case 'string': return '"'+val;
+		default : return '@'+objectId(val);
+		}
+		}
+		
+		function objectId(o){
+			var prop="|**objectId**|";
+			if(!o.hasOwnProperty(prop)){
+				o[prop]=Set._v2s.next++;
+			}
+			return o[prop];
+		}
+	};
+	Set._v2s.next=100;
+	//////////////////////
+	
+	
+	
+	
+	
+	
+	function inherit(p) {
+		    if (p == null) throw TypeError(); // p must be a non-null object
+		    if (Object.create){                // If Object.create() is defined...
+		       // alert('Object.create');
+		    	return Object.create(p);      //    then just use it.
+		    }
+		    var t = typeof p;                 // Otherwise do some more type checking
+		    if (t !== "object" && t !== "function") throw TypeError();
+		    function f() {};                  // Define a dummy constructor function.
+		    f.prototype = p;                  // Set its prototype property to p.
+		    return new f();                   // Use f() to create an "heir" of p.
+		}
+		
+		function defineSubclass(superclass,
+								constructor,
+								methods,
+								statics) {
+			constructor.prototype=inherit(superclass.prototype);
+			constructor.prototype.constructor=constructor;
+			
+			if(methods) extend(constructor.prototype,methods);
+			if(statics) extend(constructor,statics);
+			
+			return constructor;
+		};
+		
+		Function.prototype.extend=function(constructor,methods,statics){
+			return defineSubclass(this,constructor,methods,statics);
+		};
+		
+		///
+		/////////////and now we will manually extend class without function defineSubclass
+		
+		function SingletonSet(member){
+			this.member=member;
+			this.values={};
+			this.n=0;
+			
+		};
+		
+		
+		SingletonSet.prototype=inherit(Set.prototype);
+		SingletonSet.prototype.constructor=SingletonSet;
+		
+		
+		var ss=new SingletonSet(10);
+		/* ss.add(1);
+		alert(ss.n); */
+		
+		
+		// i don't know what is going WITH properties when inherit
+		
+		
+		
+		function Animal(name){
+			this.name=name;
+			Animal.prototype.type='animal'; // PUT PROPERTIES IN PROTOTYPE !!!!!!!!
+		}
+		
+		Animal.prototype.say=function(){
+			alert('Animal '+this.name+" "+this.type);
+		}
+		
+		
+		function Dog(name,vlasnuk){
+			Animal(name);
+			this.name=name;
+			this.vlasnuk=vlasnuk;
+		}
+		
+		
+		//Dog.prototype=Object.create(Animal.prototype);
+		Dog.prototype=Animal.prototype;
+		Dog.prototype.constructor=Dog;
+		
+		
+		Dog.prototype.gaf=function(){
+			alert('gaf');
+		}
+		
+		
+		var reks=new Dog('Reks','andrew');
+		
+		reks.gaf();
+		reks.say();
+		//alert(reks.type);
+		
+	
+		alert('end');
+	</script>
+</body>
+</html>

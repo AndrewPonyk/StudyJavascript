@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	
+		// how it works ???????????????
+		function not(f) {
+			return function(){
+				var result=f.apply(this,arguments);
+				return !result;
+			}
+		}
+		
+		var even=function(x){
+			return x%2==0;
+		}
+		
+		var odd=not(even);
+		
+		alert(even(1));
+		alert(odd(1));
+	
+		alert('end');
+	</script>
+</body>
+</html>

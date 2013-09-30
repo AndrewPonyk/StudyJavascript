@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	
+	
+	.green{
+		color:green;
+		font-size: 2em;
+	}
+	
+	.red{
+		color:red;
+	}
+	
+	.yellow{
+		color:yellow;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="div1" class="red green">
+		div with id=div1
+	</div>
+
+	<script type="text/javascript">
+		var div1=document.getElementById("div1");
+		
+		alert(div1);
+	
+		alert(div1.className); // return "red green" - simply
+	
+		alert("end");
+	</script>
+</body>
+</html>

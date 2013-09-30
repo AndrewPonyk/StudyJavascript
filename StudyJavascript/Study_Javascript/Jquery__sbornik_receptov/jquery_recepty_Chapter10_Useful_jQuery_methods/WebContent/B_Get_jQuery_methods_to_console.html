@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Methods</title>
+
+	<style>
+		div{
+			width:32%;
+			margin:10px auto;
+			border:1px solid black;
+			float:left;
+
+		}
+		
+		span{
+			text-decoration:underline;
+			border:1px solid black;
+			display:block;
+			height:29px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.6.js"></script>
+	<script type="text/javascript">
+		
+	
+		$(function(){
+			alert( $("div").size() );	
+			
+
+			var counter=1;
+/* 			for(var item in $){
+				$("#jQuery_OBJECT_methods").append("<span>"+(counter++)+")"+item+"</span> ");
+			}
+ */			
+			counter=1;
+			/* for(var item in $()){
+				$("#jQuery_FUNCTION_methods").append("<span>"+(counter++)+")"+item+"</span> ");
+			} */
+			
+			counter=1;
+			$("#jQuery_EVENT_methods").one("click",function(e){
+				
+				/* for(var item in e){
+					$("#jQuery_EVENT_methods").append("<span>"+(counter++)+")"+item+"</span> ");
+				} */
+				
+			});
+			
+			$("#jQuery_EVENT_methods").trigger("click");
+			
+
+					
+		});
+		
+	</script>
+</head>
+
+
+<body>
+	<h2>jQuery-1.6</h2>
+
+	<div id="jQuery_OBJECT_methods">
+		
+  <h4>$ - methods   ($ is the same as jQuery)</h4>
+  <span>1)fn</span>
+  
+  <span>2)extend</span>
+  
+  <span>3)noConflict</span>
+  
+  <span>4)isReady</span>
+  <span>5)readyWait</span>
+  <span>6)holdReady</span>
+  <span>7)ready</span>
+  <span>8)bindReady</span>
+  <span>9)isFunction</span>
+  <span>10)isArray</span>
+  <span>11)isWindow</span>
+  <span>12)isNaN</span>
+  <span>13)type</span>
+  <span>14)isPlainObject</span>
+  <span>15)isEmptyObject</span>
+  <span>16)error</span>
+  <span>17)parseJSON</span>
+  <span>18)parseXML</span>
+  <span>19)noop</span>
+  <span>20)globalEval</span>
+  <span>21)nodeName</span>
+  <span>22)each</span>
+  <span>23)trim</span>
+  <span>24)makeArray</span>
+  <span>25)inArray</span>
+  <span>26)merge</span>
+  <span>27)grep</span>
+  <span>28)map</span>
+  <span>29)guid</span>
+  <span>30)proxy</span>
+  <span>31)access</span>
+  <span>32)now</span>
+  <span>33)uaMatch</span>
+  <span>34)sub</span>
+  <span>35)browser</span>
+  <span>36)_Deferred</span>
+  <span>37)Deferred</span>
+  <span>38)when</span>
+  <span>39)support</span>
+  <span>40)boxModel</span>
+  <span>41)cache</span>
+  <span>42)uuid</span>
+  <span>43)expando</span>
+  <span>44)noData</span>
+  <span>45)hasData</span>
+  <span>46)data</span>
+  <span>47)removeData</span>
+  <span>48)_data</span>
+  <span>49)acceptData</span>
+  <span>50)_mark</span>
+  <span>51)_unmark</span>
+  <span>52)queue</span>
+  <span>53)dequeue</span>
+  <span>54)valHooks</span>
+  <span>55)attrFn</span>
+  <span>56)attrFix</span>
+  <span>57)attr</span>
+  <span>58)removeAttr</span>
+  <span>59)attrHooks</span>
+  <span>60)propFix</span>
+  <span>61)prop</span>
+  <span>62)propHooks</span>
+  <span>63)event</span>
+  <span>64)removeEvent</span>
+  <span>65)Event</span>
+  <span>66)find</span>
+  <span>67)expr</span>
+  <span>68)unique</span>
+  <span>69)text</span>
+  <span>70)isXMLDoc</span>
+  <span>71)contains</span>
+  <span>72)filter</span>
+  <span>73)dir</span>
+  <span>74)nth</span>
+  <span>75)sibling</span>
+  <span>76)buildFragment</span>
+  <span>77)fragments</span>
+  <span>78)clone</span>
+  <span>79)clean</span>
+  <span>80)cleanData</span>
+  <span>81)cssHooks</span>
+  <span>82)cssNumber</span>
+  <span>83)cssProps</span>
+  <span>84)style</span>
+  <span>85)css</span>
+  <span>86)swap</span>
+  <span>87)camelCase</span>
+  <span>88)curCSS</span>
+  <span>89)get</span>
+  <span>90)post</span>
+  <span>91)getScript</span>
+  <span>92)getJSON</span>
+  <span>93)ajaxSetup</span>
+  <span>94)ajaxSettings</span>
+  <span>95)ajaxPrefilter</span>
+  <span>96)ajaxTransport</span>
+  <span>97)ajax</span>
+  <span>98)param</span>
+  <span>99)active</span>
+  <span>100)lastModified</span>
+  <span>101)etag</span>
+  <span>102)speed</span>
+  <span>103)easing</span>
+  <span>104)timers</span>
+  <span>105)fx</span>
+  <span>106)offset</span>
+
+	</div>
+	
+<div id="jQuery_FUNCTION_methods">
+  <h4>
+    $() - methods  (it is a function fn so we can write 
+    <b>$()</b>
+     or 
+    <b>$.fn</b>
+     or 
+    <b>jQuery()</b>
+     )
+  </h4>
+  <span>1)constructor</span>
+  <span>2)init</span>
+  <span>3)selector</span>
+  <span>4)jquery</span>
+  <span>5)length</span>
+  <span>6)size</span>
+  <span>7)toArray</span>
+  <span>8)get</span>
+  <span>9)pushStack</span>
+  <span>10)each</span>
+  <span>11)ready</span>
+  <span>12)eq</span>
+  <span>13)first</span>
+  <span>14)last</span>
+  <span>15)slice</span>
+  <span>16)map</span>
+  <span>17)end</span>
+  <span>18)push</span>
+  <span>19)sort</span>
+  <span>20)splice</span>
+  <span>21)extend</span>
+  <span>22)data</span>
+  <span>23)removeData</span>
+  <span>24)queue</span>
+  <span>25)dequeue</span>
+  <span>26)delay</span>
+  <span>27)clearQueue</span>
+  <span>28)promise</span>
+  <span>29)attr</span>
+   
+  <span>30)removeAttr</span>
+   
+  <span>31)prop</span>
+   
+  <span>32)removeProp</span>
+   
+  <span>33)addClass</span>
+   
+  <span>34)removeClass</span>
+   
+  <span>35)toggleClass</span>
+   
+  <span>36)hasClass</span>
+   
+  <span>37)val</span>
+   
+  <span>38)bind</span>
+   
+  <span>39)one</span>
+   
+  <span>40)unbind</span>
+   
+  <span>41)delegate</span>
+   
+  <span>42)undelegate</span>
+   
+  <span>43)trigger</span>
+   
+  <span>44)triggerHandler</span>
+   
+  <span>45)toggle</span>
+   
+  <span>46)hover</span>
+   
+  <span>47)live</span>
+   
+  <span>48)die</span>
+   
+  <span>49)blur</span>
+   
+  <span>50)focus</span>
+   
+  <span>51)focusin</span>
+   
+  <span>52)focusout</span>
+   
+  <span>53)load</span>
+   
+  <span>54)resize</span>
+   
+  <span>55)scroll</span>
+   
+  <span>56)unload</span>
+   
+  <span>57)click</span>
+   
+  <span>58)dblclick</span>
+   
+  <span>59)mousedown</span>
+   
+  <span>60)mouseup</span>
+   
+  <span>61)mousemove</span>
+   
+  <span>62)mouseover</span>
+   
+  <span>63)mouseout</span>
+   
+  <span>64)mouseenter</span>
+   
+  <span>65)mouseleave</span>
+   
+  <span>66)change</span>
+   
+  <span>67)select</span>
+   
+  <span>68)submit</span>
+   
+  <span>69)keydown</span>
+   
+  <span>70)keypress</span>
+   
+  <span>71)keyup</span>
+   
+  <span>72)error</span>
+   
+  <span>73)find</span>
+   
+  <span>74)has</span>
+   
+  <span>75)not</span>
+   
+  <span>76)filter</span>
+   
+  <span>77)is</span>
+   
+  <span>78)closest</span>
+   
+  <span>79)index</span>
+   
+  <span>80)add</span>
+   
+  <span>81)andSelf</span>
+   
+  <span>82)parent</span>
+   
+  <span>83)parents</span>
+   
+  <span>84)parentsUntil</span>
+   
+  <span>85)next</span>
+   
+  <span>86)prev</span>
+   
+  <span>87)nextAll</span>
+   
+  <span>88)prevAll</span>
+   
+  <span>89)nextUntil</span>
+   
+  <span>90)prevUntil</span>
+   
+  <span>91)siblings</span>
+   
+  <span>92)children</span>
+   
+  <span>93)contents</span>
+   
+  <span>94)text</span>
+   
+  <span>95)wrapAll</span>
+   
+  <span>96)wrapInner</span>
+   
+  <span>97)wrap</span>
+   
+  <span>98)unwrap</span>
+   
+  <span>99)append</span>
+   
+  <span>100)prepend</span>
+   
+  <span>101)before</span>
+   
+  <span>102)after</span>
+   
+  <span>103)remove</span>
+   
+  <span>104)empty</span>
+   
+  <span>105)clone</span>
+   
+  <span>106)html</span>
+   
+  <span>107)replaceWith</span>
+   
+  <span>108)detach</span>
+   
+  <span>109)domManip</span>
+   
+  <span>110)appendTo</span>
+   
+  <span>111)prependTo</span>
+   
+  <span>112)insertBefore</span>
+   
+  <span>113)insertAfter</span>
+   
+  <span>114)replaceAll</span>
+   
+  <span>115)css</span>
+   
+  <span>116)serialize</span>
+   
+  <span>117)serializeArray</span>
+   
+  <span>118)ajaxStart</span>
+   
+  <span>119)ajaxStop</span>
+   
+  <span>120)ajaxComplete</span>
+   
+  <span>121)ajaxError</span>
+   
+  <span>122)ajaxSuccess</span>
+   
+  <span>123)ajaxSend</span>
+   
+  <span>124)show</span>
+   
+  <span>125)hide</span>
+   
+  <span>126)_toggle</span>
+   
+  <span>127)fadeTo</span>
+   
+  <span>128)animate</span>
+   
+  <span>129)stop</span>
+   
+  <span>130)slideDown</span>
+   
+  <span>131)slideUp</span>
+   
+  <span>132)slideToggle</span>
+   
+  <span>133)fadeIn</span>
+   
+  <span>134)fadeOut</span>
+   
+  <span>135)fadeToggle</span>
+   
+  <span>136)offset</span>
+   
+  <span>137)position</span>
+   
+  <span>138)offsetParent</span>
+   
+  <span>139)scrollLeft</span>
+   
+  <span>140)scrollTop</span>
+   
+  <span>141)innerHeight</span>
+   
+  <span>142)outerHeight</span>
+   
+  <span>143)height</span>
+   
+  <span>144)innerWidth</span>
+   
+  <span>145)outerWidth</span>
+   
+  <span>146)width</span>
+   
+</div>
+
+<div id="jQuery_EVENT_methods">
+  <h4>
+    jQuery 
+    <b>Event</b>
+     - methods
+  </h4>
+  <span>1)type</span>
+   
+  <span>2)timeStamp</span>
+   
+  <span>3)jQuery1609772141904865986</span>
+   
+  <span>4)exclusive</span>
+   
+  <span>5)namespace</span>
+   
+  <span>6)namespace_re</span>
+   
+  <span>7)result</span>
+   
+  <span>8)target</span>
+   
+  <span>9)currentTarget</span>
+   
+  <span>10)handler</span>
+   
+  <span>11)data</span>
+   
+  <span>12)handleObj</span>
+   
+  <span>13)preventDefault</span>
+   
+  <span>14)stopPropagation</span>
+   
+  <span>15)stopImmediatePropagation</span>
+   
+  <span>16)isDefaultPrevented</span>
+   
+  <span>17)isPropagationStopped</span>
+   
+  <span>18)isImmediatePropagationStopped</span>
+   
+</div>
+	
+	
+</body>
+</html>

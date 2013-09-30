@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	
+
+	<script type="text/javascript">
+	
+		// describe methods :         search, replace , match exec , split
+	
+		
+		var str='1stric5hka';
+		var pattern=/\d/g;   // new RegExp('\d') - don't work  , g -global 
+		
+		pattern =new RegExp('\d','g');
+		
+		console.log(str.search(pattern));
+  	
+		
+		/// replace
+		str=str.replace(pattern,'k');
+		console.log(str);
+		
+		
+		alert('end'); 
+	</script>
+</body>
+</html>

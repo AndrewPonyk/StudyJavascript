@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.6.js"> </script>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		 $.ajax({
+			"url":"/getJSON.php",
+			"success":function(data){
+				alert("success");
+				console.log(typeof data);
+				console.log(data);
+				//var json='[1,1,1,2]'; // json is javascript -- here we have array  (  {[1,2,3]}- is wrong json , {"property":[1,2,3]} -valid json )
+				var datamas=JSON.parse(data);
+				console.log(datamas+" , data array length = "+datamas.length);
+					
+					
+				}
+			}
+		
+		); 
+		
+		$("div");
+	
+		alert("end");
+	</script>
+</body>
+</html>

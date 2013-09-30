@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		window.onpopstate=popstate;
+		
+		var zminna=0;
+		
+		
+		function save(state){
+			history.pushState(state,state.title);
+			console.log(state.zminna+";"+state.title);
+		};
+		
+		function popstate(event){
+			console.log("pop");
+			if (event.state) {  // If the event has a state object, restore that state
+		        // Note that event.state is a deep copy of the saved state object
+		        // so we can modify it without altering the saved value.
+		        state = event.state;    // Restore the historical state
+		       // display(state);         // Display the restored state
+		    	console.log(event.state.zminna);
+			}
+		    else {
+		        // When we load the page for the first time, we'll get a popstate event
+		        // with no state. Replace that null state with our real state: see the
+		        // comment in newgame(). No need to call display() here.
+		        history.replaceState({'zminna':0 , 'title':'sometitle'}, "", "#guess" );
+		    }
+		};
+	
+	</script>
+
+	<button onclick="save({'zminna':++zminna , 'title':'sometitle'} ) ">	Push  state to state</button>
+	<button onclick="alert(window.history.state.zminna)">Alert state data</button>
+</body>
+
+</html>

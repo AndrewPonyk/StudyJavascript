@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vincenty's formulae</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function rads(x){
+			return Math.PI*x/180;
+		};
+	
+		//49°51′N	24°01′E//lviv
+		//50°27′N	30°31′E // kyiv
+		// 49 47 , 23 09  // mostuska
+		
+		//constants
+		var a=6378137.0;
+		var f=1/298.257223563;
+		var b= (1 - f)*a;	
+		
+		
+		
+		
+		
+		
+		
+	
+		 // set Lincoln Memorial coordinates
+//        GlobalCoordinates lincolnMemorial;
+       // lincolnMemorial = new GlobalCoordinates( new Angle(38.88922),
+       // new Angle(-77.04978) );
+
+         // set Eiffel Tower coordinates
+//            GlobalCoordinates eiffelTower;
+  //          eiffelTower = new GlobalCoordinates( new Angle(48.85889),
+    //        new Angle(2.29583) );
+
+
+       
+        // get parameters as radians
+        var  phi1 = rads(38.88922);
+        var  lambda1 = rads(-77.04978);
+        var phi2 =rads(48.85889);
+        var lambda2 = rads(2.29583);
+        
+
+        
+/*		
+		  // get parameters as radians
+        var  phi1 = rads(49.51);
+        var  lambda1 = rads(24);
+        var phi2 =rads(50.27);
+        var lambda2 = rads(30.31);  */
+
+		 // get parameters as radians
+ /*        var  phi1 = rads(49.47);
+        var  lambda1 = rads(23.09);
+        var phi2 =rads(49.49);
+        var lambda2 = rads(24);  */
+
+        
+        
+
+        var a2 = a * a;
+        var b2 = b * b;
+        var a2b2b2 = (a2 - b2) / b2;
+
+        
+        var omega = lambda2 - lambda1;
+
+        var tanphi1 = Math.tan(phi1);
+        var tanU1 = (1.0 - f) * tanphi1;
+        var U1 = Math.atan(tanU1);
+        var sinU1 = Math.sin(U1);
+        var cosU1 = Math.cos(U1);
+
+        var tanphi2 = Math.tan(phi2);
+        var tanU2 = (1.0 - f) * tanphi2; // 
+        
+     
+        var U2 = Math.atan(tanU2);//var U2=Math.atan( (1-f) *Math.tan(phi2) );
+        var sinU2 = Math.sin(U2);
+        var cosU2 = Math.cos(U2);
+        
+        
+        
+        
+        var sinU1sinU2 = sinU1 * sinU2;
+        var cosU1sinU2 = cosU1 * sinU2;
+        var sinU1cosU2 = sinU1 * cosU2;
+        var cosU1cosU2 = cosU1 * cosU2;
+
+        // eq. 13
+        var lambda = omega;
+
+     // intermediates we'll need to compute 's'
+        var A = 0.0;
+        var B = 0.0;
+        var sigma = 0.0;
+        var deltasigma = 0.0;
+        var lambda0;
+        var converged = false;
+
+
+        for (var i = 0; i < 10; i++)
+        {
+            lambda0 = lambda;
+
+            var sinlambda = Math.sin(lambda);
+            var coslambda = Math.cos(lambda);
+
+            // eq. 14
+            var sin2sigma = (cosU2 * sinlambda * cosU2 * sinlambda) +
+                 (cosU1sinU2 - sinU1cosU2 * coslambda) *
+                 (cosU1sinU2 - sinU1cosU2 * coslambda);
+            
+            var sinsigma = Math.sqrt(sin2sigma);
+           
+           
+            // eq. 15
+            var cossigma = sinU1sinU2 + (cosU1cosU2 * coslambda);
+          
+            // eq. 16
+            sigma = Math.atan(sinsigma/ cossigma);
+           
+            // eq. 17 Careful! sin2sigma might be almost 0!
+            var sinalpha = (sin2sigma == 0) ? 0.0 :
+                  cosU1cosU2 * sinlambda / sinsigma;
+			
+
+            
+            var alpha = Math.asin(sinalpha);
+            var cosalpha = Math.cos(alpha);
+            var cos2alpha = cosalpha * cosalpha; 
+
+            // eq. 18 Careful! cos2alpha might be almost 0!
+            var cos2sigmam = cos2alpha == 0.0 ? 0.0 :
+                cossigma - 2 * sinU1sinU2 / cos2alpha;  
+
+            var u2 = cos2alpha * a2b2b2;
+           
+            var cos2sigmam2 = cos2sigmam * cos2sigmam;
+
+            // eq. 3
+            A = 1.0 + u2 / 16384 * (4096 + u2 *
+                (-768 + u2 * (320 - 175 * u2)));
+			
+          
+            
+            // eq. 4
+            B = u2 / 1024 * (256 + u2 * (-128 + u2 * (74 - 47 * u2)));
+          
+            // eq. 6
+            deltasigma = B * sinsigma * (cos2sigmam + B / 4
+                * (cossigma * (-1 + 2 * cos2sigmam2) - B / 6
+                * cos2sigmam * (-3 + 4 * sin2sigma)
+                * (-3 + 4 * cos2sigmam2)));
+
+            // eq. 10
+            var C = f / 16 * cos2alpha * (4 + f * (4 - 3 * cos2alpha)); 
+           
+            // eq. 11 (modified)
+            lambda = omega + (1 - C) * f * sinalpha
+                * (sigma + C * sinsigma * (cos2sigmam + C
+                * cossigma * (-1 + 2 * cos2sigmam2))); 
+         
+          
+            // see how much improvement we got
+            var change = Math.abs((lambda - lambda0) / lambda);
+
+            
+            
+            if ((i > 1) && (change < 0.0000000000001))
+            {
+                 converged = true;
+                 break;
+            }
+        };
+
+       /*  console.log(b);
+        console.log(A);
+        console.log(sigma);
+        console.log(deltasigma); */
+        var s = b * A * (sigma - deltasigma);
+        console.log("s="+s);
+       
+		alert(s/1000);
+
+
+
+
+        
+
+		
+		
+		//alert(f);	
+		//alert("end");
+	</script>
+</body>
+</html>

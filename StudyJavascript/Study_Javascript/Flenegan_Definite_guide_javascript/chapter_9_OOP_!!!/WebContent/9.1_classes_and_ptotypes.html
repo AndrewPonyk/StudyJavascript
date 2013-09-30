@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head> 
+<body>
+	<script type="text/javascript">
+	function inherit(p) {
+	    if (p == null) throw TypeError(); // p must be a non-null object
+	    if (Object.create){                // If Object.create() is defined...
+	       // alert('Object.create');
+	    	return Object.create(p);      //    then just use it.
+	    }
+	    var t = typeof p;                 // Otherwise do some more type checking
+	    if (t !== "object" && t !== "function") throw TypeError();
+	    function f() {};                  // Define a dummy constructor function.
+	    f.prototype = p;                  // Set its prototype property to p.
+	    return new f();                   // Use f() to create an "heir" of p.
+	}
+	
+	
+	function range(from,to){
+		
+		// range.methods - to je object
+		var r=inherit(range.methods);
+		
+		r.from=from;
+		r.to=to;
+		return r;
+	}
+	
+	range.methods={
+		includes :	function(x){ return (this.from<=x && x<=this.to) ;},
+		foreach	:	function(f){for (var x=Math.ceil(this.from);x<=this.to;x++) f(x); },
+		toString	: function(){ return "("+this.from+"..."+this.to+")"; },
+	/* 	compareTo :	function (b){
+					
+						if(!(b instanceof Range)) throw new Error('can\'t compare Range to '+b);
+						return this.from<b.from ?-1:1;
+					} */
+					
+					// for comparison r>rr - method r.valueOf() is using !!!
+					// compareTo we can use to sort arrays !!!!!
+					
+					// valueOf- method to convert object to primitive
+	}
+	
+	
+	
+	
+	var r=range(3,10);
+	
+	var rr=new range(2,100);
+	alert(r>=rr);
+	alert(r.valueOf());
+	
+	//alert(rr.toString());
+	//alert(rr.includes(44));
+	//alert(r.includes(3));
+	
+	var a1=0.1+0.2;
+	var a2=0.3;  		// a1==a2 - false (!!! Precision)
+	 			
+	
+	
+		alert('end');
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+Understanding typeof, instanceof and constructor in JavaScript
+September 18th, 2011 Skilldrick Leave a comment Go to comments
+
+They say in JavaScript “everything is an object”. They’re wrong. Some types in JavaScript are so-called “primitive types”, and they don’t act like objects. These types are:
+
+    Undefined
+    Null
+    Boolean
+    Number
+    String
+
+The confusion comes from the fact that the boolean, number and string types can be treated like objects in a limited way. For example, the expression "I'm no object".length returns the value 13. This happens because when you attempt to access properties or methods on a primitive value, JavaScript instantiates a wrapper object temporarily, just so you can access its methods. ‘Cause JavaScript’s nice like that. I’m not going to go into more details here, but Angus Croll wrote about The Secret Life of JavaScript Primitives, so that would be a good place to learn more.
+typeof
+
+typeof is a unary operator, just like the ! operator. It returns a string representing the type of its operand. Here are some examples:
+
+typeof 3; // returns "number"
+typeof 'blah'; //returns "string"
+typeof {}; //returns "object"
+typeof []; //returns "object"
+typeof function () {}; //returns "function"
+
+typeof has its idiosyncrasies. For example, typeof null returns "object", and typeof /[a-z]/ returns "function". Again, Angus Croll has written more on this subject than I have space for here.
+
+So, basically typeof is used for telling apart the different primitive types (as long as you don’t care about null). It’s no use for telling different types of object apart though – for most objects typeof will return "object".
+constructor
+
+constructor is a property available on all objects’ prototypes, and it is a reference to the constructor function used to create the object. So, ({}).constructor returns the Object constructor function (the parentheses are needed to clarify a syntactic ambiguity) and [].constructor returns the Array constructor function. Likewise, it will return your custom constructor function:
+
+function Person(name) {
+  this.name = name;
+}
+
+var dave = new Person('Dave');
+dave.constructor === Person; //true
+
+Remember that unlike the typeof operator, constructor returns a reference to the actual function. Another gotcha: because constructor is part of the prototype, if you reassign the prototype to a constructor function, e.g. Person.prototype = {};, you’ll lose the constructor property.
+instanceof
+
+instanceof is a binary operator – its syntax is instance instanceof Constructor. So, to continue the above example:
+
+dave instanceof Person; //true
+
+The difference between instanceof and the constructor property (apart from the obvious syntactic difference) is that instanceof inspects the object’s prototype chain. So, going back to our friend dave again:
+
+dave instanceof Object; //true
+
+This is because Person.prototype is an object, so Object is in dave‘s prototype chain, therefore dave is an instance of Object.
+Wrap-up
+
+So, if you’re dealing with primitive objects, use typeof to distinguish them. Because typeof returns "function" for functions, it can also be useful for checking if an object member or a function argument is a function. If you’re working out the constructor of an object, use its constructor property. And if you’re dealing with lengthy inheritance chains, and you want to find out whether an object inherits from a certain constructor, use instanceof.

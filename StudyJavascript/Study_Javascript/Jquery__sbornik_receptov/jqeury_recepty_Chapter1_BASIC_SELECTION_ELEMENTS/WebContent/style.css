@@ -1,0 +1,25 @@
+.task{
+	border:1px solid black;
+	font-size:1.4em;
+	font-family: cursive;
+	background-color: #ffa;
+}
+
+.task_title{
+	font-size:1.8em;
+}
+
+.notes{
+	font-size:1.3em;
+	background-color: #E00030 ;
+}
+
+.source_code{
+	width:80%;
+	margin:0 auto;
+	font-size:1.1em;
+	font-family: monospace;
+	background-color:#66FF33;
+}
+
+

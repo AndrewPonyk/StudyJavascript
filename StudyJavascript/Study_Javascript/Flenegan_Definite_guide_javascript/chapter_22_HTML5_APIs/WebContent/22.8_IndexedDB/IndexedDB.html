@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.8.0.js"> </script>
+</head>
+<body>
+  <script type="text/javascript">
+//In the following line, you should include the prefixes of implementations you want to test.
+  window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+  // DON'T use "var indexedDB = ..." if you're not in a function.
+  // Moreover, you may need references to some window.IDB* objects:
+  window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+  window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+  // (Mozilla has never prefixed these objects, so we don't need window.mozIDB*)
+  	
+  
+var db=null;  
+var peopleData = [
+    { name: "John Dow", email: "john@company.com" },
+    { name: "Don Dow", email: "don@company.com" }
+]; // init data
+ 
+(function initDb() {
+    var request = indexedDB.open("PeopleDB", 3);  // second arg is version - if the current version is 1 , and we pass 2 THEN onupgradeneeded event is generated 
+    request.onsuccess = function (evt) {
+        db = request.result;
+    
+        alert("opened");
+    };
+ 
+    request.onerror = function (evt) {
+        console.log("IndexedDB error: " + evt.target.errorCode);
+    };
+ 
+    request.onupgradeneeded = function (evt) {                   
+       var objectStore = evt.currentTarget.result.createObjectStore("people", 
+                                     { keyPath: "id", autoIncrement: true });
+ 
+        objectStore.createIndex("name", "name", { unique: false });
+        objectStore.createIndex("email", "email", { unique: true });
+ 
+        for (i in peopleData) {
+            objectStore.add(peopleData[i]);
+        }
+        alert("added"); 
+    };
+})();
+  
+	function addPerson(name,email){
+		//alert(name+email);	
+		var transaction = db.transaction("people", "readwrite");
+		var objectStore = transaction.objectStore("people");                    
+		var request = objectStore.add({ "name": name, "email": email });
+		request.onsuccess=function(){
+			alert("added "+name);
+		}
+		request.onerror=function(evt){
+			
+			if(evt.target.webkitErrorMessage){
+				console.log(evt.target.webkitErrorMessage);
+			}
+		}
+		transaction.oncomplete = function(evt) {  
+			  // do something after the transaction completed  
+		};
+	}
+	
+	function getPerson(id){
+		
+		var transaction = db.transaction("people", "readonly");
+		var objectStore = transaction.objectStore("people");  
+		var request = objectStore.get(+id);  
+		request.onsuccess = function(evt) {  
+		  alert("Name for id  "+id+" :" + request.result.name+" "+request.result.email);  
+			
+		};
+	}
+	
+	function getPersonWithCursor (){
+		var transaction = db.transaction("people", "readonly");
+		var objectStore = transaction.objectStore("people");
+
+		var request = objectStore.openCursor();
+		$('#outAll').html("");
+		request.onsuccess = function(evt) {  
+		    var cursor = evt.target.result;  
+		    
+		    if (cursor) {  
+		     
+		        $('#outAll').html($('#outAll').html()+"<br>"+cursor.key+" "+cursor.value.name+" "+cursor.value.email);
+		        cursor.continue();  
+		    }  
+		    else {  
+		        console.log("No more entries!");  
+		    }  
+		};
+	}
+	
+	function findByName(name){
+		var transaction = db.transaction("people", "readonly");
+		var objectStore = transaction.objectStore("people");
+		var index=objectStore.index("name");
+		
+		//Match anything between "Bill" and "Donna", but not including "Donna"
+		var boundKeyRange = IDBKeyRange.bound("Bill", "Donna", false, true);
+		
+		
+		$('#out').html("");
+		//find by name , maybe not unique result , 
+		index.openCursor(name).onsuccess = function(event) {
+			  var cursor = event.target.result;
+			  
+			  if (cursor) {
+			    // Do something with the matches.
+			    //alert(cursor.value.name+cursor.value.email);
+			    $('#out').html($('#out').html()+"<br>"+cursor.value.name+" "+cursor.value.email);
+			    
+			    cursor.continue();
+			  }
+			};
+		
+	}
+	
+	function deletePerson(id){
+		var transaction = db.transaction("people", "readwrite");
+		var objectStore = transaction.objectStore("people");
+		
+		var request=objectStore.delete(+id);
+		request.onsuccess=function(){
+			alert("removed");
+		}
+	}
+
+ 
+  </script>
+  
+  <div style ="border:1px solid black">
+  	Add person <br>
+  	<input id="name" size="20">
+  	<input id="email" size="20"><br>
+  	<button onclick="addPerson($('#name').val(),$('#email').val())">Add person</button>
+  </div>
+  <br>
+  <div style="border:1px solid black">
+  	Find Person by Id<br>
+  	<input id="Id" size="20">
+  	<button onclick="getPerson( $('#Id').val() )">Find Person By Id</button>
+  </div>
+  <br>
+  <hr>
+  <div>
+  	<button onclick="getPersonWithCursor()">Get All values with cursor</button>
+  	<div id="outAll" style="background-color:gray"></div>
+  </div>
+  <br>
+  <hr>
+  <div style="border:1px solid black">
+  Find by name (name is not unique so we use indexes)
+  <input  type="text" id="findName"><br>
+  <button onclick="findByName($('#findName').val() )">Find By Name</button>
+  <div id="out" style="background-color:gray"></div>
+  </div>
+  <br>
+  <hr>
+  <div>
+  	Delete item by id <br>
+  	<input id="deleteId">
+  	<button onclick="deletePerson($('#deleteId').val() )">Delete person</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<H3>Geolocation</H3>
+	<div style="border:3px solid black" id="window.navigator.geolocation">
+	
+	
+		<h4>window.navigator.geolocation properties:</h4>
+	</div>
+	<br>
+	<div style="border:3px solid black" id="pos">
+	
+	
+		<h4>pos object properties:</h4>
+	</div>
+	
+	<div id="position"  style="border:1px solid black ; padding:5px">Position</div>
+	<script type="text/javascript">
+		alert(window.navigator.userAgent);
+		
+		if(window.navigator.geolocation){
+			alert("browser support geolocation");
+			
+			var div=document.getElementById("window.navigator.geolocation");
+			
+			for(var item in window.navigator.geolocation){
+				div.innerHTML= div.innerHTML+item+"="+window.navigator.geolocation[item]+"<br>";
+			};
+			
+			var positionDiv=document.getElementById("position");
+			var posdiv=document.getElementById("pos");
+			window.navigator.geolocation.getCurrentPosition(function(pos){
+				alert("ua");
+				positionDiv.innerHTML="Coordinates:"+pos.coords.latitude+";"+pos.coords.longitude
+				//console.log(pos.coords.latitude+";"+pos.coords.longitude);
+				for(var item in pos){
+				 	
+					posdiv.innerHTML= posdiv.innerHTML+item+"="+pos[item]+"<br>";
+				}
+				posdiv.innerHTML= posdiv.innerHTML+"<br>"+"pos.coords properties : <br>";
+				for(var item in pos.coords){
+					
+					posdiv.innerHTML= posdiv.innerHTML+item+"="+pos.coords[item]+"<br>";
+				}
+			},
+			function(er){
+				alert(er.message);
+			});
+			
+			
+		}	
+	</script>
+</body>
+</html>

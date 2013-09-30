@@ -1,0 +1,13 @@
+CACHE MANIFEST #version40699deddd23edd5
+
+CACHE:
+orange.jpg
+vokzal.jpg
+FALLBACK:
+ vokzal.jpg
+NETWORK:
+*
+
+#
+#
+#

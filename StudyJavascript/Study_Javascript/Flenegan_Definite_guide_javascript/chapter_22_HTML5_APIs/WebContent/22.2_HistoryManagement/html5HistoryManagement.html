@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="window.history">
+		<h4>window.history Object</h4>
+	</div>
+	<hr>
+
+	<script type="text/javascript">
+		var historyDiv=document.getElementById("window.history");	
+	
+	
+		//alert(window.navigator.userAgent);
+		//alert(window.history);
+		
+		for(var item in window.history){
+			//alert(item);
+			historyDiv.innerHTML=historyDiv.innerHTML+item+"<br>";
+		};
+		//alert(window.history['previous']);
+		
+			//window.history.go(-1); // go to previous page // in usual application
+		 // Pick a random number and initialize game state
+	    state = {
+	        n: Math.floor(99 * Math.random()) + 1,  // An integer: 0 < n < 100
+	        low: 0,            // The lower bound (exclusive) on guesses
+	        high: 100,         // The upper bound (exclusive) on guesses
+	        guessnum: 0,       // How many guesses have been made
+	        guess: undefined   // What the last guess was
+	    };
+			
+		
+	    history.pushState(state,  // State object to save
+                "",     // State title: current browsers ignore this
+                "http://localhost");   // State URL: not useful to bookmark
+
+        	    history.pushState(state,  // State object to save
+                        "",     // State title: current browsers ignore this
+                        "http://localhost");   // State URL: not useful to bookmark
+
+                	    history.pushState(state,  // State object to save
+                                "",     // State title: current browsers ignore this
+                                "http://localhost");   // State URL: not useful to bookmark
+
+			
+			
+		
+			
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="div1">	
+		Element with id=div1
+	</div>
+	<script type="text/javascript">
+	
+		function changeDivStyle(e) {
+		
+			e.style.fontWeight="bold"; // remember this in css font-weight => in javascript fontWeight
+			e.style.color="#aaa";
+
+			
+			//alert(e.style.fontSize.length);
+			
+			if(e.style.fontSize.length==0){
+				e.style.fontSize="12px";
+				
+			}
+			else{
+				e.style.fontSize=(parseInt( e.style.fontSize.substring(0,2))+1) +"px";
+			}
+			
+		};
+	
+		function resetStyleOfElement(e) {
+			e.style.cssText="";             // e.style -is Style object  (info http://www.w3schools.com/jsref/dom_obj_style.asp)
+		}
+		
+		alert('end');
+	</script>
+	
+	<button onclick="changeDivStyle(document.getElementById('div1'))">changeDiv1Style</button>
+	<button onclick="resetStyleOfElement(document.getElementById('div1'))">changeDiv1Style</button>
+	
+</body>
+</html>

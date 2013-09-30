@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    
+	<script type="text/javascript">
+		
+		// two ways of creating patterns 
+		var pattern = /[abc]/;
+		
+		pattern=new RegExp('^(abc)$');
+		
+		
+		alert(pattern.test('abc'));
+	
+		var str='aaaab';
+		str=str.replace(new RegExp('a+?'),"1"); // 1aaab
+		//str=str.replace(new RegExp('a+'),"1"); // 1b
+		
+		
+		
+		alert(str);
+		// repetition {n,m} - match the previous at least n times , but no more than m
+		// {n,} - match previous at least n times
+		
+		
+		
+		// ? zero or one , * zero or more , + one  or more
+				
+				
+				
+				///////Alternation , grouping and references
+				/// just put in () , if you want to found '(' just write '\\('
+				
+				
+				
+				
+				var patternGroup=new RegExp('q(?!u)','g');  // negative lookahead С€СѓРєР°С” q, Р·Р° СЏРєРёРј РЅРµ Р№РґРµ u
+				var groupString ='qsdfquoiweij';
+				
+				
+				
+				//groupString=groupString.replace(patternGroup,5);
+				
+				
+				alert(patternGroup.test(groupString));
+				console.log(groupString);
+	
+				
+				
+				////!!!!!!!!!!!!!!!!!!!!!
+				//// flags - i case insesitive , g global match , m mutiline mode 
+				
+				
+		alert('end');
+	</script>
+</body>
+</html>

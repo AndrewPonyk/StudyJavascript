@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>localStorage_and_sessionStorage.</title>
+</head>
+<body>
+
+	<div id="div1">Name :</div>
+
+	<script type="text/javascript">
+	
+	
+		if(!window.localStorage){
+			alert("Your browse doesn't support localStorage");
+			document.body.style.backgroundColor="red";
+		}
+	
+	 	var name=window.localStorage.name;
+	 	
+	 	if(!name){
+			name=prompt("Input your name"); 
+			document.getElementById("div1").innerText=document.getElementById("div1").innerText+ ":"+name;
+			window.localStorage.name=name;
+			
+	 	}else{
+	 		document.getElementById("div1").innerText=document.getElementById("div1").innerText+ ":"+name;
+	 	}
+	
+		for(var item in window.localStorage){
+			console.log(item);
+		}
+		
+		
+		  var onstorage = function(evt) {                                                                  
+	            alert([evt.key, evt.oldValue, evt.newValue].join('\n'));                                 
+	    }                            
+		  window.addEventListener('storage', onstorage, false);   
+		
+		
+		window.localStorage.integer=[1,1,1];
+		//alert(typeof window.localStorage.integer); //string
+		//alert(window.localStorage.integer);
+		
+
+	
+	</script>
+	
+	
+	<button onclick="alert(window.localStorage.getItem('name') )">Alert Name</button><br>
+	<button onclick="window.localStorage.removeItem('name')">Delete Name</button>
+	
+	<br><br><br><hr>
+	<pre>
+		window.localStorage
+			setItem
+			getItem
+			removeItem
+			length
+			clear - delete all data
+			
+	</pre>
+	
+	<br>
+	<pre>
+				localStorage is scoped to the document origin. As explained in §13.6.2, the origin of
+		a document is defined by its protocol, hostname, and port, so each of the following
+		URLs has a different origin:
+		http://www.example.com        // Protocol: http; hostname: www.example.com
+		https://www.example.com       // Different protocol
+		http://static.example.com     // Different hostname
+		http://www.example.com:8000   // Different port
+		
+				Like localStorage, sessionStorage is scoped to the document origin so that documents
+		with different origins will never share sessionStorage. But sessionStorage is also sco-
+		ped on a per-window basis. If a user has two browser tabs displaying documents from
+		the same origin, those two tabs have separate sessionStorage data: the scripts running
+		in one tab cannot read or overwrite the data written by scripts in the other tab, even if
+		both tabs are visiting exactly the same page and are running exactly the same scripts.
+	</pre>
+</body>
+</html>

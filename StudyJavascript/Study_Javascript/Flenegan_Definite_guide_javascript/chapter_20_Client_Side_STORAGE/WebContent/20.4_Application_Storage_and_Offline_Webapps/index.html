@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html manifest="myapp.manifest"> 
+<head>
+<meta charset="UTF-8">
+<title>Offline web app</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+	#div1{
+		display:block;
+		width:40%;
+		height:400px;
+		background-color:white;
+	}
+</style>
+</head>
+<body>
+	<div id="div1">
+		diadddddddddddddd3
+	</div>
+	<script type="text/javascript">
+	
+		function setBackground(id, imgUrl){
+			var elem=document.getElementById(id);
+			elem.style.background="url("+imgUrl+")";
+		}	
+	
+		
+		
+		window.applicationCache.addEventListener('cached', function(){
+			//window.applicationCache.swapCache();
+			alert("cached");
+			console.log("---------------CACHED----------------");	
+	}, false);
+		
+		
+
+		window.applicationCache.addEventListener('updateready', function(){
+			//window.applicationCache.swapCache();
+			alert("updated");
+			console.log("---------------UPDATED----------------");	
+	}, false);
+		
+		
+		function updateCache(){
+			window.applicationCache.update();
+			alert("updating");
+		}
+		
+		
+		
+	</script>
+	
+	<input type="text"  id="url"/> 
+	<button onclick="setBackground('div1',document.getElementById('url').value)">Set orange background</button>
+	<button onclick="updateCache()">Update  Cache</button>
+
+	<pre>
+	There is one more type of section in a cache manifest file: a fallback section. In a fallback section, you can define substitutions for online resources that, for whatever reason, can’t be cached or weren’t cached successfully. The HTML5 specification offers this clever example of using a fallback section:
+	</b>
+	CACHE MANIFEST
+	FALLBACK:
+	/ /offline.html
+	NETWORK:
+	*
+	</b>
+
+What does this do? First, consider a site that contains millions of pages, like Wikipedia.
+ You couldn’t possibly download the entire site, nor would you want to. 
+ But suppose you could make part of it available offline. But how would you decide which pages to cache? How about this: every page you ever look at on a hypothetical offline-enabled Wikipedia would be downloaded and cached. 
+ That would include every encyclopedia entry that you ever visited, every talk page (where you can have makeshift discussions about a particular encyclopedia entry), 
+ and every edit page (which you can actually make changes to the particular entry).
+
+That’s what this cache manifest does.
+ Suppose every HTML page (entry, talk page, edit page, history page) on Wikipedia pointed to this cache manifest file. When you visit any page that points to a cache manifest, your browser says “hey, this page is part of an offline web application, is it one I know about?” If your browser hasn’t ever downloaded this particular cache manifest file, it will set up a new offline “appcache” (short for “application cache”), download all the resources listed in the cache manifest, and then add the current page to the appcache. If your browser does know about this cache manifest, it will simply add the current page to the existing appcache. Either way, the page you just visited ends up in the appcache. This is important. It means that you can have an offline web application that “lazily” adds pages as you visit them. 
+ You don’t need to list every single one of your HTML pages in your cache manifest.
+
+
+Now look at the fallback section. The fallback section in this cache manifest only has a single line. The first part of the line (before the space) is not a URL. It’s really a URL pattern. The single character (/) will match any page on your site, not just the home page.
+ When you try to visit a page while you’re offline, your browser will look for it in the appcache.
+ If your browser finds the page in the appcache (because you visited it while online, and the page was implicitly added to the appcache at that time), then your browser will display the cached copy of the page.
+ If your browser doesn’t find the page in the appcache, instead of displaying an error message, it will display the page /offline.html, 
+as specified in the second half of that line in the fallback section.
+
+Finally, let’s examine the network section. The network section in this cache manifest also has just a single line, a line that contains just a single character (*). 
+This character has special meaning in a network section. It’s called the “online whitelist wildcard flag.” That’s a fancy way of saying that anything that isn’t in the appcache can still be downloaded from the original web address, as long as you have an internet connection. This is important for an “open-ended” offline web application. It means that, while you’re browsing this hypothetical offline-enabled Wikipedia online, your browser will fetch images and videos and other embedded resources normally, even if they are on a different domain. (This is common in large websites, even if they aren’t part of an offline web application.
+ HTML pages are generated and served locally, while images and videos are served from a CDN on another domain.) Without this wildcard flag,
+ our hypothetical offline-enabled Wikipedia would behave strangely when you were online — specifically, it wouldn’t load any externally-hosted images or videos!
+
+Is this example complete? No. Wikipedia is more than HTML files. It uses common CSS, JavaScript, and images on each page.
+ Each of these resources would need to be listed explicitly in the CACHE: section of the manifest file, in order for pages to display and behave properly offline.
+ But the point of the fallback section is that you can have an “open-ended” offline web application that extends beyond the resources you’ve listed explicitly in the manifest file. 
+	
+	
+	</pre>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="jquery-1.6.js"></script>
+	
+	<style type="text/css">
+	
+		label{
+			display:inline-block;
+			
+			color:red;
+		}
+		
+		div{
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+
+	<div style="background-color:grey;display:block;height:70px" id="div1">
+
+	Login Form
+		<form method="post" action="http://google.com">
+			<label>First Name</label><input name="firstName">
+			<label>Last Name</label> <input name="lastName">
+			<input type="submit">
+		</form>
+	</div>
+
+	<script type="text/javascript">
+	
+
+	
+	// $ -is synonym of jQuery
+	/* $(document).ready(function(){
+			alert("jquery document ready");
+		}); */
+	
+		
+	    //$.noConflict(); // restore $ from library , so after this we cannot use $("div") , but use jQuery("div")
+		
+		
+		alert("end");
+	</script>
+	<hr>
+	<button onclick="jQuery('#div1').slideUp(700)">Hide div1</button>
+	<button onclick="jQuery('#div1').slideDown(800)">Show div1</button>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MouseWheel example</title>
+
+<style type="text/css">
+	#div1{
+		background-color:#808;
+		width:60%;
+		height: 40px;
+		color:red;
+		overflow: hidden;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div id="div1" style="position:absolute;top:100px;left:100px;">
+		ZOOM
+	</div>
+	<hr>
+	<table border="1" cellpadding="2" cellspacing="0" width="800">
+		<tr>
+			<td bgcolor="#eaeaff" valign="top" width="140"><b>Event property</b></td>
+			<td bgcolor="#eaeaff" valign="top" width="200"><b>Applies to event:</b></td>
+			<td bgcolor="#eaeaff" valign="top"><b>Up 1 click</b></td>
+			<td bgcolor="#eaeaff" valign="top"><b>Up 2 clicks</b></td>
+			<td bgcolor="#eaeaff" valign="top"><b>Down 1 click</b></td>
+			<td bgcolor="#eaeaff" valign="top"><b>Down 2 clicks</b></td>
+		</tr>
+		<tr>
+			<td valign="top" width="140"><b>e.wheelDelta</b><p>Supported in Non 
+			FF browsers</td>
+			<td valign="top" width="200"><code>onmousewheel</code> and in non FF 
+			browsers</td>
+			<td valign="top">120</td>
+			<td valign="top">240</td>
+			<td valign="top">-120</td>
+			<td valign="top">-240</td>
+		</tr>
+		<tr>
+			<td valign="top" width="140"><b>e.detail</b><p>Supported in FF and 
+			Opera</td>
+			<td valign="top" width="200"><code>DOMMouseScroll</code> and in FF 
+			(as of FF3.x)</td>
+			<td valign="top">-1</td>
+			<td valign="top">-2</td>
+			<td valign="top">1</td>
+			<td valign="top">2</td>
+		</tr>
+	</table>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	<script type="text/javascript">
+	
+	// Define if it is Firefox
+	var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel";
+	
+	
+	function mouseWheel(event){
+		event=event||window.event;
+		//alert("mousewheel");
+		
+		var div1=document.getElementById("div1");
+		
+	
+		
+		
+		// getComputedStyle doesn't work in IE		
+		//var div1css=window.getComputedStyle(div1);
+		/* var x_=parseInt(div1css.width);
+		var y_=parseInt(div1css.height); */
+		
+		//!!!!!!!!!!!!!!!!!!!!  if (div1.currentStyle) alert("ie6");
+		 
+		var x_=div1.offsetWidth;
+		var y_=div1.offsetHeight;
+		 
+
+		
+		//check for detail first so Opera uses that instead of wheelDelta 
+		  var delta=event.detail? event.detail*(-120) : event.wheelDelta ;
+	
+		  if(delta>=0){
+			  	div1.style.width=(x_+5)+"px";
+				div1.style.height=(y_+5)+"px";	  
+			  
+		  }else{
+			  	div1.style.width=(x_-5)+"px";
+				div1.style.height=(y_-5)+"px";
+		  }
+		  
+		  
+		  
+		// Now we need prevent defauld
+		if(event.preventDefault) event.preventDefault();
+		if(event.returnValue){//IE
+			alert(event.returnValue);
+			event.returnValue=false;
+		}
+		return false;
+		
+	};
+	
+	
+	
+	if (document.attachEvent) //if IE (and Opera depending on user setting)
+	  (document.getElementById("div1")).attachEvent("on"+mousewheelevt, mouseWheel)
+	else if (document.addEventListener) //WC3 browsers
+		(document.getElementById("div1")).addEventListener(mousewheelevt, mouseWheel, false)
+	
+	
+	
+		
+		alert("end");
+	</script>
+</body>
+</html>

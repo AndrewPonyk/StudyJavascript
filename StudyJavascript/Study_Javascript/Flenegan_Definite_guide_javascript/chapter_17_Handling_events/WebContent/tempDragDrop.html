@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#div1{
+		color:fff;
+		position: absolute;
+		top:40px;
+		left:40px;
+		cursor: move;
+	}
+</style>
+</head>
+<body>
+
+		<div>Primitive draggable  , try to drag and drop div1</div>
+		<br/>
+		<div id="div1">div1</div>
+		
+		<script type="text/javascript">
+		
+		
+			var div1=document.getElementById("div1");
+			
+			
+			var draggable=null;
+			
+			var divs=document.getElementsByTagName("div");
+			
+		 	for(var i=0;i<divs.length;i++){
+				
+				divs[i].onmousedown=function(){
+					draggable=this; // important , this!!!!! (not divs[i])
+				};
+				
+				divs[i].onclick=function(){
+					//alert('click');  /// Order of executing : onmousedown, onmouseup , onclick !!!! onclick - is last
+				};
+				
+			}; 
+			
+			
+			
+			/* 
+			 div1.onmousedown=function(){
+				
+				alert('mousedown');
+			};  */
+			
+			/* div1.onmouseup=function(){
+				
+				alert('mouseup');
+			};  */
+			
+			
+			
+			
+			
+			
+			document.onmousemove=function (e){
+				
+				e=e ||window.event;
+				
+				//alert('up document'+draggable);
+				
+				if(draggable){
+					draggable.style.position="absolute";
+					draggable.style.left=e.clientX+"px";
+					draggable.style.top=e.clientY+"px";
+					//draggable=null;
+				};
+			};
+			
+			
+			document.onmouseup=function (e){
+				
+				e=e||window.event;
+				
+				//alert('up document'+draggable);
+				
+				if(draggable){
+					draggable.style.position="absolute";
+					draggable.style.left=e.clientX+"px";
+					draggable.style.top=e.clientY+"px";
+					draggable=null;
+				};
+			};
+			
+			
+			
+			/* window.onunload=function(){
+				alert('undloaded');
+			}; */
+			
+			for(var item in window){
+				if(item.search("on")==0)
+				console.log(item);
+			};
+			console.log('item');
+			alert('end');
+		</script>
+</body>
+</html>

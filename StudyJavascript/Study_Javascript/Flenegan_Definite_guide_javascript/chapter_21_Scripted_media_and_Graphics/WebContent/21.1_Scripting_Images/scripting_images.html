@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+	<head>
+	<meta charset="UTF-8">
+	<title>Image Rollowers</title>
+	</head>
+	<body>
+		<img src="cherry.jpg" data-rollover="orange.jpg" style="cursor:pointer;width:150px;height:150px" />
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		
+	
+		window.onload=function(){
+			
+			for(var i=0;i<document.images.length;i++){
+				
+				var img		=document.images[i];
+				var rollover=img.getAttribute("data-rollover");
+				if(!rollover) continue;
+				
+				//Ensure that the rollover image is in the CACHE
+				(new Image()).src=rollover;
+				
+				//remember the default url of image
+				img.setAttribute("data-rollout",img.src);
+				
+				img.onmouseover=function(){
+					this.src=this.getAttribute("data-rollover");
+				};
+				img.onmouseout=function(){
+					this.src=this.getAttribute("data-rollout");
+				}
+				
+			}
+		}
+		
+		alert("end");
+	</script>	
+	</body>
+</html>

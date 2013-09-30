@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    	<script type="text/javascript">
+    	
+    	  var filesystem=window.webkitRequestFileSystem(TEMPORARY,
+    							 50*1024*1024,
+    							 function(fs){
+    		
+    								alert("we have fs");
+    							},
+    							function(e){
+    								console.log(e);
+    								alert(e);
+    							}
+    	); 
+    	 
+    	  alert(filesystem);
+    	  
+    	  
+    	// Read the contents of the specified file as text and pass them to callback.
+    	  function readTextFile(path, callback) {
+    	      // Call getFile() to find the FileEntry for the specified filename
+    	      filesystem.root.getFile(path, {}, function(entry) {
+    	          // This function is called with the FileEntry for the file
+    	          // Now we call the FileEntry.file() method to get the File object
+    	          entry.file(function(file) {          // Call this with the File
+    	              var reader = new FileReader();   // Create a FileReader
+    	              reader.readAsText(file);         // And read the file
+    	              reader.onload = function() {     // When read successful
+    	                  callback(reader.result);     // Pass it to the callback
+    	              } 
+    	              reader.onerror = logerr;         // Log readAsText() errors
+    	          }, logerr);                          // Log file() errors
+    	      }, 
+    	      logerr);                                 // Log getFile() errors
+    	  }  
+    	  
+    	  
+    	  
+    	// Append the specified contents to the file at the specified path, creating
+    	// a new file if no file by that name already exists.  Call callback when done.
+    	function appendToFile(path, contents, callback) {
+    	    // filesystem.root is the root directory.
+    	    filesystem.root.getFile( // Get a FileEntry object 
+    	        path,                // The name and path of the file we want
+    	        {create:true},       // Create it if it doesn't already exist
+    	        function(entry) {    // Call this when it has been found
+    	            entry.createWriter(     // Create a FileWriter object for the file
+    	                function(writer) {  // Call this function when created
+    	                    // By default a writer starts at the beginning of the file.
+    	                    // We want to start writing at the end of the file
+    	                    writer.seek(writer.length);  // Move to end of file
+    	                    
+    	                    // Convert file contents to a Blob. The contents argument
+    	                    // can be a string or a Blob or an ArrayBuffer.
+    	                    var bb = new BlobBuilder()
+    	                    bb.append(contents);
+    	                    var blob = bb.getBlob();
+    	                    // Now write the blob to the file
+    	                    writer.write(blob);
+    	                    writer.onerror = logerr;  // Log errors from write()
+    	                    if (callback)             // If there is a callback
+    	                        writer.onwrite = callback; // call it on success
+    	                },
+    	                logerr);     // Log errors from createWriter()
+    	        },
+    	        logerr);             // Log errors from getFile()
+    	}
+    	  
+    	  
+    	  
+    	
+    	
+    	 function showwindowitem(){
+    		 for(var item in window){
+    		
+    	    		console.log(item);
+    	    	};	 
+    	 }
+    		
+    	</script>
+    	<button onclick="showwindowitem()">Show window object elements</button>
+</body>
+</html>

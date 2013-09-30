@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Radial Gradient</h3>
+		<pre>
+	
+	JavaScript syntax:	context.createRadialGradient(x0,y0,r0,x1,y1,r1);
+
+Parameter ValuesParameter	Description
+x0	The x-coordinate of the starting circle of the gradient
+y0	The y-coordinate of the starting circle of the gradient
+r0	The radius of the starting circle
+x1	The x-coordinate of the ending circle of the gradient
+y1	The y-coordinate of the ending circle of the gradient
+r1	The radius of the ending circle
+	
+	
+	
+	
+	
+	</pre>
+	
+	<canvas id="21.4.7" width="800" height="800" style="border:1px solid black;background-color:blue"></canvas>
+	<script type="text/javascript">
+		
+		var canvas=document.getElementById("21.4.7");
+		var c=canvas.getContext("2d");
+	
+		
+		//A linear gradient , diagonally accross the canvas
+		var bgfade=c.createLinearGradient(0,0,150,150);
+		bgfade.addColorStop(0,"#88f");
+		bgfade.addColorStop(1.0,"white");
+		
+		//A gradient between tho concentric circles . Transparent in the middle
+		// fading to transluent gray and then back to transparent
+		var peekhose=c.createRadialGradient(300,300,50,300,300,300);
+		peekhose.addColorStop(0.0,"yellow");
+		peekhose.addColorStop(0.1,"yellow");
+		peekhose.addColorStop(1.0,"rgba(0,0,0,0.0)");
+		
+		
+	
+		c.fillStyle=bgfade;
+		c.fillRect(5,5,150,150);
+		
+		
+		c.fillStyle=peekhose;
+		c.fillRect(200,200,400,400);
+		
+		
+	//	alert("end");
+	</script>
+	
+
+</body>
+</html>

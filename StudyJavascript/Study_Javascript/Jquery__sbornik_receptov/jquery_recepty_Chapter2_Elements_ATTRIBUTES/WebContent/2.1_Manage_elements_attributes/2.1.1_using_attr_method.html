@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>2.1.1_using_attr_method.html</title>
+        <link  rel="stylesheet" type="text/css" href="../style.css" />
+        <link type="text/css" rel="stylesheet" href="../syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        
+        <script type="text/javascript"> SyntaxHighlighter.defaults['html-script'] = true; SyntaxHighlighter.all();</script>
+        <script src="../jquery-1.6.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $(function(){ 
+                // $( function(){...} )  - function will be called when the page will load dfsd
+                $(function(){
+                   
+                
+                    var pageCode=$("html").html();  
+                    $(".source_code pre").text( pageCode );
+         
+                    
+                    
+         			alert($("a").length);
+                    $("a").attr("href","http://facebook.com"); // sets href attribute to all links on page
+                  
+                }) 
+            }); 
+        </script>
+        <style>
+            table td{
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="task_title" id="task">Task</div>
+        <div class="task">
+  2.1.1_using_attr_method.html<br>
+            
+        </div>
+        <hr/>
+        <div class="notes">
+            Notes:<br>
+           1)    $("a").attr("href","http://facebook.com"); -  sets href attribute to all links on page <br>
+        </div>
+        
+       
+        
+
+			<a href="http://google.com">Link to another site</a>
+			<a href="http://google.com">Link to another site</a>
+        
+   
+
+      
+       
+        <div id="my.Div" class="source_code">
+            <pre class="brush: js;">
+            </pre> 
+            
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Complex(real,imiginary){
+			if(isNaN(real) || isNaN(imiginary)) throw new TypeError();
+		
+			this.r=real;
+			this.i=imiginary;
+		}
+		
+		Complex.prototype.add=function(that){
+			return new Complex(this.r+that.r,this.i+that.i);
+		}
+		
+		Complex.prototype.mul=function(that){
+			return new Complex(this.r*that.r-this.i*that.i,
+								this.r*that.i-this.i*that.r);
+		}
+		
+		
+		Complex.prototype.toString=function(){
+			return "{"+this.r+","+this.i+"}";
+		}
+	
+		var c=new Complex(2,3);
+		var d=new Complex(1,1);
+		
+		alert(c.constructor);
+		alert(c.toString());
+		alert(c.add(d).toString());
+		alert('end');
+	</script>
+</body>
+</html>

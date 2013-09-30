@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		// abstract class 
+		function abstractMethod() {
+			throw new Error('abstract method');
+		}
+	
+		function AbsractSet() {
+			throw new Error('Can\'t instantiate abstract class');
+		}
+		
+		AbsractSet.prototype.contains=abstractMethod;
+		///////////////////////////////////////////////////////////
+		
+	
+	
+		alert('end');
+	</script>
+</body>
+</html>

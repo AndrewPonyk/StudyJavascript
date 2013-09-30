@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<canvas id="text" style="border:1px solid black" width="500"  height="500"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("text");
+		var c=canvas.getContext("2d");
+		
+		c.font="bold 50pt sans-serif";
+		c.strokeText("<canvas>",15,330);
+		
+		c.fillText("<canvas>",15,230);
+		
+	</script>
+</body>
+</html>

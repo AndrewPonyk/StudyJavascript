@@ -1,0 +1,1855 @@
+Content-Type: multipart/related; start=<op.mhtml.1370336019115.4c1eb75c3520b3b5@10.132.146.168>; boundary=----------q5BSV0swEcIaakgc3jzQmK
+Content-Location: http://www.w3schools.com/jsref/dom_obj_all.asp
+Subject: =?utf-8?Q?HTML=20DOM=20HTMLElement=20Object?=
+MIME-Version: 1.0
+
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=dom_obj_all.htm
+Content-Type: text/html; charset=windows-1252; name=dom_obj_all.htm
+Content-ID: <op.mhtml.1370336019115.4c1eb75c3520b3b5@10.132.146.168>
+Content-Location: http://www.w3schools.com/jsref/dom_obj_all.asp
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>HTML DOM HTMLElement Object</title>
+ 
+<meta charset="windows-1252">
+<meta name="Keywords" content="HTML,CSS,XML,JavaScript,DOM,jQuery,ASP.NET,PHP,SQL,colors,tutorial,programming,development,training,learning,quiz,primer,lessons,reference,examples,source code,demos,tips,color table,w3c,cascading style sheets,active server pages,Web building,Webmaster" />
+<meta name="Description" content="Free HTML CSS JavaScript DOM jQuery XML AJAX RSS ASP .NET PHP SQL tutorials, references, examples for web building." />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3855518-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script>
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{obj.value=""}
+}
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("POST","/err_sup.asp",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+<script>
+(function() {
+var useSSL = 'https:' == document.location.protocol;
+var src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+
+<script>
+googletag.defineSlot('/16833175/BottomMediumRectangle', [300, 250], 'div-gpt-ad-1362650798669-0').addService(googletag.pubads());
+googletag.defineSlot('/16833175/LargePS', [600, 350], 'div-gpt-ad-1343810007679-1').addService(googletag.pubads());
+googletag.defineSlot('/16833175/MainLeaderboard', [728, 90], 'div-gpt-ad-1343810007679-2').addService(googletag.pubads());
+googletag.defineSlot('/16833175/SmallPS', [600, 100], 'div-gpt-ad-1343810007679-4').addService(googletag.pubads());
+googletag.defineSlot('/16833175/WideSkyScraper', [160, 600], 'div-gpt-ad-1357306838470-0').addService(googletag.pubads());
+googletag.defineSlot('/16833175/TopLeftRectangle', [170, 90], 'div-gpt-ad-1357907445241-0').addService(googletag.pubads());
+googletag.pubads().setTargeting("content","jsref");
+googletag.pubads().enableSyncRendering();
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+</script>
+<script>
+  (function() {
+    var cx = '012971019331610648934:m2tou3_miwy';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<link rel="stylesheet" type="text/css" href="/stdtheme.css" />
+</head>
+<body>
+
+<div id="top">
+	<div style="height:78px;">
+		<div id="topLogo">
+			<a id="top"></a>
+			<a href="http://www.w3schools.com"><img width="336" height="69" src="/images/w3schoolslogoNEW310113.gif" alt="W3Schools.com" style="border:0;margin-top:5px;" /></a>
+		</div>
+		<div id="searchTranslate">
+			<div id="searchText">Search w3schools.com:</div>
+			<div id="googleSearch">
+				<gcse:search></gcse:search>
+			</div>
+			<div id="google_translate_element"></div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	<div id="topnav">
+		<div id="topnavTut">
+			<a class="topnav" href="/default.asp" target="_top">HOME </a>
+			<a class="topnav" href="/html/default.asp" target="_top">HTML </a>
+			<a class="topnav" href="/css/default.asp" target="_top">CSS </a>
+			<a class="topnav" href="/js/default.asp" target="_top">JAVASCRIPT </a>
+			<a class="topnav" href="/jquery/default.asp" target="_top">JQUERY </a>	
+			<a class="topnav" href="/xml/default.asp" target="_top">XML </a>
+			<a class="topnav" href="/aspnet/default.asp" target="_top">ASP.NET </a>
+			<a class="topnav" href="/php/default.asp" target="_top">PHP </a>
+			<a class="topnav" href="/sql/default.asp" target="_top">SQL </a>	
+			<a class="topnav" href="/sitemap/default.asp" target="_top">MORE...</a>
+		</div>
+		<div id="topnavAbout">
+			<a class="topnav" href="/sitemap/default.asp#references" target="_top">REFERENCES</a> |
+			<a class="topnav" href="/sitemap/default.asp#examples" target="_top">EXAMPLES</a> |
+			<a class="topnav" href="/forum/default.asp" target="_blank">FORUM</a> |
+			<a class="topnav" href="/about/default.asp" target="_top">ABOUT</a>	
+		</div>
+	</div>
+	<div id="page">
+		<!-- TopLeftRectangle -->
+		<div class="topLeftRectangle" id='div-gpt-ad-1357907445241-0'>
+			<script type='text/javascript'>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1357907445241-0'); });
+			</script>
+		</div>
+		<!-- MainLeaderboard -->
+		<div id="mainLeaderboard">
+			<div id='div-gpt-ad-1343810007679-2' style='width:728px; height:90px;'>
+				<script>
+				googletag.display('div-gpt-ad-1343810007679-2');
+				</script>
+			</div>
+		</div>
+		<!-- TopRight -->		
+		<div id="topRight">
+			<div id="rightshare" style="height:78px;margin-bottom:0px;">
+				<h2>SHARE THIS PAGE</h2>
+				<div style="margin-top:10px;">
+					<script>
+					<!--
+					txt='<a href="http://www.facebook.com/sharer.php?u=http://www.w3schools.com'+location.pathname+'" target="_blank" title="Facebook">'
+					txt=txt+'<img src="/images/share_facebook.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="http://twitter.com/home?status=Currently reading http://www.w3schools.com'+location.pathname+'" target="_blank" title="Twitter">';
+					txt=txt+'<img src="/images/share_twitter.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20http://www.w3schools.com'+location.pathname+'" target="_blank" title="E-mail">';
+					txt=txt+'<img src="/images/share_email.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url=http://www.w3schools.com'+location.pathname+'&title='+document.title+'" target="_blank" title="Delicious">';
+					txt=txt+'<img src="/images/share_delicious.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="http://www.reddit.com/submit?url=http://www.w3schools.com'+location.pathname+'" target="_blank" title="Reddit">';
+					txt=txt+'<img src="/images/share_reddit.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="http://digg.com/submit?url=http://www.w3schools.com'+location.pathname+'&amp;title='+document.title+'" target="_blank" title="Digg">';
+					txt=txt+'<img src="/images/share_digg.gif" width="16px" height="16px" style="margin-right:4px" /></a>';
+					txt=txt+'<a href="http://www.stumbleupon.com/submit?url=http://www.w3schools.com'+location.pathname+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
+					txt=txt+'<img src="/images/share_stumbleupon.gif" width="16px" height="16px" /></a>';
+					document.write(txt);
+					//--></script>
+				</div>
+				<div style="padding-left:18px;padding-top:10px;">
+					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fw3schoolscom&amp;send=false&amp;layout=button_count&amp;width=125&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px; " allowTransparency="true"></iframe>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div id="leftcolumn">
+<div class="notranslate">
+<h2 class="left"><span class="left_h2">JS &amp; DOM</span> Reference</h2>
+<a target="_top" href="default.asp" >Overview</a>
+<br>
+<h2 class="left"><span class="left_h2">JavaScript</span> Objects</h2>
+<a target="_top" href="jsref_obj_array.asp" >JS Array</a>
+<a target="_top" href="jsref_obj_boolean.asp" >JS Boolean</a>
+<a target="_top" href="jsref_obj_date.asp" >JS Date</a>
+<a target="_top" href="jsref_obj_math.asp" >JS Math</a>
+<a target="_top" href="jsref_obj_number.asp" >JS Number</a>
+<a target="_top" href="jsref_obj_string.asp" >JS String</a>
+<a target="_top" href="jsref_obj_regexp.asp" >JS RegExp</a>
+<a target="_top" href="jsref_obj_global.asp" >JS Global</a>
+<br>
+<h2 class="left"><span class="left_h2">Browser</span> Objects</h2>
+<a target="_top" href="obj_window.asp" >Window</a>
+<a target="_top" href="obj_navigator.asp" >Navigator</a>
+<a target="_top" href="obj_screen.asp" >Screen</a>
+<a target="_top" href="obj_history.asp" >History</a>
+<a target="_top" href="obj_location.asp" >Location</a>
+<br>
+<h2 class="left"><span class="left_h2">Core DOM</span> Objects</h2>
+<a target="_top" href="dom_obj_node.asp" >DOM Node</a>
+<a target="_top" href="dom_obj_nodelist.asp" >DOM NodeList</a>
+<a target="_top" href="dom_obj_namednodemap.asp" >DOM NamedNodeMap</a>
+<a target="_top" href="dom_obj_core_document.asp" >DOM Document</a>
+<a target="_top" href="dom_obj_element.asp" >DOM Element</a>
+<a target="_top" href="dom_obj_attr.asp" >DOM Attr</a>
+<br>
+<h2 class="left"><span class="left_h2">HTML DOM</span> Objects</h2>
+<a target="_top" href="dom_obj_document.asp" >DOM Document</a>
+<a target="_top" href="dom_obj_event.asp" >DOM Events</a>
+<a target="_top" href="dom_obj_all.asp" style='font-weight:bold;'>DOM Elements</a>
+<br>
+<a target="_top" href="dom_obj_anchor.asp" >DOM Anchor</a>
+<a target="_top" href="dom_obj_area.asp" >DOM Area</a>
+<a target="_top" href="dom_obj_base.asp" >DOM Base</a>
+<a target="_top" href="dom_obj_body.asp" >DOM Body</a>
+<a target="_top" href="dom_obj_pushbutton.asp" >DOM Button</a>
+<a target="_top" href="dom_obj_form.asp" >DOM Form</a>
+<a target="_top" href="dom_obj_frame.asp" >DOM Frame/IFrame</a>
+<a target="_top" href="dom_obj_frameset.asp" >DOM Frameset</a>
+<a target="_top" href="dom_obj_image.asp" >DOM Image</a>
+<a target="_top" href="dom_obj_button.asp" >DOM Input Button</a>
+<a target="_top" href="dom_obj_checkbox.asp" >DOM Input Checkbox</a>
+<a target="_top" href="dom_obj_fileupload.asp" >DOM Input File</a>
+<a target="_top" href="dom_obj_hidden.asp" >DOM Input Hidden</a>
+<a target="_top" href="dom_obj_password.asp" >DOM Input Password</a>
+<a target="_top" href="dom_obj_radio.asp" >DOM Input Radio</a>
+<a target="_top" href="dom_obj_reset.asp" >DOM Input Reset</a>
+<a target="_top" href="dom_obj_submit.asp" >DOM Input Submit</a>
+<a target="_top" href="dom_obj_text.asp" >DOM Input Text</a>
+<a target="_top" href="dom_obj_link.asp" >DOM Link</a>
+<a target="_top" href="dom_obj_meta.asp" >DOM Meta</a>
+<a target="_top" href="dom_obj_object.asp" >DOM Object</a>
+<a target="_top" href="dom_obj_option.asp" >DOM Option</a>
+<a target="_top" href="dom_obj_select.asp" >DOM Select</a>
+<a target="_top" href="dom_obj_style.asp" >DOM Style</a>
+<a target="_top" href="dom_obj_table.asp" >DOM Table</a>
+<a target="_top" href="dom_obj_tabledata.asp" >DOM td / th</a>
+<a target="_top" href="dom_obj_tablerow.asp" >DOM tr</a>
+<a target="_top" href="dom_obj_textarea.asp" >DOM Textarea</a>
+</div>		</div>
+		<div id="main">
+			
+<h1>HTML DOM <span class="color_h1">HTMLElement</span> Object</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_obj_event.asp">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_obj_anchor.asp">Next Reference &raquo;</a></div>
+</div>
+<hr>
+
+<h2>HTMLElement Object</h2>
+<p>The following properties, and methods can be used on all HTML elements.</p>
+<p><strong>Note:</strong> All elements can also use the properties/methods of the <a href="dom_obj_node.asp">Node object</a> and the <a href="dom_obj_element.asp">Element object</a>.</p>
+
+<hr>
+
+<h2>Properties</h2>
+<table class="reference notranslate">
+  <tr>
+    <th width="28%" align="left">Property</th>
+    <th width="65%" align="left">Description</th>
+    <th width="7%" align="left">W3C</th>
+  </tr>
+  <tr>
+    <td><a href="prop_html_accesskey.asp">accessKey</a></td>
+    <td>Sets or returns an accesskey for an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><a href="prop_html_classname.asp">className</a></td>
+    <td>Sets or returns the class attribute of an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>clientHeight</td>
+    <td>Returns the viewable height of the content on a page (not including 
+	borders, margins, or scrollbars)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>clientWidth</td>
+    <td>Returns the viewable width of the content on a page (not including 
+	borders, margins, or scrollbars)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td><a href="prop_html_dir.asp">dir</a></td>
+    <td>Sets or returns the text direction of an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><a href="prop_html_id.asp">id</a></td>
+    <td>Sets or returns the id of an element</td>
+    <td>Yes</td>
+  </tr>
+	<tr>
+    <td><a href="prop_html_innerhtml.asp">innerHTML</a></td>
+    <td>Sets or returns the HTML contents (+text) of an element</td>
+    <td>Yes</td>
+  </tr>
+	<tr>
+    <td><a href="prop_html_lang.asp">lang</a></td>
+    <td>Sets or returns the language code for an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>offsetHeight</td>
+    <td>Returns the height of an element, including borders and padding if any, 
+	but not margins</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>offsetLeft</td>
+    <td>Returns the horizontal offset position of the current element relative 
+	to its offset container</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>offsetParent</td>
+    <td>Returns the offset container of an element</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>offsetTop</td>
+    <td>Returns the vertical offset position of the current element relative to 
+	its offset container</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>offsetWidth</td>
+    <td>Returns the width of an element, including borders and padding if any, 
+	but not margins</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>scrollHeight</td>
+    <td>Returns the entire height of an element (including areas hidden with 
+	scrollbars)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>scrollLeft</td>
+    <td>Returns the distance between the actual left edge of an element and its 
+	left edge currently in view</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>scrollTop</td>
+    <td>Returns the distance between the actual top edge of an element and its 
+	top edge currently in view</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>scrollWidth</td>
+    <td>Returns the entire width of an element (including areas hidden with 
+	scrollbars)</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>Sets or returns the style attribute of an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><a href="prop_html_tabindex.asp">tabIndex</a></td>
+    <td>Sets or returns the tab order of an element</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><a href="prop_html_title.asp">title</a></td>
+    <td>Sets or returns the title attribute of an element</td>
+    <td>Yes</td>
+  </tr>
+  </table>
+
+<h2>HTMLElement Methods</h2>
+<table class="reference notranslate">
+  <tr>
+    <th align="left" width="28%">Method</th>
+    <th align="left" width="65%">Description</th>
+    <th align="left" width="7%">W3C</th>
+  </tr>
+	<tr>
+    <td>toString()</td>
+    <td>Converts an element to a string</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+<br>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_obj_event.asp">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_obj_anchor.asp">Next Reference &raquo;</a></div>
+</div>
+
+			<hr />
+			
+			<!-- SmallPS -->
+			<div id='div-gpt-ad-1343810007679-4' style='width:720px;margin-left:auto;margin-right:auto;'>
+				<script>
+				googletag.display('div-gpt-ad-1343810007679-4');
+				</script>
+			</div>
+			<!-- LargePS -->
+			<div id='div-gpt-ad-1343810007679-1' style='width:720px;margin-left:auto;margin-right:auto;'>
+				<script>
+				googletag.display('div-gpt-ad-1343810007679-1');
+				</script>
+			</div>
+			<!-- BottomMediumRectangle -->
+			<div id='div-gpt-ad-1362650798669-0' style='width:300px; height:250px;margin-left:auto;margin-right:auto;'>
+				<script type='text/javascript'>
+				googletag.display('div-gpt-ad-1362650798669-0');
+				</script>
+			</div>
+			
+			<div id="err_form">
+				<h2>Your suggestion:</h2>
+				<p><label for="err_email">Your E-mail (optional):</label> <input type="text" id="err_email" name="err_email" /></p>
+				<p><label for="err_url">Page address:</label> <input type="text" disabled="disabled" id="err_url" name="err_url" /></p>
+				<p><label for="err_desc">Description:</label> <textarea name="err_desc" id="err_desc" cols="92" rows="20"></textarea></p>
+				<p class="submit"><input type="button" value="Submit" onclick="sendErr()" /></p>
+				<div class="err_close" onclick="hideError()">Close [X]</div>
+			</div>
+			<div id="err_sent">
+				<h2>Thank You For Helping Us!</h2>
+				<p>Your message has been sent to W3Schools.</p>
+				<div class="err_close" onclick="hideSent()">Close [X]</div>
+			</div>
+		</div>
+		
+		<div id="rightcolumn">
+			<div class="rightad">
+				<h2>WEB HOSTING</h2>
+				<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/id/w3schools/goto/w3schools">Best Web Hosting</a>
+				<a target="_blank" rel="nofollow" href="http://www.eukhost.com">eUK Web Hosting</a>
+				<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk">UK Reseller Hosting</a>
+				<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/cloud-hosting.php">Cloud Hosting</a>
+			</div>
+			<div class="rightad">
+				<h2>WEB BUILDING</h2>
+				
+				<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text2&amp;q=xmlspy">XML Editor - Free Trial!</a>
+				
+				<a target="_blank" rel="nofollow" href="http://www.wix.com/eteamhtml/400?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_w3schools.comlink1_400Html&amp;embed_tags=camp&amp;utm_camp=hOUdCO-AmAMQm__j8AM">FREE Website BUILDER</a>
+				<a target="_blank" rel="nofollow" href="http://www.wix.com/eteamhtml/complete-solution?utm_campaign=ma_w3schools.com&experiment_id=ma_w3schools.comlink2_CS">FREE Website Creator</a>
+			</div>
+			<div class="rightad">
+				<h2>STATISTICS</h2>
+				<a target="_top" href="/browsers/browsers_stats.asp">Browser Statistics</a>
+				<a target="_top" href="/browsers/browsers_os.asp">OS Statistics</a>
+				<a target="_top" href="/browsers/browsers_display.asp">Display Statistics</a>
+			</div>
+			<div style="padding-left:1px;">
+				<!-- WideSkyScraper -->
+				<div id='div-gpt-ad-1357306838470-0' class="wideSkyscraper">
+					<script type='text/javascript'>
+					googletag.display('div-gpt-ad-1357306838470-0');
+					</script>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div id="footer">
+			<br>
+			<hr style="height:2px;">
+			<table id="bottomlinks"><tr>
+			<td valign="top">
+			<h3>Top 10 Tutorials</h3>
+			<a href="/html/default.asp"><span class="bottomlinksraquo">&raquo;</span> HTML Tutorial</a><br>
+			<a href="/html/html5_intro.asp"><span class="bottomlinksraquo">&raquo;</span> HTML5 Tutorial</a><br>
+			<a href="/css/default.asp"><span class="bottomlinksraquo">&raquo;</span> CSS Tutorial</a><br>
+			<a href="/css3/default.asp"><span class="bottomlinksraquo">&raquo;</span> CSS3 Tutorial</a><br>
+			<a href="/js/default.asp"><span class="bottomlinksraquo">&raquo;</span> JavaScript Tutorial</a><br>
+			<a href="/jquery/default.asp"><span class="bottomlinksraquo">&raquo;</span> jQuery Tutorial</a><br>
+			<a href="/sql/default.asp"><span class="bottomlinksraquo">&raquo;</span> SQL Tutorial</a><br>
+			<a href="/php/default.asp"><span class="bottomlinksraquo">&raquo;</span> PHP Tutorial</a><br>
+			<a href="/aspnet/default.asp"><span class="bottomlinksraquo">&raquo;</span> ASP.NET Tutorial</a><br>
+			<a href="/xml/default.asp"><span class="bottomlinksraquo">&raquo;</span> XML Tutorial</a><br>
+			</td>
+			<td valign="top">
+			<h3>Top 10 References</h3>
+			<a href="/tags/default.asp"><span class="bottomlinksraquo">&raquo;</span> HTML/HTML5 Reference</a><br>
+			<a href="/cssref/default.asp"><span class="bottomlinksraquo">&raquo;</span> CSS 1,2,3 Reference</a><br>
+			<a href="/cssref/css3_browsersupport.asp"><span class="bottomlinksraquo">&raquo;</span> CSS 3 Browser Support</a><br>
+			<a href="/jsref/default.asp"><span class="bottomlinksraquo">&raquo;</span> JavaScript</a><br>
+			<a href="/jsref/default.asp"><span class="bottomlinksraquo">&raquo;</span> HTML DOM</a><br>
+			<a href="/dom/dom_nodetype.asp"><span class="bottomlinksraquo">&raquo;</span> XML DOM</a><br>
+			<a href="/php/php_ref_array.asp"><span class="bottomlinksraquo">&raquo;</span> PHP Reference</a><br>
+			<a href="/jquery/jquery_ref_selectors.asp"><span class="bottomlinksraquo">&raquo;</span> jQuery Reference</a><br>
+			<a href="/aspnet/webpages_ref_classes.asp"><span class="bottomlinksraquo">&raquo;</span> ASP.NET Reference</a><br>
+			<a href="/tags/ref_colornames.asp"><span class="bottomlinksraquo">&raquo;</span> HTML Colors</a><br>
+			</td>
+			<td valign="top">
+			<h3>Examples</h3>
+			<a href="/html/html_examples.asp"><span class="bottomlinksraquo">&raquo;</span> HTML Examples</a><br>
+			<a href="/css/css_examples.asp"><span class="bottomlinksraquo">&raquo;</span> CSS Examples</a><br>
+			<a href="/xml/xml_examples.asp"><span class="bottomlinksraquo">&raquo;</span> XML Examples</a><br>
+			<a href="/js/js_examples.asp"><span class="bottomlinksraquo">&raquo;</span> JavaScript Examples</a><br>
+			<a href="/htmldom/dom_examples.asp"><span class="bottomlinksraquo">&raquo;</span> HTML DOM Examples</a><br>
+			<a href="/dom/dom_examples.asp"><span class="bottomlinksraquo">&raquo;</span> XML DOM Examples</a><br>
+			<a href="/ajax/ajax_examples.asp"><span class="bottomlinksraquo">&raquo;</span> AJAX Examples</a><br>
+			<a href="/aspnet/aspnet_examples.asp"><span class="bottomlinksraquo">&raquo;</span> ASP.NET Examples</a><br>
+			<a href="/aspnet/webpages_examples.asp"><span class="bottomlinksraquo">&raquo;</span> Razor Examples</a><br>
+			<a href="/asp/asp_examples.asp"><span class="bottomlinksraquo">&raquo;</span> ASP Examples</a><br>
+			<a href="/svg/svg_examples.asp"><span class="bottomlinksraquo">&raquo;</span> SVG Examples</a>
+			</td>
+			<td valign="top">
+			<h3>Quizzes</h3>
+			<a href="/quiztest/quiztest.asp?qtest=HTML"><span class="bottomlinksraquo">&raquo;</span> HTML Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=HTML5"><span class="bottomlinksraquo">&raquo;</span> HTML5 Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=XHTML"><span class="bottomlinksraquo">&raquo;</span> XHTML Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=CSS"><span class="bottomlinksraquo">&raquo;</span> CSS Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=JavaScript"><span class="bottomlinksraquo">&raquo;</span> JavaScript Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=jQuery"><span class="bottomlinksraquo">&raquo;</span> jQuery Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=XML"><span class="bottomlinksraquo">&raquo;</span> XML Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=ASP"><span class="bottomlinksraquo">&raquo;</span> ASP Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=PHP"><span class="bottomlinksraquo">&raquo;</span> PHP Quiz</a><br>
+			<a href="/quiztest/quiztest.asp?qtest=SQL"><span class="bottomlinksraquo">&raquo;</span> SQL Quiz</a><br>
+			</td>
+			<td valign="top">
+			<h3>Color Picker</h3>
+			<a href="/tags/ref_colorpicker.asp">
+			<img src="/images/colormap_80.gif" alt="colorpicker" /></a>
+			<h3 style="margin-top:20px">Statistics</h3>
+			<a href="/browsers/browsers_stats.asp"><span class="bottomlinksraquo">&raquo;</span> Browser Statistics</a><br>	
+			<a href="/browsers/browsers_os.asp"><span class="bottomlinksraquo">&raquo;</span> Browser OS</a><br>			
+			<a href="/browsers/browsers_display.asp"><span class="bottomlinksraquo">&raquo;</span> Browser Display</a>			
+			</td>
+			</tr></table>
+			<br>
+			<hr style="height:2px;">
+			<div id="footerImg"><a href="http://www.w3schools.com">
+				<img style="border:0" src="/images/w3schoolscom_gray.gif" alt="W3Schools.com" /></a>
+			</div>
+			<div id="footerAbout">
+				<a href="" onclick="displayError();return false" style="word-spacing:normal;">REPORT ERROR</a> |
+				<a href="/default.asp" target="_top">HOME</a> |
+				<a href="#top" target="_top">TOP</a> |
+				<a href='/jsref/dom_obj_all.asp?output=print' target="_blank">PRINT</a> |
+				<a href="/forum/default.asp" target="_blank">FORUM</a> |
+				<a href="/about/default.asp" target="_top">ABOUT</a> |
+				<a href="/about/about_advert.asp" target="_top" style="word-spacing:normal;">ADVERTISE WITH US</a>
+			</div>
+			<div id="footerText">
+				W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.<br>
+				Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.<br>
+				While using this site, you agree to have read and accepted our
+				<a href="/about/about_copyright.asp">terms of use</a> and
+				<a href="/about/about_privacy.asp">privacy policy</a>.<br>
+				<a href="/about/about_copyright.asp">Copyright 1999-2013</a> by Refsnes Data. All Rights Reserved.<br><br>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,    
+    gaTrack: true,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=favicon.ico
+Content-Type: image/x-icon; name=favicon.ico
+Content-Location: http://www.w3schools.com/favicon.ico
+Content-Transfer-Encoding: Base64
+
+AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAQAEAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAA////AEG1iACi28UAccimAM7s4QAqrHoAV72WALnj
+0wCO07gA7PfzAN3x6QCAzbAAZMKeADSwgABNupAA9fv5AMXo2wB5y6sA1u/lALLh
+zwBqxaIAnNjBADqyhABcwJoARreLAFK7kwDx+fYA4fPsAMHm2ACS1LsAMK5+AITP
+sgD5/PsAvOXVAD60hgC14tEAdMmoACytfABDtooASLiNAGbDoADb8OgAbMajAG/H
+pQD3/PoAOLKDAFC7kgC349IAYsKdAP7+/gA7s4UAW7+ZADGvfgA/tIcAM7CAADuz
+hACO07kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJCgjAjY2NjYCNgICIzMPMCgX
+AjY2NjY2AgIXDignJhkjAjY2AjY2NgIXKREyLTAPAiMCNjY2NgIXGhAtFCIyCwIC
+JwICAgIZDhYyKwYGFjICFzcfFwIXNyYHJQInNyUyDjEeHjEmBwk5Dx8nFyMRMh4h
+MjIhAwoyMhAEJgMyMjIyHQ8vETIFDxgKGwIgCzIyKjQOHywyBDUfEhMYNQ4RMhc2
+AiMPOQ8CIxUIGjgmHjICNgICIzUjAg4NMggnGhwtAjYCIwICAgICDgMyMjItDCMC
+IwICNjYCAgIOKR45Bw4oFwICNjYCNiMCAi41Nw4PJCgjAjYCIzY2NgICJwIPIgAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAA=
+
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=stdtheme.css
+Content-Type: text/css; charset=utf-8; name=stdtheme.css
+Content-Location: http://www.w3schools.com/stdtheme.css
+Content-Transfer-Encoding: 8bit
+
+﻿/*
+Orange:			EE872A
+Green:			8AC007
+Lightgreen:		e5eecc
+Blue:			40B3DF
+DarkGreyBg:		555555
+LightGreyBg:	F6F4F0
+GreyBorder:		D4D4D4
+Pink:			B4009E
+*/
+
+html{overflow-y:scroll;}
+
+body{
+font-size:12px;
+color:#000000;
+background-color:#F6F4F0;
+margin:0px;
+}
+
+p,td,ul{
+line-height:140%;
+}
+
+body,p,h1,h2,h3,h4,table,td,th,ul,ol,textarea,input{
+font-family:verdana,helvetica,arial,sans-serif;
+}
+
+iframe 	{margin:0px;}
+img		{border:0;}
+
+table,th,td,input,textarea{
+font-size:100%;
+}
+
+h1 {font-size:210%;margin-top:0px;font-weight:normal}
+h2 {font-size:180%;margin-top:10px;margin-bottom:10px;font-weight:normal}
+h3 {font-size:120%;font-weight:normal}
+h4 {font-size:100%;}
+h5 {font-size:90%;}
+h6 {font-size:80%;}
+
+h1,h2,h3,h4,h5,h6{
+background-color:transparent;
+color:#000000;
+}
+
+#top{
+width:1098px;margin:auto;
+}
+
+#topLogo{
+width:340px;text-align:left;float:left;
+}
+
+#searchTranslate{
+float:right;margin-bottom:5px;position:relative;width:600px;height:20px;margin-top:25px;margin-right:0px;text-align:left;
+}
+
+#searchText{
+float:right;color:#777777;width:235px;font-size:11px;font-style:italic;padding-top:3px;
+}
+
+#googleSearch{
+position:absolute;top:15px;right:0px;margin:0;padding:0;font-size:10px;width:245px;
+}
+
+#google_translate_element
+{
+float:right;width:150px;position:absolute;right:260px;top:16px;
+}
+
+#topnav{
+height:25px;background-color:#d3d3d3;border:1px solid #d3d3d3;border-top-right-radius:2px;border-top-left-radius:2px;
+}
+
+#topnavTut{
+float:left;width:400px;word-spacing:12px;font-size:90%;padding-left:15px;padding-top:6px;white-space:nowrap;
+}
+
+#topnavAbout{
+float:right;width:280px;word-spacing:6px;font-size:80%;padding-right:13px;padding-top:7px;color:#888888;white-space:nowrap;text-align:right;
+}
+
+a.topnav:link,a.topnav:visited {color:#555555;text-decoration:none;}
+a.topnav:hover,a.topnav:active {color:#ff4800;text-decoration:none;}
+
+#page{
+border-left:1px solid #d3d3d3;border-right:1px solid #d3d3d3;background-color:#ffffff;
+}
+
+div.topLeftRectangle{
+float:left;width:170px; height:90px;margin-top:10px;margin-right:4px;margin-left:10px;overflow:hidden;
+}
+
+#mainLeaderboard{
+width:728px;height:90px;float:left;margin-top:10px;margin-left:5px;margin-right:5px;overflow:hidden;
+}
+
+#topRight{
+float:left;width:160px;margin-right:5px;margin-top:10px;margin-left:4px;
+}
+
+#leftcolumn{
+width:170px;float:left;margin-top:5px;margin-right:4px;margin-left:10px;padding-top:5px;background-color:#ffffff;
+}
+
+#leftcolumn h2{font-size:15px;font-weight:normal;}
+
+#leftcolumn a:link,#leftcolumn a:visited,#leftcolumn a:hover,#leftcolumn a:active{
+	background-color:#F6F4F0;color:#000000;text-decoration:none;display:block;padding:2px;border:1px solid #e5e5e5;margin-top:1px;border-radius:2px;
+}
+#leftcolumn a:hover,#leftcolumn a:active{
+	background-color:#ffffff;
+}
+
+#main{
+width:723px;float:left;margin:7px;margin-bottom:0px;overflow:hidden;background-color:#ffffff;
+}
+
+#rightcolumn {
+	font-size:11px;padding-top:8px;
+	float:left;width:160px;margin:5px;margin-left:5px;margin-top:2px;background-color:#ffffff;
+}
+
+#rightcolumn h2,#rightshare h2{
+	font-size:12px;margin-top:3px;font-weight:bold;
+}
+
+#rightcolumn .rightad a:link,#rightcolumn .rightad a:visited,#rightcolumn .rightad a:hover,#rightcolumn .rightad a:active{
+	text-decoration:none;display:block;color:#222222;margin-bottom:5px;border-top:2px solid #ffffff;padding-top:3px;
+}
+
+#rightcolumn .rightad a:hover,#rightcolumn .rightad a:active{
+	text-decoration:underline;
+}
+
+#rightcolumn .rightad, #rightshare{
+	background-color:#F6F4F0;border:1px solid #d4d4d4;border-radius:2px;margin-bottom:13px;padding:5px;
+	width:150px;text-align:center;
+}
+
+div.wideSkyscraper{
+width:160px;height:600px;margin:auto;margin-top:0;overflow:hidden;
+}
+
+#footer
+{
+width:95%;
+margin:auto;
+color:#909090;
+font-size:90%;
+text-align:center;
+}
+
+#footerImg{
+float:left;width:200px;text-align:left;padding-left:3px;padding-top:11px;
+}
+
+#footerAbout{
+word-spacing:6px;font-size:80%;padding-right:12px;padding-top:19px;float:right;width:600px;text-align:right;
+}
+
+#footerText{
+padding-top:13px;color:#404040;clear:both;
+}
+
+#footer a:link,#footer a:visited {text-decoration:none;color:#404040;background-color:transparent}
+#footer a:hover,#footer a:active {text-decoration:underline;color:#404040;background-color:transparent}
+
+div.example
+{
+width:711px;
+color:#000000;
+background-color:#F6F4F0;
+background-color:#D0E69C;
+background-color:#DCECB5;
+background-color:#e5eecc;
+margin:0px;
+padding:5px;
+border:1px solid #d4d4d4;
+background-image:-webkit-linear-gradient( #ffffff , #e5eecc 100px);
+/*background-image:-webkit-linear-gradient( #ffffff , #E8F2CD 100px);
+background-image:-webkit-linear-gradient( #ffffff , #DCECB5 100px);*/
+background-image:linear-gradient( #ffffff , #e5eecc 100px);
+}
+
+div.example_code
+{
+width:98%;
+background-color:#ffffff;
+padding:5px;
+border:1px solid #d4d4d4;
+font-size:110%;
+font-family:"courier new";
+}
+
+div.example_result
+{
+background-color:#ffffff;
+padding:4px;
+border:1px solid #d4d4d4;
+width:98%;
+}
+
+div.code
+{
+width:711px;
+border:1px solid #d4d4d4;
+background-color:#F6F4F0;
+color:#444444;
+padding:5px;
+margin:0;
+}
+
+div.code div
+{
+font-size:110%;
+}
+
+div.example_code p,div.code p,div.code div
+{
+font-family:"courier new";
+}
+
+div.tryit_ex
+{
+clear:both;
+width:600px;
+height:50px;
+margin-bottom:5px
+}
+
+div.tryit_ex img
+{
+border:0;
+float:left;
+margin-right:10px
+}
+
+div.tryit_ex h2
+{
+padding-top:5px
+}
+
+table.lamp
+{
+width:100%;
+padding:0px;
+border:1px solid #d4d4d4;
+}
+
+table.lamp th
+{
+color:#000000;
+background-color:white;
+padding:10px;
+padding-right:5px;
+}
+
+table.lamp td
+{
+padding:4px;
+padding-left:0px;
+padding-right:10px;
+background-color:#ffffff;
+}
+
+table.tecspec th,table.tecspec td{
+	border:1px solid #d4d4d4;padding:5px;padding-top:7px;padding-bottom:7px;vertical-align:top;text-align:left;
+}
+
+table.reference,table.tecspec{
+	border-collapse:collapse;width:100%;
+}
+
+table.reference tr:nth-child(odd)	{background-color:#F6F4F0;}
+table.reference tr:nth-child(even)	{background-color:#ffffff;}
+
+table.reference tr.fixzebra			{background-color:#F6F4F0;}
+
+table.reference th{
+	color:#ffffff;background-color:#555555;border:1px solid #555555;font-size:12px;padding:3px;vertical-align:top;text-align:left;
+}
+
+table.reference th a:link,table.reference th a:visited{
+	color:#ffffff;
+}
+
+table.reference th a:hover,table.reference th a:active{
+	color:#EE872A;
+}
+
+table.reference td{
+	border:1px solid #d4d4d4;padding:5px;padding-top:7px;padding-bottom:7px;vertical-align:top;
+}
+
+table.reference td.example_code
+{
+vertical-align:bottom;
+}
+
+table.summary
+{
+border:1px solid #d4d4d4;
+padding:5px;
+font-size:100%;
+color:#555555;
+background-color:#fafad2;
+}
+
+h2.example,h2.example_head
+{
+color:#444444;
+color:#617f10;
+background-color:transparent;
+margin-top:0px;
+}
+
+h2.example {font-size:120%;}
+h2.example_head {font-size:140%;}
+
+h2.home
+{
+margin-top:0px;
+margin-bottom:5px;
+font-size:120%;
+padding-top:1px;
+padding-bottom:1px;
+padding-left:1px;
+color:#900B09;
+background-color:#ffffff;
+}
+
+h2.tutheader
+{
+margin:0px;
+padding-top:5px;
+border-top:1px solid #d4d4d4;
+clear:both;
+}
+
+h2.left
+{
+color:#404040;
+background-color:#ffffff;
+font-size:120%;
+margin-bottom:4px;
+padding-bottom:0px;
+margin-top:0px;
+padding-top:0px;
+font-weight:bold;
+}
+
+span.marked 	{color:#e80000;background-color:transparent;}
+span.deprecated {color:#e80000;background-color:transparent;}
+
+p.tutintro
+{
+margin-top:0px;
+font-size:125%;
+}
+
+div.tutintro
+{
+width:711px;
+}
+
+div.tutintro img
+{
+float:left;
+margin-right:20px;
+margin-bottom:10px;
+}
+div.tutintro p
+{
+margin-top:0px;
+font-size:125%;
+}
+
+p.intro
+{
+font-size:120%;
+color:#404040;
+background-color:transparent;
+margin-top:10px;
+}
+
+pre
+{
+font-family:"courier new";
+font-size:110%;
+margin-left:0;
+margin-bottom:0;
+}
+
+img.float {float:left;}
+img.navup
+{
+vertical-align:middle;
+height:22px;
+width:18px;
+}
+
+hr
+{
+background-color:#d4d4d4;
+color:#d4d4d4;
+height:1px;
+border:0px;
+clear:both;
+}
+
+a.example {font-weight:bold}
+
+a:link,a:visited {color:#B72801; background-color:transparent}
+a:hover,a:active {color:#E97700; background-color:transparent}
+
+a:link,a:visited {color:#000000; background-color:transparent}
+a:hover,a:active {color:#B72801; background-color:transparent}
+
+
+a.plain:link,a.plain:visited {text-decoration:none;color:#900B09;background-color:transparent}
+a.plain:hover,a.plain:active {text-decoration:underline;color:#FF0000;background-color:transparent}
+
+a.header:link,a.header:visited {text-decoration:none;color:black;background-color:transparent}
+a.header:hover,a.header:active {text-decoration:underline;color:black;background-color:transparent}
+
+table.sitemap a:link,table.sitemap a:visited {text-decoration:none;color:black;background-color:transparent}
+table.sitemap a:hover,table.sitemap a:active {text-decoration:underline;color:black;background-color:transparent}
+
+
+.toprect_txt a:link,.toprect_txt a:visited {text-decoration:none;color:#900B09;background-color:transparent}
+.toprect_txt a:hover,.toprect_txt a:active {text-decoration:underline;color:#FF0000;background-color:transparent}
+
+
+a.m_item:link,a.m_item:visited {text-decoration:none;color:white; background-color:transparent}
+a.m_item:hover,a.m_item:active {text-decoration:underline;color:white; background-color:transparent}
+
+a.chapter:link    {text-decoration:none;color:#8AC007;background-color:transparent}
+a.chapter:visited {text-decoration:none;color:#8AC007;background-color:transparent}
+a.chapter:hover   {text-decoration:underline;color:#8AC007;background-color:transparent}
+a.chapter:active  {text-decoration:none;color:#8AC007;background-color:transparent}
+
+a.tryitbtn,a.tryitbtn:link,a.tryitbtn:visited,a.showbtn,a.showbtn:link,a.showbtn:visited
+{
+display:inline-block;
+color:#FFFFFF;
+background-color:#8AC007;
+font-weight:bold;
+font-size:12px;
+text-align:center;
+padding-left:10px;
+padding-right:10px;
+padding-top:3px;
+padding-bottom:4px;
+text-decoration:none;
+margin-left:5px;
+margin-top:0px;
+margin-bottom:5px;
+border:1px solid #aaaaaa;
+border-radius:5px;
+white-space:nowrap;
+}
+
+a.tryitbtn:hover,a.tryitbtn:active,a.showbtn:hover,a.showbtn:active
+{
+background-color:#ffffff;color:#8AC007;
+}
+
+a.playitbtn,a.playitbtn:link,a.playitbtn:visited
+{
+display:inline-block;
+color:#ffffff;
+background-color:#FFAD33;
+border:1px solid #FFAD33;
+font-weight:bold;
+font-size:11px;
+text-align:center;
+padding:10px;
+padding-top:1px;
+padding-bottom:2px;
+text-decoration:none;
+margin-left:1px;
+border-radius:5px;
+white-space:nowrap;
+}
+
+a.playitbtn:hover,a.playitbtn:active
+{
+background-color:#ffffff;color:#FFAD33;
+}
+
+a.tryitbtnsyntax:link,a.tryitbtnsyntax:visited,a.tryitbtnsyntax:active,a.tryitbtnsyntax:hover
+{
+font-family:verdana;
+float:right;
+padding-top:0px;
+padding-bottom:2px;
+background-color:#8AC007;;
+border:1px solid #aaaaaa;
+}
+
+a.tryitbtnsyntax:active,a.tryitbtnsyntax:hover
+{
+color:#8AC007;;
+background-color:#ffffff;
+}
+
+table.chapter 
+{
+font-size:140%;margin:0px;padding:0px;padding-left:3px;padding-right:3px;
+}
+table.chapter td.prev {text-align:left;}
+table.chapter td.next {text-align:right;}
+
+div.chapter 
+{
+font-size:140%;margin:0px;padding:0px;width:100%;height:20px;
+}
+
+div.chapter div.prev {width:40%;float:left;text-align:left;}
+div.chapter div.next {width:48%;float:right;text-align:right;}
+
+span.color_h1 {color:#8AC007;}
+span.left_h2 {color:#8AC007;}
+
+span.new
+{
+float:right;
+color:#FFFFFF;
+background-color:#8AC007;
+font-weight:bold;
+padding-left:1px;
+padding-right:1px;
+border:1px solid #ffffff;
+outline:1px solid #8AC007;
+}
+
+.notsupported,.notsupported:hover,.notsupported:active,.notsupported:visited,.notsupported:link
+{
+color:rgb(197,128,128)
+}
+
+#err_form, #err_sent
+{
+color:#000000;
+background-color:#F6F4F0;
+border:1px solid #d4d4d4;
+background-repeat:repeat-x;
+padding:10px;
+padding-bottom:0px;
+width:95%;
+z-index:1;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+display:none;
+position:relative;
+}
+
+#err_form h2, #err_sent h2
+{
+margin-top:0px;	
+}
+#err_form label
+{
+display:block;
+margin-bottom:3px;
+}
+#err_form input
+{
+border:1px solid gray;
+width:590px;
+height:16px;
+display:block;
+padding:4px;
+}
+#err_form textarea
+{
+border:1px solid gray;
+width:590px;
+height:100px;
+padding:4px;
+display:block;
+}
+#err_form .submit input
+{
+border:1px solid gray;
+width:100px;
+height:18px;
+padding:0px;
+padding-bottom:2px;
+}
+.err_close
+{
+width:58px;
+padding:0px;
+position:absolute;
+top:5px;
+right:5px;
+text-decoration:underline;
+cursor:pointer;
+}
+
+table#bottomlinks
+{
+border:none;
+width:100%;
+}
+
+#bottomlinks td
+{
+text-align:left;
+padding:10px;
+}
+
+.bottomlinksraquo
+{
+font-weight:bold;
+color:#ff4800;
+}
+
+#bottomlinks h3
+{
+font-size:14px;
+font-weight:bold;
+color:#555555;
+}
+
+#bottomlinks a
+{
+font-size:11px;
+color:#555555;
+text-decoration:none;
+}
+
+.expandingMenu
+{
+width:170px;
+overflow:hidden;
+}
+
+.expandingMenuItem
+{
+width:158px;
+padding-left:12px;
+margin-top:1px;
+margin-bottom:0px;
+}
+
+.expandingMenuSelected
+{
+background-image:url('images/minus_arrow.gif');
+background-repeat:no-repeat;
+background-position:1px 7px;
+background-color:#F6F4F0;
+border:1px solid #e5e5e5;
+border-radius:2px;
+margin-top:1px;
+}
+
+.expandingMenuNotSelected
+{
+background-image:url('images/plus_arrow.gif');
+background-repeat:no-repeat;
+background-position:1px 7px;
+padding:0px;
+margin-top:0px;
+margin-bottom:0px;
+}
+
+#leftcolumn .expandingMenuHeader{
+	width:152px;cursor:pointer;background-color:#F6F4F0;color:#000000;text-decoration:none;margin-left:12px;margin-top:1px;margin-bottom:0px;padding:2px;border:1px solid #e5e5e5;border-radius:2px;	
+}
+#leftcolumn .expandingMenuHeader:hover{
+	background-color:#ffffff;
+}
+
+#leftcolumn div.expandingMenuSelected a:link, #leftcolumn div.expandingMenuSelected a:visited
+{
+background-color:#ffffff;
+border:1px solid #e5e5e5;
+margin-bottom:0px;
+}
+
+#leftcolumn div.expandingMenuItem a:link, #leftcolumn div.expandingMenuItem a:visited,#leftcolumn div.expandingMenuItem a:hover, #leftcolumn div.expandingMenuItem a:active
+{
+margin-bottom:0px;
+}
+
+#leftcolumn div.expandingMenuSelected a:hover, #leftcolumn div.expandingMenuSelected a:active
+{
+text-decoration:underline;
+}
+
+#leftcolumn div.expandingMenuSelected .expandingMenuHeader
+{
+background-color:transparent;
+border:1px solid transparent;
+}
+
+#leftcolumn div.expandingMenuSelected .expandingMenuItem
+{
+width:160px;
+padding-left:5px;
+margin-bottom:3px;
+}
+
+#as_q
+{
+border:1px solid #d4d4d4;padding:0px;height:20px;width:150px;margin:0px;padding-left:2px;
+}
+
+div#google_translate_element .goog-te-gadget-simple
+{
+margin-top:2px;height:25px;padding:0px;border:1px solid #d9d9d9;
+}
+
+#google_translate_element a
+{
+font-size:11px;
+color:#808080;
+text-decoration:none;
+font-family:verdana;
+padding-top:0px;
+}
+
+#google_translate_element a:hover
+{
+color:#222222;
+}
+
+div.cse .gsc-control-cse, div.gsc-control-cse {
+background-color: transparent;
+border: none;
+padding:0px;
+margin:0px;
+}
+
+.cse input.gsc-search-button, input.gsc-search-button {
+border: 1px solid #666;
+background-color: #555555;
+background-image:none;
+}
+
+div.gsc-selected-option-container {
+max-width: 50%;
+padding: 0;
+}
+
+div.gsc-option-menu {
+width: 200px;
+}
+
+div.gsc-option-menu-item {
+width: 140px;
+}
+
+td.gsc-search-button input.gsc-search-button {
+border-color: #555555;
+background-color: #555555;
+background-image: none;
+}
+
+div.goog-te-gadget-simple {
+font-size: 11pt;
+}
+
+img.goog-te-gadget-icon {
+margin-top: 3px;
+}
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=w3schoolslogoNEW310113.gif
+Content-Type: image/gif; name=w3schoolslogoNEW310113.gif
+Content-Location: http://www.w3schools.com/images/w3schoolslogoNEW310113.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODlhUAFFAOYAAPb18JDBQFRUU5eTkXNxb8LYlsG9u6rMa/Ty7pbDSfDx5dzl
+ws/frLzVjLbSgunt2ubk4Z3GU6PJYPLw7Orn5O7s6Obj4KunpVxbWq/Pd8zJx+Pp
+zWNhYISBf9bit97b2ejm49za1tjW08ncoeLg3I6KiLayr93a1+zp5WtpZ/Du6uzq
+53x4d9PRzqGdm9HPzOXj39fV0trY1eHe29/d2uPi3tbU0dPQzc7LyNnW09XT0MzK
+x9DOy9HOy9LQzNXSz87MydLQzd7c2e3r6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAABQAUUAAAf/gACCg4SFhoeIiQAPHg0H
+AZASDQ+KlZaXmJmam5ydnp+goaKjpJoLBRkRkKusCQylsLGys7S1tre4iwwNEqy+
+vwEbucPExcbHyLOnGQnAzr4HydLT1NXWpQ+7vc/cv8LX4OHi48QKy83d6b8F5O3u
+7/CVGwwO2+r3v9Hx+/z9yeYFDqDDRxCYv4MIE45SQM9eQXwRDkgcCOmbwosYMxJS
+0IDiQ3UZPCgo9KAAuhEaU6r0t0HVR3wHKCVSkCGAg5U4c45T4PKlOpSXHETQSbSo
+tAI+773KlGGk0adQbTlM6qxBIQUjMkjMsOCqzKhgw4qi2i2BU0EbPNoUy7ZtKLLc
+/6wOeqAWEtBqBgTo3cu3LwEXFpIN4DvgXV8Dbi/BfdZ1kINnQ63l7Uu5LwYNyAbv
+LezucGJLjxb/KlR3lcVpkyurFoAhsDHNejm38/xZUQPRowl1a0wt9erKsonBFhB8
+HO3aiBjg9jXXw25rFgxIn07dgAsClFMcG15c3HHkhh4sZ5W1J7fT8FhQ3k7YMF/E
+4BGVxi3xmT5PA/LnL2RA/wD4g/jXnSImrFeIBi4IqOAFiESnoH4iCDIcAQqa4Foi
+FlzQAQEcEsCCCxFWYkIJHXI4AGaHfCcIgg/6x2AmpxQg44wy8kYIPRLlWMBXhdDo
+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
+FwgAOw==
+
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=colormap_80.gif
+Content-Type: image/gif; name=colormap_80.gif
+Content-Location: http://www.w3schools.com/images/colormap_80.gif
+Content-Transfer-Encoding: Base64
+
+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
+8IIwGIMwyIL7cGggeINYFxAAOw==
+
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=w3schoolscom_gray.gif
+Content-Type: image/gif; name=w3schoolscom_gray.gif
+Content-Location: http://www.w3schools.com/images/w3schoolscom_gray.gif
+Content-Transfer-Encoding: Base64
+
+R0lGODlhlgAcAOZVAKqqqrOzs/7+/s7Ozv39/crKyrKyssfHx7q6uvv7+/z8/Pr6
++tXV1fX19c3Nzfj4+LCwsPn5+fb29vPz88nJybu7u8bGxq2trb+/v9PT09DQ0MPD
+w7y8vLm5ufDw8LS0tLGxsczMzK6urunp6aurq+vr69nZ2c/Pz8TExNLS0tHR0cvL
+y7i4uOjo6O/v79bW1sLCwt/f3+Xl5ebm5sXFxd3d3b29vcjIyK+vr9vb26ysrLW1
+tfT09PLy8re3t8DAwMHBwdTU1Pf399zc3La2tt7e3uDg4PHx8e7u7tjY2L6+vuPj
+4+fn5+Hh4dfX1+Li4uzs7OTk5Nra2u3t7erq6v///wAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAACH5BAEAAFUALAAAAACWABwAAAf/gFUtGwGFhoeIiAYBGzNV
+j5CRkpOUlZaXmJmam5yQIxAAoaKjpKWiIiWdqqusra6YMKays6EHr7e4ubqPAbS+
+pAgPu8PExZQGv6UXQCEnDkAXACwNxtXWub3Joh9LCZAJMkQf1Nfl5pzZ2gGpVQsT
+C49QNj3n9faU6b8kMY9LSh9KojySQY9VghgMmhAw9mBIEEf3WuXzFYDakXQ7JlQR
+sJCVBB8AbEQw5gIEAAsCIrISYWoHjAokRhF5UkIFKX6vJHQAgAFesZIADqRUqQpF
+hWijklQBeqqCkh2kitySgADAj46WBCzwVkkrV0gukAk1lsBnq6GPFgjhQGpJFR5E
+/0YBkbBgyKgPRx5FqKHBwYC/IVSQq+IhSd+/AyY8qBrAwYkBKWKMhDThxYEfG05A
+hNTjhQXMmsGKTbkghgq/f/0iodRDyukBDhyM0FtjBRAgK4ZMrlIjBOLff0+8cPFI
+wIgZLWZXyTCKhYRHBUbVeJQCgA4QFWQ8UkDBlA52MiYCYBKhKikSB7iWADnqgoqh
+LaC2z5AybNCNA2KWkioJCYtSDLQTCykbjCTAgLQQ4cEjTQxBww3eCLECC0RUINAj
+E8BABAsZeNPAfxh4oAAkJUTTmAappUCNBx8AQAIHITiwQgiKVQWCBTfQ0MsFVFQh
+RFUkwJCECi0C8EQVEvxHAv8KhvVCghFLifVWiwaEgCJiq0XyAFsAdBDjCgXMxkAo
+LDDgRAWhFLAQCtZtcIAFJkFgwQH/ATAAhj0wQYUKI1bRgGKPjKBRAhOQQ0B3J0my
+RCghVFIdABoIEwlVVkXAkQmhTIcpACv4NEI0QFRRRCgDcNUCSzAQJqUHUmKSQy2D
+YQjKDnm9xRYqVbAJQQMCKIBBSAoI0INJHGD1CA4OSApJCxDQIISWK4jigwlM9NlC
+KAbcACYFDGhUhQUA4MDDJJT+wNUToeRQRQgAiKDcIzZGMIB1TETCWAKs3jcBMiAc
+sG0GC0YiQHc6bAZJDKFoEMkL6VZBAwAQPCfAr0oMtVP/BcZWgUwFGjghBQMU4BAK
+AiqYYIIG5pFigTARgFvKDgsCAcAHZkFCaU+PGBHKEFV0BwJxkGzQ7gTdidACJAT8
+KoIER0ipQHSlgKAd0mziwE4kSYRiQiSjAhDgw7tWkXRICymwU7GSiKfNKE488kAN
+GcTNAA0xpVDFARDH+sjNPukMgLrsXvCuAGgaEIED1m0mwL35jhVBDEHIXQBLG2A1
+cOKTIAyACpE4sbPDeYv9qw1ln52x2rKI8MEHSImCEiVTgEJBFWNC2qfNVeFchd/q
+SpFmn0zoAMAGvIXiwFAzRIOCqkGhFUl5ACixgFYj1hDKypJMMGutPKCJwxS5hj42
+/+lVmA0A2pGgbsoBERxOSgFIvhAEA/QnITQAdveATPQDnOB/jTzpW8N0cr0iBGF/
+AmkAe25QhAyAggRNiNJ9EmCCDNDPTAVQHgGawIEBCOABaAJABRzzmNkEYWQ5yIF5
+QpASXVFjfKU73+nW9oMRyUA/ALiAdqAgCwU94gnsGQUTHgASG/hEc1urQglSFooL
+ZKBPI9jJKETwgoUgARQ0eAsooqad6nRgIVBgYigCFIGHkQIFzzpQDsdFALZgrHwg
+6cDteLG274mtCB2AQAdwgoQbFOCPf6RAEGr1CB4YQQOALMAREpABC7ygTyWgwA2O
+9gghmGADFcDACa62t0tmUqEDUIBEAwZgAZ5FQAUUAFMgU5AlGThyKEJYQgoASQFK
+JmAJBeAAByjQhK+Y4AYDEIYALMOAlBAgAzcIgvOqoL71cUUBDeDKA0JQkHIscxLX
+NIcAsimRtYViA+96RAt+sAO9EeWcxNifN3GwAQ0wQAMwEJlz0EnPYnDJm7KAQcbq
+yU9XWA+fsoBSPwf6CgK84AOLSIRCE2GAD6RgnwSNqCYCAQA7
+
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline; filename=like.htm
+Content-Type: text/html; charset=utf-8; name=like.htm
+Content-Location: http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fw3schoolscom&send=false&layout=button_count&width=125&show_faces=false&action=like&colorscheme=light&font=verdana&height=21
+Content-Transfer-Encoding: Quoted-Printable
+
+<!DOCTYPE html>
+<html lang=3D"ru" id=3D"facebook" class=3D"no_js">
+<head><meta charset=3D"utf-8" /><meta name=3D"robots" content=3D"noodp, =
+noydir" /><meta name=3D"referrer" content=3D"default" id=3D"meta_referre=
+r" /><script></script><title>Facebook</title><style>body.plugin{backgrou=
+nd:transparent;overflow:hidden}body{background:#fff;color:#333;line-heig=
+ht:1.28;margin:0;padding:0;text-align:left;direction:ltr;unicode-bidi:em=
+bed}
+body, button, input, label, select, td, textarea{font-family:'lucida gra=
+nde',tahoma,verdana,arial,sans-serif;font-size:11px}
+h1, h2, h3, h4, h5, h6{font-size:13px;color:#333;margin:0;padding:0}
+h1{font-size:14px}
+h4, h5, h6{font-size:11px}
+p{margin:1em 0}
+a{color:#3b5998;cursor:pointer;text-decoration:none}
+button{margin:0}
+a:hover{text-decoration:underline}
+img{border:0}
+td, td.label{text-align:left}
+dd{color:#000}
+dt{color:#777}
+ul{list-style-type:none;margin:0;padding:0}
+abbr{border-bottom:none}
+hr{background:#d9d9d9;border-width:0;color:#d9d9d9;height:1px}.clearfix:=
+after{clear:both;content:".";display:block;font-size:0;height:0;line-hei=
+ght:0;visibility:hidden}
+.clearfix{zoom:1}
+.datawrap{word-wrap:break-word}
+.word_break{display:inline-block}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.img_loading{position:absolute;top:-9999999px}
+.aero{opacity:.5}
+.column{float:left}
+.center{margin-left:auto;margin-right:auto}
+#facebook .hidden_elem{display:none !important}
+#facebook .invisible_elem{visibility:hidden}
+#facebook .accessible_elem{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px=
+, 1px, 1px);height:1px;overflow:hidden;position:absolute;width:1px}
+.direction_ltr{direction:ltr}
+.direction_rtl{direction:rtl}
+.text_align_ltr{text-align:left}
+.text_align_rtl{text-align:right}.pluginFontArial{font-family:"arial", s=
+ans-serif}
+.pluginFontLucida{font-family:"lucida grande", sans-serif}
+.pluginFontSegoe{font-family:"segoe ui", sans-serif}
+.pluginFontTahoma{font-family:"tahoma", sans-serif}
+.pluginFontTrebuchet{font-family:"trebuchet ms", sans-serif}
+.pluginFontVerdana{font-family:"verdana", sans-serif}.uiGrid{border:0;bo=
+rder-collapse:collapse;border-spacing:0}
+.uiGridFixed{table-layout:fixed;width:100%}
+.uiGrid .vTop{vertical-align:top}
+.uiGrid .vMid{vertical-align:middle}
+.uiGrid .vBot{vertical-align:bottom}
+.uiGrid .hLeft{text-align:left}
+.uiGrid .hCent{text-align:center}
+.uiGrid .hRght{text-align:right}.pluginErrorLink{color:#f03d25}.fss{font=
+-size:9px}
+.fsm{font-size:11px}
+.fsl{font-size:13px}
+.fsxl{font-size:16px}
+.fsxxl{font-size:18px}
+.fwn{font-weight:normal}
+.fwb{font-weight:bold}
+.fcb{color:#333}
+.fcg{color:gray}
+.fcw{color:#fff}form{margin:0;padding:0}
+label{cursor:pointer;color:#666;font-weight:bold;vertical-align:middle}
+label input{font-weight:normal}
+textarea, .inputtext, .inputpassword{border:1px solid #bdc7d8;margin:0;p=
+adding:3px}
+textarea{max-width:100%}
+select{border:1px solid #bdc7d8;padding:2px}
+.inputtext, .inputpassword{padding-bottom:4px}
+.inputtext:invalid, .inputpassword:invalid{box-shadow:none}
+.inputradio{padding:0;margin:0 5px 0 0;vertical-align:middle}
+.inputcheckbox{border:0;vertical-align:middle}
+.inputbutton, .inputsubmit{border-style:solid;border-width:1px;border-co=
+lor:#d9dfea #0e1f5b #0e1f5b #d9dfea;background-color:#3b5998;color:#fff;=
+padding:2px 15px 3px 15px;text-align:center}
+.inputsubmit_disabled{background-color:#999;border-bottom:1px solid #000=
+;border-right:1px solid #666;color:#fff}
+.inputaux{background:#f0f0f0;border-color:#e7e7e7 #666 #666 #e7e7e7;colo=
+r:#000}
+.inputaux_disabled{color:#999}
+.inputsearch{background:#fff url(http://static.ak.fbcdn.net/rsrc.php/v2/=
+yV/r/IJYgcESal33.png) no-repeat left 4px;padding-left:17px}.pluginButton=
+{background:#eceef5;border-radius:3px;border:1px solid #cad4e7;cursor:po=
+inter;padding:2px 6px 4px;white-space:nowrap;color:#3b5998}
+.pluginButtonInline{display:inline-block}
+.pluginButtonX{cursor:default}
+.pluginButton button{background:transparent;border:0;margin:-1px;padding=
+:0;font:inherit;color:inherit;cursor:pointer}
+.pluginButtonIcon{position:relative;top:3px;margin-right:3px}
+.pluginButtonSmall{padding:0 5px 2px 5px}
+.pluginButtonSmall .pluginButtonIcon{margin-right:2px}
+.pluginButton:hover{border-color:#9dacce}
+.pluginButtonPressed, .pluginButtonPressed:hover{background-color:#eee;b=
+order-color:#ddd;color:#aaa}
+.pluginSkinDark .pluginButton{background-color:#c7c7c7;border-color:#999=
+;color:#333}
+.pluginSkinDark .pluginButton:hover{background-color:#d9d9d9;border-colo=
+r:#ddd}
+.pluginSkinDark .pluginButtonPressed, .pluginSkinDark .pluginButtonPress=
+ed:hover{background-color:#444;border-color:#555;color:#666}
+.pluginButtonErrorLink{color:#a00;font-weight:bold}
+.pluginButtonX .pluginButtonXOff, .pluginButtonX button:hover .pluginBut=
+tonXOn{display:inline-block}
+.pluginButtonX .pluginButtonXOn, .pluginButtonX button:hover .pluginButt=
+onXOff{display:none}
+.pluginButton .pluginButtonThrobber, form.async_saving .pluginButtonIcon=
+WithThrobber{display:none}
+form.async_saving .pluginButtonThrobber{display:inline-block;margin-top:=
+2px;margin-bottom:1px;max-width:14px}.pluginCountButton{background:#fff;=
+border:1px solid #c1c1c1;height:14px;line-height:14px;margin-left:6px;mi=
+n-width:15px;padding:1px 2px;text-align:center;white-space:nowrap}
+.pluginCountButtonNub{height:0;left:2px;position:relative;top:-14px;widt=
+h:5px;z-index:2}
+.pluginCountButtonNub s, .pluginCountButtonNub i{border-color:transparen=
+t #D7D7D7 transparent;border-style:solid;border-width:4px 5px 4px 0;disp=
+lay:block;position:relative;top:1px}
+.pluginCountButtonNub i{border-right-color:#fff;left:2px;top:-7px}
+.pluginCountButtonDark{background:#d7d7d7;border-color:#d7d7d7;color:#33=
+3}
+.pluginCountButtonDarkNub i{display:none}.pluginCountTextConnected,
+.pluginCountConnected .pluginCountTextDisconnected{display:none}
+.pluginCountConnected .pluginCountTextConnected{display:inline}.sp_like{=
+background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yF/r/wtsky0E=
+mo_J.png);background-size:auto;background-repeat:no-repeat;display:inlin=
+e-block;height:14px;width:14px}
+.sx_like_fav{background-position:0 0}
+.sx_like_ch{background-position:0 -15px}
+.sx_like_x{background-position:0 -30px}
+.sx_like_thumb{background-position:0 -45px}i.img{-ms-high-contrast-adjus=
+t:none;_overflow:hidden}
+i.img u{position:absolute;top:-9999999px}.uiLayer{outline:none}._4-nd{fl=
+oat:right}</style><script>var ServerJSQueue=3D(function(){var a=3D[],b;r=
+eturn {add:function(c){if(b){b.handle(c);}else a.push(c);},run:function(=
+){if(!window.require)return;b=3Dnew (window.require('ServerJS'))();for(v=
+ar c=3D0;c<a.length;c++)b.handle(a[c]);}};}());document.write=3Dfunction=
+(){};var onloadRegister_DEPRECATED=3Dfunction(){},onafterloadRegister_DE=
+PRECATED=3Dfunction(){},AsyncLoader=3D(function(){var a=3Dfalse,b=3Dfals=
+e,c=3D{loaded:1,complete:1},d=3Dfunction(){},e=3Ddocument,f=3Dfalse;func=
+tion g(){if(e.readyState in c){e.detachEvent('onreadystatechange',g);d('=
+t_domcontent');}}function h(){if(window._cavalry&&a&&b){d('t_layout');d(=
+'t_onload');d('t_paint');_cavalry.send();window._cavalry=3Dfalse;}}funct=
+ion i(){if(!f&&b){f=3Dtrue;ServerJSQueue.run();}}function j(l,m){if('onr=
+eadystatechange' in l){l.onreadystatechange=3Dfunction(){if(l.readyState=
+ in c){l.onreadystatechange=3Dnull;m();}};}else if(l.addEventListener){v=
+ar n=3Dfunction(){m();l.removeEventListener('load',n,false);};l.addEvent=
+Listener('load',n,false);}}function k(l){var m=3De.createElement("script=
+");if(m.readyState&&m.readyState=3D=3D=3D"uninitialized"){j(m,function()=
+{b=3Dtrue;h();});m.src=3Dl;return true;}else if(typeof XMLHttpRequest!=3D=
+=3D'undefined'){var n=3Dnew XMLHttpRequest();if("withCredentials" in n){=
+n.onloadend=3Dfunction(){b=3Dtrue;h();};n.open("GET",l,true);n.send(null=
+);return true;}}}if(window._cavalry){d=3Dfunction(l){_cavalry.log(l);};i=
+f(window.addEventListener){window.addEventListener('DOMContentLoaded',fu=
+nction(){d('t_domcontent');},false);}else if(e.attachEvent)e.attachEvent=
+('onreadystatechange',g);}window.onload=3Dfunction(){a=3Dtrue;i();h();};=
+return {ondemandjs:null,run:function(l){this.file=3Dl;this.execute();},l=
+oad:function(l){this.file=3Dl;if(!k(l)){this.run(l);return;}window.onloa=
+d=3Dfunction(){a=3Dtrue;h();};e.onkeydown=3De.onmouseover=3De.onclick=3D=
+onfocus=3Dfunction(){e.onkeydown=3De.onmouseover=3De.onclick=3Donfocus=3D=
+null;AsyncLoader.execute();};},execute:function(l){var m=3De.createEleme=
+nt('script');m.src=3DAsyncLoader.file;m.async=3Dtrue;j(m,function(){b=3D=
+true;i();l&&l();h();});e.getElementsByTagName('head')[0].appendChild(m);=
+},wakeUp:function(l,m,n){function o(){window.require("Arbiter").inform(l=
+,m,n);}if(f){o();}else this.execute(o);}};})();AsyncLoader.load("http:\/=
+\/static.ak.fbcdn.net\/rsrc.php\/v2\/yk\/r\/DO5Q5SfU9eK.js");AsyncLoader=
+.ondemandjs=3D"http:\/\/static.ak.fbcdn.net\/rsrc.php\/v2\/yf\/r\/WR-LLs=
+K128I.js";</script><script>ServerJSQueue.add({"require":[["removeArrayRe=
+duce"],["markJSEnabled"],["lowerDomain"],["Primer"]],"define":[["BanzaiC=
+onfig",[],{"MAX_WAIT":60000,"MAX_SIZE":10000,"COMPRESSION_THRESHOLD":800=
+,"gks":{"jslogger":true,"miny_compression":true,"boosted_posts":true,"ti=
+me_spent":true,"time_spent_bit_array":true,"time_spent_debug":true,"user=
+action":true,"videos":true}},7]]});</script></head><body class=3D"plugin=
+ opera win Locale_ru_RU"><div class=3D"_li"><div class=3D"pluginSkinLigh=
+t pluginFontVerdana"><div><table class=3D"uiGrid pluginConnectButtonLayo=
+utRoot" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td class=3D"hCen=
+t"><div><form rel=3D"async" ajaxify=3D"/plugins/like/connect" method=3D"=
+post" action=3D"/plugins/like/connect" onsubmit=3D"return window.Event &=
+amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,even=
+t)" id=3D"u_0_0"><input type=3D"hidden" name=3D"lsd" value=3D"AVpCcwoI" =
+autocomplete=3D"off" /><input type=3D"hidden" autocomplete=3D"off" name=3D=
+"href" value=3D"http://www.facebook.com/w3schoolscom" /><input type=3D"h=
+idden" autocomplete=3D"off" name=3D"action" value=3D"like" /><input type=
+=3D"hidden" autocomplete=3D"off" name=3D"nobootload" /><input type=3D"hi=
+dden" autocomplete=3D"off" name=3D"iframe_referer" value=3D"http://www.w=
+3schools.com/jsref/dom_obj_all.asp" /><input type=3D"hidden" autocomplet=
+e=3D"off" name=3D"ref" /><div class=3D"pluginConnectButton"><div class=3D=
+"pluginButton pluginButtonSmall pluginButtonInline pluginConnectButtonDi=
+sconnected" title=3D""><div><button type=3D"submit"><i class=3D"pluginBu=
+ttonIcon img sp_like sx_like_fav"></i>=D0=9D=D1=80=D0=B0=D0=B2=D0=B8=D1=82=
+=D1=81=D1=8F</button></div></div><div class=3D"pluginButton pluginButton=
+Small pluginButtonPressed pluginButtonInline pluginButtonX pluginConnect=
+ButtonConnected hidden_elem" title=3D""><div><button type=3D"submit"><i =
+class=3D"pluginButtonIcon pluginButtonXOff img sp_like sx_like_ch"></i><=
+i class=3D"pluginButtonIcon pluginButtonXOn img sp_like sx_like_x" title=
+=3D""></i></button>=D0=9D=D1=80=D0=B0=D0=B2=D0=B8=D1=82=D1=81=D1=8F</div=
+></div></div></form></div></td><td><div><div class=3D"pluginCountButton =
+pluginCountNum"><span id=3D"u_0_1"><span class=3D"pluginCountTextConnect=
+ed">64 =D1=82.</span><span class=3D"pluginCountTextDisconnected">64 =D1=82=
+.</span></span></div><div class=3D"pluginCountButtonNub"><s></s><i></i><=
+/div></div></td></tr></tbody></table></div></div></div><script>function =
+envFlush(a){function b(c){for(var d in a)c[d]=3Da[d];}if(window.requireL=
+azy){requireLazy(['Env'],b);}else{Env=3Dwindow.Env||{};b(Env);}}envFlush=
+({"fb_dtsg":"AQDHl0Fb","ajaxpipe_token":"AXjDlHzdg6Avtqyl","no_cookies":=
+1,"lhsh":"XAQG8-wwL","user":"0"});</script><script>
+
+
+ServerJSQueue.add({"require":[["m_0_1"],["PluginConnection","init",["m_0=
+_3"],[[["http:\/\/www.facebook.com\/w3schoolscom",{"__m":"m_0_3"},"plugi=
+nCountConnected"]]]]],"instances":[["m_0_1",["PluginConnectButton","m_0_=
+0"],[{"plugin":"like","identifier":"http:\/\/www.facebook.com\/w3schools=
+com","connected":false,"canpersonalize":false,"autosubmit":false,"form":=
+{"__m":"m_0_0"}}],1]],"elements":[["m_0_0","u_0_0",2],["m_0_2","u_0_0",2=
+],["m_0_3","u_0_1",2]]});
+
+</script>
+------------q5BSV0swEcIaakgc3jzQmK
+Content-Disposition: inline
+Content-Type: image/png
+Content-Location: http://static.ak.fbcdn.net/rsrc.php/v2/yF/r/wtsky0Emo_J.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAA8CAMAAACO5hB7AAAAclBMVEUAAAA7V503
+S403S402WJn///+7u7s7V53+/v5zirZ1i7iNoMU5UpfAwMCkpKQ3S41KaKRed65V
+canu8fc7VpvEzN84TpHn6vLS1+dXbqzL0+b6+/28xd7W3Oo3TI+bq8v+/v9MXpo4
+T5LCyt/o6/S2wNyA1adLAAAABHRSTlMAn5udWdclfwAAAK1JREFUeF69zscOgzAQ
+RVFI3timp/de/v8Xw2DB2HGIxCK5Eoujp7GIgkZV15id666cbbHd7Q9ai49ES9cX
+ut5cEy20+EF1c/GavRGfKqJq5d9r/dmxOI5+mnqjUj1ULWUR2i289WL+q6JsKxqX
+UmviT0xE/Dk7McV29ffwvu99Kfi/AWHicWp8w8DlOfENYwCkfAjONIGXLGOJk+S7
+03AHkjt7Zt+vz54pAObAXtCJDvV9nuq/AAAAAElFTkSuQmCC
+
+------------q5BSV0swEcIaakgc3jzQmK--

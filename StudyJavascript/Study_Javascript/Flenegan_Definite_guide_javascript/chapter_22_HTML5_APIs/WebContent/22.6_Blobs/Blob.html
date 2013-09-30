@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="resources" style="font-size:0.8em">
+	https://developer.mozilla.org/en-US/docs/Web/API/Blob<br>
+	</div>
+	<img  src="blobs.gif" width=400/>
+	
+	
+	<div id="div1">
+		A Blob object represents a file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system.
+		<hr>
+			 page 693 example <br>
+		<input type="file"  accept="image/*" size="150" multiple  onchange="fileInfo(this.files)"/>
+		<hr>
+		<pre>
+		
+			22.6.3  <b style="font-size:1.4em">Building</b> Blobs
+Blobs often represent chunks of data from an external source such as a local file, a URL,
+or a database. But sometimes a web application wants to create its own Blobs to be
+uploaded to the Web or stored in a file or database or passed to another thread. To
+create a Blob from your own data, use a BlobBuilder:
+
+
+// Create a new BlobBuilder
+var bb = new BlobBuilder();
+// Append a string to the blob, and mark the end of the string with a NUL char
+bb.append("This blob contains this text and 10 big-endian 32-bit signed ints.");
+bb.append("\0");  // NUL-terminate the string to mark its end
+// Store some data into an ArrayBuffer
+var ab = new ArrayBuffer(4*10);
+var dv = new DataView(ab);
+for(var i = 0; i < 10; i++) dv.setInt32(i*4,i);
+// Append the ArrayBuffer to the Blob
+bb.append(ab);
+// Now get the blob from the builder, specifying a made-up MIME type
+var blob = bb.getBlob("x-optional/mime-type-here");
+We saw at the beginning of this section that Blobs have a slice() method that breaks
+them into pieces. You can join Blobs together by passing Blobs to the append() method
+of a BlobBuilder.
+		</pre>
+		<hr>
+		<b>
+			<pre>
+			In addition to selecting files with an &lt;input> element, a user can also give a script access
+to local files by dropping them into the browser. When an application receives a drop
+event, the dataTransfer.files property of the event object will be the FileList associated
+with the drop, if there was one. The drag-and-drop API was covered in §17.7 and
+Example 22-10 below demonstrates its use with files.
+			</pre>
+		</b>
+		
+		
+		<div id="droptarget" style="background-color:#ff4">Drop file here </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		function fileInfo(files){
+			for(var i=0;i<files.length;i++){
+				alert(files[i]+"; lastModififedDate="+files[i].lastModifiedDate+"; name="+files[i].name+"; type="+files[i].type+"; size="+files[i].size);
+				for(var item in files[i])
+					console.log(item);
+			}
+		}
+		
+		
+		var droptarget=document.getElementById("droptarget");
+		droptarget.ondragover=function(e){
+			if(e.preventDefault)e.preventDefault();
+			if(e.returnValue) e.returnValue=false;
+		}
+		droptarget.ondrop=function(e){
+			alert(e);
+			
+		}
+		
+		
+		
+	</script>
+</body>
+</html>

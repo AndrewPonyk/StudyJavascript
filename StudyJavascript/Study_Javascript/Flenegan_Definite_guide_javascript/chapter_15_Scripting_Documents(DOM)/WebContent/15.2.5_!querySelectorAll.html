@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+	
+	.red{
+		background-color: red;
+		display:inline;
+	}
+	
+	.blue{
+		background-color: blue;
+		display:inline;
+	}
+	
+	div.red{
+		font-size: 2em;
+	}
+	</style>
+
+</head>
+<body>
+
+	<div class="red"  id="red1">sdofjsoigj red</div>
+	
+	<div class="red">sdofjsoigjsdfsdf red</div>
+	<div class="blue">sdofjsoigjsdfsdf blue</div>
+	<div class="blue red" ><!-- order of definition css classes is important (this text will be blue , becouse .blue is defined after red --> 
+		blue big text
+	</div> 
+	
+	<script type="text/javascript">
+		
+		//alert(document.querySelectorAll); // check if browser implement such function
+		
+		
+		//var redelements=document.querySelectorAll('#red1'); // tak mozna vziatu po id
+		//var redelements=document.querySelectorAll('.red,.blue'); // elements with class .red or .blue
+		
+		var redelements=document.querySelectorAll(".red");
+		
+		//		alert(redelements[0].innerHTML);
+		for(var i=0;i<redelements.length;i++){
+			alert(redelements[i].innerHTML);
+		}
+		
+		
+		alert('end');
+	</script>
+</body>
+</html>

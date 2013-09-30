@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-1.6.js"></script>
+</head>
+<body>
+	
+	<h3>
+	
+		function val() - to set and get values of form elements
+	</h3>
+
+	<form name="shippingform" action="http://google.com">
+		Surname<input type="text" id="surname"><br>
+		Ship <input type="checkbox" name="ship" ><br>
+		Country <select name="country"	><option value="Ukraine">Ukr</option><option value="Chech">CH</option></select>
+	 	<br>
+	 	<input type="submit" value ="submit"/>
+	</form>
+	
+	<script type="text/javascript">
+	
+	
+		
+	
+	alert("end");
+	</script>
+	
+	
+	
+	<button onclick="alert( $('#surname').val() )" >Get surname  (alert( $('#surname').val() ))</button>
+	<button onclick="alert(  $('input:checkbox[name=ship]:checked').val())">Get chekbox value</button>
+	<button onclick="  alert( $('select[name=country]').val())  ">Get countries</button>
+	
+	
+	
+	
+</body>
+</html>

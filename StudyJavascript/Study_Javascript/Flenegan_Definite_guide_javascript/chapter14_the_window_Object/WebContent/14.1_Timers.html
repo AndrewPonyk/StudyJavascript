@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// setTimeout and setInterval - allow you to register a function to be invoked once or repeatedly
+		
+		  
+		//oto je profesijnuj kod
+		function invoke(f,start,interval,end) {
+			alert('h');
+			if(!start) start=0;
+			if(arguments.length<=2)
+				setTimeout(f,start);
+			else{
+				setTimeout(repeat,start);
+				function repeat() {
+					var h=setInterval(f,interval);
+					if(end) setTimeout(function(){clearInterval(h) } , end	);
+				}
+			}
+		}
+	
+		
+		function say() {
+			console.log('-');
+			console.log('+');
+		}
+	
+		var f=setInterval(say,1000); // every second
+		
+		setTimeout(function() { // stop f after 5 times of execution
+			clearInterval(f	);	
+		},6000);
+		
+		
+		
+	</script>
+	
+</body>
+</html>

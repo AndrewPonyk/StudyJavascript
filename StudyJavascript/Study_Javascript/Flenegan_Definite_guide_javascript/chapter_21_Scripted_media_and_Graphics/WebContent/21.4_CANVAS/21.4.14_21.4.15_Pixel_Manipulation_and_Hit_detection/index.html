@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h3>Motion effect on image</h3>
+	
+	<canvas style="border:1px solid black" id="canvas" width="600" height="600"> no canvas support</canvas>
+	<canvas style="border:1px solid black" id="result" width="600" height="600"> no canvas support</canvas>
+	
+	
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var c=canvas.getContext("2d");
+		
+		var vokzal=new Image(200,200);
+			vokzal.src="vokzal.jpg";
+		c.drawImage(vokzal,0,0,400,400);
+		
+		var pixels=c.getImageData(0,0,400,400);
+		
+		
+		
+		var data=pixels.data;
+		var width=pixels.width;
+		var height=pixels.height;
+		alert(pixels.data.length);
+		for(var row=0;row<height*width*4;row+=4){
+				//console.log(row);
+				
+			
+				data[row]=( data[row] +data[row-4]*5)/6;
+				data[row+1]=( data[row+1] +data[row-3]*5)/6;
+				data[row+2]=( data[row+2] +data[row-2]*5)/6;
+				data[row+3]=( data[row+3] +data[row-1]*5)/6;
+				
+				
+				//console.log("-");
+			
+		}
+		
+		
+		//make a diagonale LINE
+		for(var i=0;i<height;i++){
+			for(var j=0;j<width;j++){
+				if(i==j)
+				data[ (i*width+j)*4 ]=255;
+			}
+		}
+		
+		
+		var resultCanvas=document.getElementById("result");
+		var resultC=resultCanvas.getContext("2d");
+		
+		//!!!!! put modified pixels
+		resultC.putImageData(pixels,0,0);
+		
+				//half picture will be red
+			/* for(var i=4;i<data.length/2;i++){
+				if(i%4==0 || (i-3)%4==0 ) 
+					data[i]=255;
+				else data[i]=0;			
+			} */
+		
+			
+			
+			
+			
+			
+		
+		
+	</script>
+	
+</body>
+</html>

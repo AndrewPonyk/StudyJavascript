@@ -1,0 +1,24 @@
+[ 
+ 
+ 		              {id:"8039", country_code:"CH", region_code:"19", city:"1Aadorf", 
+		          latitude:"47.4833", longitude:"8.9"}, 
+		              {id:"4286", country_code:"BE", region_code:"08", city:"2Aalst", 
+		          latitude:"50.9333", longitude:"4.0333"}, 
+		              {id:"4287", country_code:"BE", region_code:"08", city:"3Aalter", 
+		          latitude:"51.0833", longitude:"3.45"}, 
+		              {id:"7405", country_code:"CH", region_code:"01", city:"4Aarau", 
+		          latitude:"47.3833", longitude:"8.05"}, 
+		              {id:"7936", country_code:"CH", region_code:"14", city:"5Aarberg", 
+		          latitude:"47.05", longitude:"7.2833"}, 
+		              {id:"7406", country_code:"CH", region_code:"01", city:"6Aarburg", 
+		          latitude:"47.3167", longitude:"7.9"}, 
+		              {id:"3564", country_code:"BE", region_code:"02", city:"7Aarschot", 
+		          latitude:"50.9833", longitude:"4.8333"}, 
+		              {id:"4437", country_code:"BE", region_code:"09", city:"8Aartrijke", 
+		          latitude:"51.1167", longitude:"3.0833"}, 
+		              {id:"3443", country_code:"BE", region_code:"01", city:"9Aartselaar", 
+		          latitude:"51.1333", longitude:"4.3833"}, 
+		              {id:"7407", country_code:"CH", region_code:"01", city:"0Aarwangen", 
+		          latitude:"47.2333", longitude:"7.75"} 
+
+ ]

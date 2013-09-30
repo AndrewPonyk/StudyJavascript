@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<h3>19.8.2  Selection Methods</h3>
+		
+		<pre>
+			In addition to the selector grammar supported by $(), jQuery defines a number of
+selection methods. Most of the jQuery methods we’ve seen so far in this chapter per-
+form some action on the selected elements. The selection methods are different: they
+alter the set of selected elements by refining it, augmenting it, or just using it as a starting
+point for a new selection.
+This section describes these selection methods. You’ll notice that many of the methods
+provide the same functionality as the selector grammar itself.
+The simplest way to refine a selection is by position within the selection. first() returns
+a jQuery object that contains only the first selected element, and last() returns a jQuery
+object that contains only the last element. More generally, the  <b>eq()</b> method returns a
+jQuery object that contains only the single selected element at the specified index. (In
+jQuery 1.4, negative indexes are allowed and count from the end of the selection.) Note
+that these methods return a jQuery object with a single element. This is different than
+regular array indexing, which returns a single element with no jQuery object wrapped
+around it:
+		
+		<br>
+		var paras = $("p");
+paras.first()         // Select only the first <p> element
+paras.last()          // Select only the last <p>
+paras.eq(1)           // Select the second <p>
+paras.eq(-2)          // Select the second to last <p>
+paras[1]              // The second <p> element, itself
+<hr>
+$("p").slice(2,5)      // Select the 3rd, 4th, and 5th <p> elements
+$("div").slice(-3)     // The last three <div> elements
+		</pre>
+		
+		<hr>
+		<pre>
+		filter() is a general-purpose selection filtering method, and you can invoke it in three
+different ways:
+• If you pass a selector string to filter(), it returns a jQuery object containing only
+those selected elements that also match that selector.
+• If you pass another jQuery object to filter(), it returns a new jQuery object that
+contains the intersection of the two jQuery objects. You can also pass an array of
+elements, or even a single document element, to filter().
+• If you pass a predicate function to filter(), that function is called for each matched
+element, and filter() returns a jQuery object containing only those elements for
+which the predicate returned true (or any truthy value). The predicate function is
+called with the element as its this value and the element index as an argument.
+(See also jQuery.grep() in §19.7.)
+$("div").filter(".note")                            // Same as $("div.note")
+$("div").filter($(".note"))                         // Same as $("div.note")
+$("div").filter(function(idx) { return idx%2==0 })  // Same as $("div:even")
+		
+		</pre>
+		
+		<hr>
+		<pre>
+			<b>
+			
+			$("div").find("p")  // find <p> elements inside <div>s.  Same as $("div p")
+			// usefull with xml
+			</b>
+		</pre>
+</body>
+</html>

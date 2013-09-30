@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script type="text/javascript">
+		/*var section1=document.getElementById('section1');
+		
+		console.log(section1.innerHTML); // here error cannot convert section1 to object
+										// because div not yet created ,
+		alert('end');*/
+	
+	
+	
+	
+	</script>
+</head>
+<body> 
+		
+		
+	<div id='section1' >div with id section1 </div>	
+	<div id='section2' >div with id section2 </div>	
+	<input type="text" name="text1" id="text1" />
+
+	<script type="text/javascript">
+		var section1=document.getElementById('section1');
+		
+		//var getByTagNameSection1=document.getElementsByName('div1'); // error name only can have form elements, img , iframe,applet
+		
+		var divs=document.getElementsByTagName('div');
+		
+		
+		
+		
+		for(var item in divs){
+			console.log(divs[item].innerHTML);
+		}
+		
+		
+		console.log(section1.innerHTML);
+		
+		
+		
+		
+		//var textField1=document.getElementById()
+		alert(text1);
+		
+		
+		alert('end');
+	</script>
+</body>
+</html>

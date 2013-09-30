@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../jquery-1.6.js"> </script>
+</head>
+<body>
+	<h4> Custom animation - animate() method</h4>
+	<img  src="Neuschwanstein_castle.jpg" style="width:300px"/>
+
+	<script type="text/javascript">
+		
+
+		
+		
+		$("img").bind("mouseover",function(e){
+			$("img").animate({
+				opacity:"-=0.25"
+			},1000);
+		});
+		
+		$("img").bind("mouseleave",function(e){
+			$("img").animate({
+				opacity:0.95
+			});
+		})
+		
+		alert("end");
+	</script>
+</body>
+</html>
