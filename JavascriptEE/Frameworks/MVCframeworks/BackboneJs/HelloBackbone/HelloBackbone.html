@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>hello-backbonejs</title>
+    <script src="include/jquery.min-1.7.1.js"></script>
+    <script src="include/underscore-1.8.3.js"></script>
+    <script src="include/backbone-1.2.1.js"></script>
+
+</head>
+<body>
+<!-- If put this in head then doesnt work!!! -->
+<script >
+    // Self-executing wrapper
+    (function($){
+        // **ListView class**: Our main app view.
+        var ListView = Backbone.View.extend({
+            el: $('body'), // attaches `this.el` to an existing element.
+            // `initialize()`: Automatically called upon instantiation. Where you make all types of bindings, _excluding_ UI events, such as clicks, etc.
+            initialize: function(){
+                _.bindAll(this, 'render'); // fixes loss of context for 'this' within methods
+
+                this.render(); // not all views are self-rendering. This one is.
+            },
+            // `render()`: Function in charge of rendering the entire view in `this.el`. Needs to be manually called by the user.
+            render: function(){
+                $(this.el).append("<ul> <li>hello world</li> </ul>");
+            }
+        });
+
+        // **listView instance**: Instantiate main app view.
+        var listView = new ListView();
+
+
+    })(jQuery);
+</script>
+
+
+<hr>
+<h4>P.S: Good cdn  https://cdnjs.com/</h4>
+<h4>P.S: Good Backbone tutorial with examples : http://arturadib.com/hello-backbonejs/</h4>
+</body>
+</html>
