@@ -1,4 +1,5 @@
-require(["purchase"],function(purchase){
+require(["purchase","mymodule"],function(purchase, mymodule){
     var finalResult = purchase.purchaseProduct();
-    console.log("Final Result = " + finalResult)
+    console.log("Final Result = " + finalResult);
+    mymodule.alertFunc();
 });

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+        .movies-container{
+            float: left;
+            min-width: 850px;
+        }
+
+        .add-movie-container{
+            width: 400px;
+            display: inline-block;
+            padding: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Get Started with Angular</title>
+    <link rel="stylesheet" href="../cdn/bootstrap3.css" />
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>-->
+    <!--The newest version on 26.09.15-->
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+
+    <!-- Testing on differente versions-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>-->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-alpha.29/angular2.min.js"></script>  DOESNT WORK ON Angular 2
+-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.0/angular.min.js"></script>-->
+
+
+    <script>
+        app = angular.module("movieMediaApp", [])
+                .controller("MainCtrl", function ($scope) {
+                    $scope.title = "Thanks for attending";
+                    var movieList = [
+                        {
+                            title: "Ace Drummond",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936"
+                        },
+                        {
+                            title: "Ace Drummond 2",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936 2"
+                        },
+                        {
+                            title: "Ace Drummond 3",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936 3"
+                        }
+                    ];
+                    $scope.movies = movieList;
+
+                    $scope.movie = {
+                        title : "",
+                        image : "",
+                        category : "",
+                        description : ""
+                    }
+
+                    $scope.validateTitle = function(){
+                        if(this.movie.title.length > 0 ){
+
+                        }else{
+                            alert("Title is mandatory");
+                        }
+                    }
+
+                    $scope.checkCategorySelected = function(){
+                        if(this.movie.category === ""){
+                            alert("Category cant be empty")
+                        }
+                    }
+
+                    $scope.checkDescription = function(){
+
+                    }
+
+                    $scope.addMovie = function(){
+                        this.movies.push(angular.copy(this.movie));
+                    }
+
+                    $scope.closed = false;
+                });
+
+    </script>
+</head>
+<body ng-app="movieMediaApp" >
+    <h1>p2Controllers and Templates</h1>
+
+    <div ng-controller="MainCtrl">
+        <div class="movies-container">
+            <h2>Movies:</h2>
+            <div ng-repeat="movie in movies"  style="border: 1px solid">
+                <h3>{{movie.title}} [{{movie.category}}]</h3>
+                <img src="{{movie.image}}" >
+                <p ng-bind="movie.description"></p>
+            </div>
+        </div>
+
+        <div class="col-xs-1" >
+            <span class="glyphicon-arrow-left" style="font-size: 13px;cursor: pointer;background: red"
+                    ng-click="closed=!closed">Toogle Hide</span>
+        </div>
+
+        <div class="add-movie-container" ng-hide="closed">
+            <h2>Add</h2>
+            <div class="form-group">
+                <label>Title</label>
+                <input class="form-control" placeholder="Enter title" ng-model="movie.title" ng-keyup="validateTitle()"/>
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input class="form-control" placeholder="Image" ng-model="movie.image"/>
+            </div>
+            <div >
+                <h4>Preview</h4>
+                <img ng-src="{{movie.image}}" style="height: 55px">
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select class="form-control" ng-model="movie.category" ng-change="checkCategorySelected()">
+                    <option value=""></option>
+                    <option value="Epic">Epic</option>
+                    <option value="Awesome">Awesome</option>
+                    <option value="Awerage">Awerage</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" ng-model="movie.description" ng-blur="checkDescription()"></textarea>
+            </div>
+            <button class="btn" ng-click="addMovie()">Add</button>
+        </div>
+    </div>
+</body>
+</html>

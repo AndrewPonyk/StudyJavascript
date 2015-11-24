@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h5>http://phrogz.net/js/classes/OOPinJS.html</h5>
+<script>
+
+    function Person(n, race){
+        test = n; // test become global variable because there is no 'var' to be private, or 'this' to be public
+
+        // setting 'static' variable,  'this.consturtor' is like name of class , but  'this.consturtor' works only inside function
+        this.constructor.population++;
+        
+        // ************************************************************************
+        // PRIVATE VARIABLES AND FUNCTIONS // !!! ONLY PRIVELEGED METHODS MAY VIEW/EDIT/INVOKE
+        var alive = true, age = 1,
+            maxAge = 70 + ( Math.round( Math.random()*15) + Math.round( Math.random()*15)),
+            myName = n ? n : "John Smith",
+            weight = 1;
+
+        function makeOlder(){ return alive = ( ++age <= maxAge )}
+
+        // ************************************************************************
+        // PRIVILEGED METHODS
+        // MAY BE INVOKED PUBLICLY AND MAY ACCESS PRIVATE ITEMS
+        // MAY NOT BE CHANGED; MAY BE REPLACED WITH PUBLIC FLAVORS
+        this.toString = this.getName = function() {return myName;}
+        this.eat = function(){
+            if(makeOlder()){
+                this.dirtFactor++;
+                weight = weight * 3;
+            }else{
+                console.log(myName + " : 'Cant eat, i am dead'")
+            }
+        }
+
+        this.exercise = function(){
+            if(makeOlder()){
+                this.dirtFactor++;
+                return  weight /= 2;
+            }
+        }
+
+        this.weight = function(){
+            return weight;
+        }
+
+        this.getRace = function(){
+            return race;
+        }
+
+        this.getAge = function(){
+            return age;
+        }
+
+        this.getName = function(){
+            return myName;
+        }
+
+        this.muchTimePasses = function(){
+            age+=50;
+            this.dirtFactor = 10;
+        }
+
+        // ************************************************************************
+        // PUBLIC PROPERTIES -- ANYONE MAY READ/WRITE
+        this.clothing="nothing/naked";
+        this.dirtFactor=0;
+    }
+    // ************************************************************************
+    // PUBLIC METHODS -- ANYONE MAY READ/WRITE
+    Person.prototype.beCool = function(){this.clothing = "khakis and black shirt"}
+    Person.prototype.shower = function(){this.dirtFactor = 2}
+    Person.prototype.showLegs = function(){console.log(this+" has "+this.legs+" legs")}
+    Person.prototype.amputate = function(){ this.legs-- }
+
+    // ************************************************************************
+    // PROTOTYOPE PROERTIES -- ANYONE MAY READ/WRITE (but may be overridden)
+    Person.prototype.legs=2;
+
+    // ************************************************************************
+    // STATIC PROPERTIES -- ANYONE MAY READ/WRITE
+    Person.population = 0;
+
+</script>
+
+<script>
+    ///////////////////////////////////////////////////////////
+    // Usage of Person class
+    var gk=new Person("Gavin","caucasian");       //New instance of the Person object created.
+    var lk=new Person("Lisa","caucasian");
+
+    console.log("There are now " + Person.population + " people")
+
+    gk.showLegs(); lk.showLegs();
+
+    gk.eat();gk.eat();gk.eat();
+    console.log("gk weight now is : " + gk.weight())
+
+    gk.exercise();gk.beCool();
+    console.log("gk weight now is : " + gk.weight());
+
+    gk.muchTimePasses();
+    console.log("Age of gk is : " + gk.getAge())
+
+    gk.muchTimePasses();
+    gk.eat();
+
+    console.log("end of example from article");
+    console.log("============================");
+</script>
+
+<script>
+    console.log("My experiments");
+    console.log("!! Please understand difference between public/privileged/private methods, and difference between public/private/global variables");
+
+    console.log("=================================");
+</script>
+</body>
+</html>

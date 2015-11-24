@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Inheritance in javascript</title>
+</head>
+<body>
+<script>
+    function Mammal(name){
+        this.name = name;
+        this.offspring = [];
+    }
+
+    Mammal.prototype.haveABaby = function(babyName){
+        var newBaby = new  this.constructor(babyName); // create instance using constructor property!!!!
+        this.offspring.push(newBaby);
+    }
+
+    Mammal.prototype.toString = function(){
+        return "[ Mammal : " + this.name;
+    }
+
+    function Cat(name){
+        this.parent.constructor.call(this, name); // call parent constructor, parent we set during inheritance  Cat.prototype.parent = Mammal.prototype;
+
+        // additional functionality
+        this.concreteType = "Cat";
+    }
+
+    // Inheritance begin
+    Cat.prototype = new Mammal();
+    Cat.prototype.constructor = Cat;
+    Cat.prototype.parent = Mammal.prototype;
+
+    Cat.prototype.toString = function(){
+        this.constructor.stat = "stat";
+        return "[ Cat : " + this.name;
+    }
+
+    Cat.prototype.childMethod = function(){
+        console.log("Child method from cat")
+    }
+
+</script>
+<script>
+    var c = new Cat("Jerry");
+    var m = new Mammal("rob");
+
+    c.haveABaby("Jerry baby 1");
+    c.haveABaby("Jerry baby 2");
+
+    console.log(c.toString()); // Jerry
+    console.log(m.toString()); // rob
+
+    console.log(c.concreteType); // Cat
+
+    console.log("Children of Jerry : ");
+    c.offspring.forEach(function(item){console.log(item.name + ":" + item.concreteType)}) // Jerrybaby1, Jerrybaby2
+
+    console.log("---------------- instanceof example ------");
+    console.log(c instanceof Mammal); // true
+    console.log(c instanceof Cat); // true
+    console.log(m instanceof Mammal); //true
+    console.log(m instanceof Cat); //false
+</script>
+
+<h5>http://phrogz.net/js/classes/OOPinJS2.html</h5>
+
+</body>
+</html>

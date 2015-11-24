@@ -1,0 +1,43 @@
+<div class="movies-container">
+    <h2>Movies:</h2>
+    <div ng-repeat="movie in movies"  style="border: 1px solid">
+        <h3>{{movie.title}} [{{movie.category}}]</h3>
+        <img src="{{movie.image}}" >
+        <p ng-bind="movie.description"></p>
+    </div>
+</div>
+
+<div class="col-xs-1" >
+            <span class="glyphicon-arrow-left" style="font-size: 13px;cursor: pointer;background: red"
+                  ng-click="closed=!closed">Toogle Hide</span>
+</div>
+
+<div class="add-movie-container" ng-hide="closed">
+    <h2>Add</h2>
+    <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" placeholder="Enter title" ng-model="movie.title" ng-keyup="validateTitle()"/>
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input class="form-control" placeholder="Image" ng-model="movie.image"/>
+    </div>
+    <div >
+        <h4>Preview</h4>
+        <img ng-src="{{movie.image}}" style="height: 55px">
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" ng-model="movie.category" ng-change="checkCategorySelected()">
+            <option value=""></option>
+            <option value="Epic">Epic</option>
+            <option value="Awesome">Awesome</option>
+            <option value="Awerage">Awerage</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" ng-model="movie.description" ng-blur="checkDescription()"></textarea>
+    </div>
+    <button class="btn" ng-click="addMovie()">Add</button>
+</div>

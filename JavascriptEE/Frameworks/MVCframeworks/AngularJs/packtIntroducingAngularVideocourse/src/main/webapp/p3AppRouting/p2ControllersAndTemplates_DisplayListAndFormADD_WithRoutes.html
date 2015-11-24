@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+        .movies-container{
+            float: left;
+            min-width: 850px;
+        }
+
+        .add-movie-container{
+            width: 400px;
+            display: inline-block;
+            padding: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Get Started with Angular</title>
+    <link rel="stylesheet" href="../cdn/bootstrap3.css" />
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>-->
+    <!--The newest version on 26.09.15-->
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+    <script src="../cdn/angular-route.1.4.7.js"></script>
+    <!-- Testing on differente versions-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>-->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-alpha.29/angular2.min.js"></script>  DOESNT WORK ON Angular 2
+-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.0/angular.min.js"></script>-->
+
+
+    <script>
+        app = angular.module("movieMediaApp", ["ngRoute"]);
+
+        app.controller("MainCtrl", function ($scope) {
+                    $scope.title = "Thanks for attending";
+                    var movieList = [
+                        {
+                            title: "Ace Drummond",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936"
+                        },
+                        {
+                            title: "Ace Drummond 2",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936 2"
+                        },
+                        {
+                            title: "Ace Drummond 3",
+                            image: "../cdn/t75302rveqr.jpg",
+                            description: "Ace drummond 1936 3"
+                        }
+                    ];
+                    $scope.movies = movieList;
+
+                    $scope.movie = {
+                        title : "",
+                        image : "",
+                        category : "",
+                        description : ""
+                    }
+
+                    $scope.validateTitle = function(){
+                        if(this.movie.title.length > 0 ){
+
+                        }else{
+                            alert("Title is mandatory");
+                        }
+                    }
+
+                    $scope.checkCategorySelected = function(){
+                        if(this.movie.category === ""){
+                            alert("Category cant be empty")
+                        }
+                    }
+
+                    $scope.checkDescription = function(){
+
+                    }
+
+                    $scope.addMovie = function(){
+                        this.movies.push(angular.copy(this.movie));
+                    }
+
+                    $scope.closed = false;
+                });
+
+        app.controller("AboutCtrl", function($scope){
+            $scope.aboutOutApplication = "Cool app";
+        });
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+                    .when("/", {
+                        templateUrl: "views/main.html",
+                        controller: "MainCtrl"
+                    }).when("/about", {
+                        templateUrl: "views/about.html",
+                        controller: "AboutCtrl"
+                    });
+        });
+
+    </script>
+</head>
+<body ng-app="movieMediaApp">
+    <div class="page-header">
+        <h1>Movie mania - header</h1>
+        <a href="#/">HOME</a>
+        <a href="#about">ABOUT APPl</a>
+    </div>
+    <div ng-view=""></div>
+</body>
+</html>

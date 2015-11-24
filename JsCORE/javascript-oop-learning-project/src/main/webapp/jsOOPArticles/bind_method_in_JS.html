@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function sendRequest(url, callback) {
+        data = 5;
+        callback(data);
+    }
+
+    myObj = {
+        num: 10,
+        callback: functionе (data) {
+            this.num += data;
+            console.log(this.num)
+        },
+        loadData: function () {
+            sendRequest("google", this.callback.bind(this))
+        }
+    }
+
+    // OUTPUT :
+
+    myObj.loadData(); // 15
+    myObj.loadData(); // 20
+    myObj.loadData(); // 25
+
+
+    // OUTPUT :  IF WE REMOVE bind(this) ,
+/*
+    myObj.loadData(); // NaN
+    myObj.loadData(); // NaN
+    myObj.loadData(); // NaN
+*/
+
+
+</script>
+</body>
+</html>

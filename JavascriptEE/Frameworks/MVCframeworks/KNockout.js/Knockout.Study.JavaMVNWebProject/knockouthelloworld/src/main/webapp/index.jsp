@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>On this page simple example</title>
+<script type="text/javascript" src="js/knockout-3.3.0.js"></script>
+</head>
+<body>
+<h2>It will be Knockout.js Hello World! 2</h2>
+
+	<div id="personInfoDiv">
+	    <p>First name: <input data-bind="value: firstName" /></p>
+	    <p>Last name: <input data-bind="value: lastName" /></p>
+	    <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+	</div>
+    <div id="asb"></div>
+    <script type="text/javascript">
+    // Here's my data mode ll
+		var ViewModel = function(first, last) {
+		    this.firstName = ko.observable(first);
+		    this.lastName = ko.observable(last);
+
+		    this.fullName = ko.pureComputed(function() {
+		        // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+		        return this.firstName() + " " + this.lastName();
+                
+		    }, this);
+		};
+            
+	       ko.applyBindings(new ViewModel("Planet", "Earth"), document.getElementById("personInfoDiv")); // This makes Knockout get to work
+    </script>
+
+    <hr>
+    <a href="#">Contacts editor example (from official site)</a>
+    <a href="#">Grid example (from official site)</a>
+    <table style="border:1px solid black;margin:40px">
+        <tr>
+            <td>1</td>
+            <td><a href="PacktKnockoutWebDev2015/chap1.jsp">Packt: Knockout.JS web development - 2015</a></td>
+        </tr>
+    </table>
+</body>
+</html>

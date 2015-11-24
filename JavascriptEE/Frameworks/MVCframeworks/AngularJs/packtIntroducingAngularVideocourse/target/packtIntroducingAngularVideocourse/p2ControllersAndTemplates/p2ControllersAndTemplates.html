@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Get Started with Angular</title>
+    <link rel="stylesheet" href="../cdn/bootstrap3.css" />
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>-->
+    <!--The newest version on 26.09.15-->
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+
+    <!-- Testing on differente versions-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>-->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-alpha.29/angular2.min.js"></script>  DOESNT WORK ON Angular 2
+-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.0/angular.min.js"></script>-->
+
+
+    <script>
+        app = angular.module("movieMediaApp", []);
+        app.controller("MainCtrl", function ($scope) {
+            $scope.title = "Thanks for attending";
+            var movie = {
+                title: "Ace Drummond",
+                image: "http://images.fandango.com/r98.4/ImageRenderer/125/188/redesign/static/img/default_poster.png/0/images/masterrepository/amg/cov150/drt700/t753/t75302rveqr.jpg",
+                description: "Ace drummond 1936"
+            }
+
+            $scope.movie = movie;
+        });
+
+
+    </script>
+</head>
+<body ng-app="movieMediaApp">
+    <h1>p2Controllers and Templates</h1>
+
+
+    <div ng-controller="MainCtrl" style="border:1px solid forestgreen" title="Main controller">
+        <h2>{{title}}</h2>
+        <p>{{movie.title}}</p>
+        <p ng-bind="movie.description"></p>
+    </div>
+
+</body>
+</html>
