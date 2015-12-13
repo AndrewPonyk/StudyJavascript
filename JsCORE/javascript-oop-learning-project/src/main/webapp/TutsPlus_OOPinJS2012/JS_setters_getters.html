@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Getters and Setters in JS</title>
+</head>
+<body>
+<script>
+
+    var createPerson = function(firstName, lastName){
+        var person = {};
+        Object.defineProperties(person, {
+            firstName : {
+                value : firstName,
+                writable : true,
+                enumerable : true
+            },
+            lastName : {
+                value: lastName,
+                writable : true
+
+            },
+            fullName : {
+                get : function(){
+                    return this.firstName + " " + this.lastName;
+                },
+                set : function(value){
+                    var valArr = value.split(" ");
+                    if(valArr.length == 2){
+                        this.firstName = valArr[0];
+                        this.lastName = valArr[1];
+                    }
+                }
+            }
+
+        });
+
+        return person;
+    }
+
+    var andrew = createPerson("Andrew", "Ponyk");
+    console.log(andrew.firstName); //"Andrew"
+    console.log(andrew.fullName); //"Andrew Ponyk"
+    andrew.fullName = "Ivan Ponyk";
+    console.log(andrew.firstName); // "Ivan"
+    for(var i in andrew){console.log(i)} // firstName
+</script>
+</body>
+</html>

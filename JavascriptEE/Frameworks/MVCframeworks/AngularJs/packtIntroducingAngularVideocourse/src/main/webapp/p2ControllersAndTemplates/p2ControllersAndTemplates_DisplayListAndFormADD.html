@@ -78,7 +78,7 @@
                     }
 
                     $scope.addMovie = function(){
-                        this.movies.push(angular.copy(this.movie));
+                        this.movies.push(angular.copy(this.movie)); // !!! copy
                     }
 
                     $scope.closed = false;
@@ -86,9 +86,10 @@
 
     </script>
 </head>
-<body ng-app="movieMediaApp" >
+<body  >
     <h1>p2Controllers and Templates</h1>
 
+    <div ng-app="movieMediaApp">
     <div ng-controller="MainCtrl">
         <div class="movies-container">
             <h2>Movies:</h2>
@@ -133,6 +134,7 @@
             </div>
             <button class="btn" ng-click="addMovie()">Add</button>
         </div>
+    </div>
     </div>
 </body>
 </html>

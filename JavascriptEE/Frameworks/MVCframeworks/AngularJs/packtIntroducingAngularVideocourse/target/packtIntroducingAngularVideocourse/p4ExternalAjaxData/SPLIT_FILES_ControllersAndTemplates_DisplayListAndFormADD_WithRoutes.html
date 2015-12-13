@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+        .movies-container{
+            float: left;
+            min-width: 850px;
+        }
+
+        .add-movie-container{
+            width: 400px;
+            display: inline-block;
+            padding: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Get Started with Angular</title>
+    <link rel="stylesheet" href="../cdn/bootstrap3.css" />
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+    <script src="../cdn/angular-route.1.4.7.js"></script>
+
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+    <script src="controllers/main.js"></script>
+    <script src="controllers/about.js"></script>
+    <script src="controllers/movieById.js"></script>
+</head>
+<body ng-app="movieMediaApp">
+    <div class="page-header">
+        <h1>Movie mania - header</h1>
+        <a href="#/">HOME</a>
+        <a href="#about">ABOUT APPl</a>
+    </div>
+    <div ng-view=""></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Github api : using angular</title>
+
+    <style>
+        pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+        .string { color: green; }
+        .number { color: darkorange; }
+        .boolean { color: blue; }
+        .null { color: magenta; }
+        .key { color: red; }
+    </style>
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+    <script src="../cdn/angular-sanitize.min.js"></script>
+    <script>
+        var app = angular.module("githubApp",["ngSanitize"]);
+        app.controller("mainCtrl", function($scope, $location, $http){
+                    $scope.title = "Example JSONP (we load json using JSONP from player2demo application)";
+                    $scope.responseFromJsonP = "";
+
+                    var playerUrl =
+                            "http://player2.wdsserve.com/device-assist-player-2/player2Resources/02-b2ab1e2cb45f35af/51003__0__en/55033/101.json";
+
+                    $http.jsonp(playerUrl, {
+                        params:{
+                            callback : "JSON_CALLBACK" /* it is like keyword in Angular*/
+                        }
+                    }).success(function(data){
+                        $scope.responseFromJsonP = $scope.highlightJSON (data);
+                    });
+
+                    $scope.highlightJSON = function (json) {
+                        if (typeof json != 'string') {
+                            json = JSON.stringify(json, undefined, 2);
+                        }
+                        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                            var cls = 'number';
+                            if (/^"/.test(match)) {
+                                if (/:$/.test(match)) {
+                                    cls = 'key';
+                                } else {
+                                    cls = 'string';
+                                }
+                            } else if (/true|false/.test(match)) {
+                                cls = 'boolean';
+                            } else if (/null/.test(match)) {
+                                cls = 'null';
+                            }
+                            return '<span class="' + cls + '">' + match + '</span>';
+                        });
+                    }
+                }
+
+
+        )
+    </script>
+</head>
+<body ng-app="githubApp">
+    <div   ng-controller="mainCtrl">
+        <h3>{{title}}</h3>
+        <pre ng-bind-html="responseFromJsonP">
+        </pre>
+    </div>
+</body>
+</html>

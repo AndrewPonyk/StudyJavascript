@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Github api : using angular</title>
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+    <script>
+        var app = angular.module("githubApp",[]);
+
+        app.controller("mainCtrl", function($scope, $location, $http){
+                    $scope.title = "Using GitHub api (searh repos with 'tetris' keyword )";
+                    $scope.repos = [];
+
+                    var url = "https://api.github.com/search/repositories",
+                            issuesUrl = "https://api.github.com/repos/";
+
+                    $scope.postIssue = function (repoFullName) {
+                        var issueBody = window.prompt("Please input issue description")
+                        $http.post(issuesUrl + repoFullName + "/issues", {title : "Issue from ANgular app :" + new Date(), body : issueBody },
+                                {
+                                    headers : {
+                                        Authorization : "token e61f74941e01e9419a6eb716c59beb442eab5c8a"
+                                    }
+                                })
+                            .success(function(data){
+                                alert("Issue posted to  Repository : " + repoFullName)
+                            })
+                            .error(function(){
+                                    alert("Cant post issue")
+                            })
+                    }
+
+                    $scope.performSearch = function(){
+                        if(this.searchQuery){
+                            $http.get(url, {params:{
+                                q : this.searchQuery,
+                                sort : "stars",
+                                order : "desc"
+                            }}).success(function(data){
+                                if(data.items){
+                                    $scope.repos = data.items;
+                                }else{
+                                    $scope.repos = [data];
+                                }
+                            }).error(function(){
+                                alert("Cant load data from github")
+                            });
+                        }
+                    }
+                }
+        )
+    </script>
+</head>
+<body ng-app="githubApp">
+
+    <div ng-controller="mainCtrl">
+        <h4>{{title}}</h4>
+        <b style="color:red">I can post issues to all repos with your access token </b>
+        <div>
+            <input type="text" ng-model="searchQuery">
+            <input type="button" ng-click="performSearch()" value="Perform search">
+        </div>
+        <li ng-repeat="item in repos">
+            {{item.name}} (<a href="{{item.html_url}}">link</a>) [<input type="button" ng-click="postIssue(item.full_name)" value="Post Issue">]
+        </li>
+    </div>
+
+</body>
+</html>
