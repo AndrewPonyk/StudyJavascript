@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello services</title>
+    <script src="../cdn/angular.min.1.4.7.js"></script>
+    <script>
+        var app = angular.module("helloAngularService", []);
+        app.service("helloService", function(){
+           this.sayHello = function(name){
+               console.log("Hello, " + name);
+           }
+        });
+
+
+
+        app.controller("mainCtrl", function($scope, helloService){
+            $scope.title = "Hello angular service";
+            helloService.sayHello("Ivan");
+        });
+
+    </script>
+</head>
+<body ng-app="helloAngularService">
+    <div ng-controller="mainCtrl">
+        {{title}}
+    </div>
+</body>
+</html>

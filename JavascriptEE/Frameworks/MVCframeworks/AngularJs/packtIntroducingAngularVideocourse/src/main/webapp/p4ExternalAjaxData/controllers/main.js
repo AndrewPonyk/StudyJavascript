@@ -6,7 +6,7 @@ angular.module("movieMediaApp").controller("MainCtrl", function ($scope, $locati
     $http.get("/movies.json").success(function(data){
         $scope.movies = data;
     });
-    
+
     $scope.movie = {
         title : "",
         image : "",

@@ -7,7 +7,6 @@ angular.module("movieMediaApp").controller("MainCtrl", function ($scope, $locati
         $scope.movies = data;
     });
 
-
     $scope.movie = {
         title : "",
         image : "",
