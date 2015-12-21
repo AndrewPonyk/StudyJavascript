@@ -6,7 +6,11 @@ angular.module("movieMediaApp").controller("MainCtrl", function ($scope, $locati
     $http.get("/movies.json").success(function(data){
         $scope.movies = data;
     });
+<<<<<<< 79330e3c80811ca4246ea3a54e7f4dfdb5c0c5b7
 
+=======
+    
+>>>>>>> migrate to project on New Nout
     $scope.movie = {
         title : "",
         image : "",
