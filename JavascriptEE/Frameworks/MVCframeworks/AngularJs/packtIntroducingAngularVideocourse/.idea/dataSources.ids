@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Oracle -" uuid="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9">
+    <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#xa;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="11.2" driver-name="Oracle JDBC driver" driver-version="11.2.0.3.0">
+      <extra-name-characters>$#</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="SQLEX" catalog=""/>
+    <schema name="SYS" catalog=""/>
+    <schema name="SYSTEM" catalog=""/>
+    <table name="BATTLES" schema="SQLEX" catalog="" type="TABLE">
+      <column name="NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="PK_BATTLES" columns="NAME"/>
+      <exported-key name="FK_OUTCOMES_BATTLES" table="OUTCOMES" schema="SQLEX" catalog="" columns="BATTLE"/>
+    </table>
+    <table name="CLASSES" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CLASS" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TYPE" sqlType="VARCHAR2" precision="2" scale="0" nullable="false" jdbcType="12"/>
+      <column name="COUNTRY" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NUMGUNS" sqlType="NUMBER" precision="0" scale="-127" nullable="true" jdbcType="3"/>
+      <column name="BORE" sqlType="FLOAT" precision="63" scale="0" nullable="true" jdbcType="6"/>
+      <column name="DISPLACEMENT" sqlType="NUMBER" precision="0" scale="-127" nullable="true" jdbcType="3"/>
+      <primary-key name="PK_CLASSES" columns="CLASS"/>
+      <exported-key name="FK_SHIPS_CLASSES" table="SHIPS" schema="SQLEX" catalog="" columns="CLASS"/>
+    </table>
+    <table name="COMPANY" schema="SQLEX" catalog="" type="TABLE">
+      <column name="ID_COMP" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PK2" columns="ID_COMP"/>
+      <exported-key name="FK_TRIP_COMPANY" table="TRIP" schema="SQLEX" catalog="" columns="ID_COMP"/>
+    </table>
+    <table name="INCOME" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CODE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="POINT" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="INC" sqlType="NUMBER" precision="12" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_INCOME" columns="CODE"/>
+    </table>
+    <table name="INCOME_O" schema="SQLEX" catalog="" type="TABLE">
+      <column name="POINT" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="INC" sqlType="NUMBER" precision="12" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_INCOME_O" columns="POINT,date"/>
+    </table>
+    <table name="LAPTOP" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CODE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="MODEL" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SPEED" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="RAM" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="HD" sqlType="FLOAT" precision="63" scale="0" nullable="false" jdbcType="6"/>
+      <column name="PRICE" sqlType="NUMBER" precision="12" scale="2" nullable="true" jdbcType="3"/>
+      <column name="SCREEN" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_LAPTOP" columns="CODE"/>
+      <foreign-key name="FK_LAPTOP_PRODUCT" columns="MODEL" ref-table="PRODUCT" ref-schema="SQLEX" ref-catalog="" ref-columns="MODEL" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="OUTCOME" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CODE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="POINT" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="out" sqlType="NUMBER" precision="12" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_OUTCOME" columns="CODE"/>
+    </table>
+    <table name="OUTCOMES" schema="SQLEX" catalog="" type="TABLE">
+      <column name="SHIP" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="BATTLE" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="RESULT" sqlType="VARCHAR2" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PK_OUTCOMES" columns="SHIP,BATTLE"/>
+      <foreign-key name="FK_OUTCOMES_BATTLES" columns="BATTLE" ref-table="BATTLES" ref-schema="SQLEX" ref-catalog="" ref-columns="NAME" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="OUTCOME_O" schema="SQLEX" catalog="" type="TABLE">
+      <column name="POINT" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="out" sqlType="NUMBER" precision="12" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_OUTCOME_O" columns="POINT,date"/>
+    </table>
+    <table name="PASSENGER" schema="SQLEX" catalog="" type="TABLE">
+      <column name="ID_PSG" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PK_PSG" columns="ID_PSG"/>
+      <exported-key name="FK_PASS_IN_TRIP_PASSENGER" table="PASS_IN_TRIP" schema="SQLEX" catalog="" columns="ID_PSG"/>
+    </table>
+    <table name="PASS_IN_TRIP" schema="SQLEX" catalog="" type="TABLE">
+      <column name="TRIP_NO" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="date" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="ID_PSG" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="PLACE" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PK_PT" columns="TRIP_NO,date,ID_PSG"/>
+      <foreign-key name="FK_PASS_IN_TRIP_PASSENGER" columns="ID_PSG" ref-table="PASSENGER" ref-schema="SQLEX" ref-catalog="" ref-columns="ID_PSG" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_PASS_IN_TRIP_TRIP" columns="TRIP_NO" ref-table="TRIP" ref-schema="SQLEX" ref-catalog="" ref-columns="TRIP_NO" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="PC" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CODE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="MODEL" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SPEED" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="RAM" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="HD" sqlType="FLOAT" precision="63" scale="0" nullable="false" jdbcType="6"/>
+      <column name="CD" sqlType="VARCHAR2" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PRICE" sqlType="NUMBER" precision="12" scale="2" nullable="true" jdbcType="3"/>
+      <primary-key name="PK_PC" columns="CODE"/>
+      <foreign-key name="FK_PC_PRODUCT" columns="MODEL" ref-table="PRODUCT" ref-schema="SQLEX" ref-catalog="" ref-columns="MODEL" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="PRINTER" schema="SQLEX" catalog="" type="TABLE">
+      <column name="CODE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="MODEL" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="COLOR" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="TYPE" sqlType="VARCHAR2" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PRICE" sqlType="NUMBER" precision="12" scale="2" nullable="true" jdbcType="3"/>
+      <primary-key name="PK_PRINTER" columns="CODE"/>
+      <foreign-key name="FK_PRINTER_PRODUCT" columns="MODEL" ref-table="PRODUCT" ref-schema="SQLEX" ref-catalog="" ref-columns="MODEL" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="PRODUCT" schema="SQLEX" catalog="" type="TABLE">
+      <column name="MAKER" sqlType="VARCHAR2" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="MODEL" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TYPE" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PK_PRODUCT" columns="MODEL"/>
+      <exported-key name="FK_LAPTOP_PRODUCT" table="LAPTOP" schema="SQLEX" catalog="" columns="MODEL"/>
+      <exported-key name="FK_PC_PRODUCT" table="PC" schema="SQLEX" catalog="" columns="MODEL"/>
+      <exported-key name="FK_PRINTER_PRODUCT" table="PRINTER" schema="SQLEX" catalog="" columns="MODEL"/>
+    </table>
+    <table name="SHIPS" schema="SQLEX" catalog="" type="TABLE">
+      <column name="NAME" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CLASS" sqlType="VARCHAR2" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAUNCHED" sqlType="NUMBER" precision="0" scale="-127" nullable="true" jdbcType="3"/>
+      <primary-key name="PK_SHIPS" columns="NAME"/>
+      <foreign-key name="FK_SHIPS_CLASSES" columns="CLASS" ref-table="CLASSES" ref-schema="SQLEX" ref-catalog="" ref-columns="CLASS" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="TEST" schema="SQLEX" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SYS_C0011443" columns="ID"/>
+    </table>
+    <table name="TRIP" schema="SQLEX" catalog="" type="TABLE">
+      <column name="TRIP_NO" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="ID_COMP" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="PLANE" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="TOWN_FROM" sqlType="CHAR" precision="25" scale="0" nullable="false" jdbcType="1"/>
+      <column name="TOWN_TO" sqlType="CHAR" precision="25" scale="0" nullable="false" jdbcType="1"/>
+      <column name="TIME_OUT" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="TIME_IN" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="PK_T" columns="TRIP_NO"/>
+      <foreign-key name="FK_TRIP_COMPANY" columns="ID_COMP" ref-table="COMPANY" ref-schema="SQLEX" ref-catalog="" ref-columns="ID_COMP" update-rule="0" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_PASS_IN_TRIP_TRIP" table="PASS_IN_TRIP" schema="SQLEX" catalog="" columns="TRIP_NO"/>
+    </table>
+    <table name="UTB" schema="SQLEX" catalog="" type="TABLE">
+      <column name="B_DATETIME" sqlType="TIMESTAMP(6)" precision="11" scale="6" nullable="false" jdbcType="93"/>
+      <column name="B_Q_ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="B_V_ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="B_VOL" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <primary-key name="PK_UTB" columns="B_DATETIME,B_Q_ID,B_V_ID"/>
+      <foreign-key name="FK_UTB_UTQ" columns="B_Q_ID" ref-table="UTQ" ref-schema="SQLEX" ref-catalog="" ref-columns="Q_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_UTB_UTV" columns="B_V_ID" ref-table="UTV" ref-schema="SQLEX" ref-catalog="" ref-columns="V_ID" update-rule="0" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="UTQ" schema="SQLEX" catalog="" type="TABLE">
+      <column name="Q_ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="Q_NAME" sqlType="VARCHAR2" precision="35" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PK_UTQ" columns="Q_ID"/>
+      <exported-key name="FK_UTB_UTQ" table="UTB" schema="SQLEX" catalog="" columns="B_Q_ID"/>
+    </table>
+    <table name="UTV" schema="SQLEX" catalog="" type="TABLE">
+      <column name="V_ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="V_NAME" sqlType="VARCHAR2" precision="35" scale="0" nullable="false" jdbcType="12"/>
+      <column name="V_COLOR" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PK_UTV" columns="V_ID"/>
+      <exported-key name="FK_UTB_UTV" table="UTB" schema="SQLEX" catalog="" columns="B_V_ID"/>
+    </table>
+    <procedure name="ABC" schema="SQLEX" catalog="" type="1" remarks="U3RhbmRhbG9uZSBwcm9jZWR1cmUgb3IgZnVuY3Rpb24="/>
+  </data-source>
+</component>

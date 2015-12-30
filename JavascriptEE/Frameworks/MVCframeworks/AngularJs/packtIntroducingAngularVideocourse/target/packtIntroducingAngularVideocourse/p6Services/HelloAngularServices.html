@@ -12,16 +12,56 @@
            }
         });
 
-        app.controller("mainCtrl", function($scope, helloService){
+        app.factory("ajaxFactory", function($http){
+            return {
+                load : function(){
+                    return $http.get("http://jsonplaceholder.typicode.com/posts/1");
+                }
+            };
+        })
+
+        app.controller("mainCtrl", function($scope, helloService, ajaxFactory){
             $scope.title = "Hello angular service";
-            helloService.sayHello("Ivan");
+            helloService.sayHello("Message from helloService Ivan");
+            ajaxFactory.load().then(function(promise){
+                $scope.userId = promise.data.userId;
+                $scope.body = promise.data.body;
+            })
+
         });
 
     </script>
 </head>
 <body ng-app="helloAngularService">
-    <div ng-controller="mainCtrl">
+http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory
+<hr>
+
+
+    <div ng-controller="mainCtrl" style="border:2px solid; padding:20px" title="Main Controller">
+        <i>Getting data from such endpoint : "http://jsonplaceholder.typicode.com/posts/1" (is is free json enpoint)</i>
         {{title}}
+        <h5>UserId : {{userId}}</h5>
+        <h2>Body of http response : '{{body}}'</h2>
     </div>
+
+<hr>
+<p>
+Services
+Syntax: module.service( 'serviceName', function );
+Result: When declaring serviceName as an injectable argument you will be provided with an instance of the function. In other words new FunctionYouPassedToService().
+</p>
+<p>
+Factories
+Syntax: module.factory( 'factoryName', function );
+Result: When declaring factoryName as an injectable argument you will be provided with the value that is returned by invoking the function reference passed to module.factory.
+</p>
+<p>
+Providers
+Syntax: module.provider( 'providerName', function );
+Result: When declaring providerName as an injectable argument you will be provided with (new ProviderFunction()).$get(). The constructor function is instantiated before the $get method is called - ProviderFunction is the function reference passed to module.provider.
+
+Providers have the advantage that they can be configured during the module configuration phase.
+</p>
+
 </body>
 </html>
