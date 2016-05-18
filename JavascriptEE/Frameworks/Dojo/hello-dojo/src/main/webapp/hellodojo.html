@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello dojo</title>
+
+</head>
+
+<body>
+    <div id="greeting"></div>
+    <script src="js/dojo.js" data-dojo-config="async: true"></script>
+    <script>
+        require(['dojo/dom',
+            'dojo/dom-construct'
+        ], function(dom, domConstruct){
+            var greetingNode = dom.byId('greeting');
+            domConstruct.place('<b>Dojo!!!!</b>', greetingNode);
+        })
+    </script>
+</body>
+</html>

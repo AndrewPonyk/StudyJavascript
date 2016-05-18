@@ -65,27 +65,112 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5625">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="18" />
+              <folding>
+                <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DATABASE/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9" pinned="false" current-in-tab="true">
+        <entry file="uml://DATABASE/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9</OriginalElement>
+              <nodes>
+                <node x="623.0" y="1267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOME_O</node>
+                <node x="438.0" y="999.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTQ</node>
+                <node x="284.5" y="243.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRINTER</node>
+                <node x="573.7878404053198" y="84.39444796284567">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP</node>
+                <node x="-25.5" y="991.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.CLASSES</node>
+                <node x="661.5" y="439.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.COMPANY</node>
+                <node x="903.0" y="1267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.INCOME_O</node>
+                <node x="-25.5" y="1255.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.INCOME</node>
+                <node x="-15.5" y="-20.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.LAPTOP</node>
+                <node x="748.5" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTV</node>
+                <node x="1208.0" y="1279.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TEST</node>
+                <node x="989.0" y="-0.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASSENGER</node>
+                <node x="378.5" y="775.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB</node>
+                <node x="-15.5" y="459.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PC</node>
+                <node x="1011.0" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOMES</node>
+                <node x="6.0" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.SHIPS</node>
+                <node x="1090.59383576103" y="284.22176483006126">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP</node>
+                <node x="294.5" y="1255.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOME</node>
+                <node x="1.5" y="267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT</node>
+                <node x="1016.0" y="999.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.BATTLES</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTQ">
+                  <point x="0.0" y="64.5" />
+                  <point x="0.0" y="-40.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRINTER" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+                  <point x="-115.5" y="-0.0" />
+                  <point x="118.5" y="-0.0" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PC" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+                  <point x="0.0" y="-100.5" />
+                  <point x="0.0" y="52.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOMES" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.BATTLES">
+                  <point x="0.0" y="52.5" />
+                  <point x="0.0" y="-40.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.COMPANY">
+                  <point x="0.0" y="100.5" />
+                  <point x="0.0" y="-40.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.LAPTOP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+                  <point x="0.0" y="100.5" />
+                  <point x="0.0" y="-52.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASSENGER">
+                  <point x="0.0" y="-64.5" />
+                  <point x="0.0" y="40.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP">
+                  <point x="-116.0" y="-0.0" />
+                  <point x="146.0" y="-0.0" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.SHIPS" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.CLASSES">
+                  <point x="0.0" y="52.5" />
+                  <point x="0.0" y="-88.5" />
+                </edge>
+                <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTV">
+                  <point x="141.5" y="-0.0" />
+                  <point x="-91.5" y="-0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.6714386959603118" x="923.8151783829428" y="396.2703187671522" />
+              <SelectedNodes>
+                <node>c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SQLEX.TEST" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -150,9 +235,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="52" />
     <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -187,14 +272,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../JavaRelated/JavaEE/2JDBC_HIBERNATE/JBBC/HelloWorldJDBC/lib/ojdbc6.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -488,6 +573,9 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Unknown" factoryName="Unknown">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -534,30 +622,34 @@
       <workItem from="1451160158349" duration="2364000" />
       <workItem from="1451216068368" duration="734000" />
       <workItem from="1451250525121" duration="18000" />
+      <workItem from="1451515195709" duration="1837000" />
+      <workItem from="1452174467714" duration="1575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13058000" />
+    <option name="totallyTimeSpent" value="16470000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="7" />
-    <editor active="false" />
+    <frame x="65" y="52" width="1301" height="716" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.4458109" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1525974" sideWeight="0.44888547" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.4458109" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29658386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1525974" sideWeight="0.5511145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16602613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10299769" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28900847" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28900847" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -569,9 +661,36 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.5541891" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1525974" sideWeight="0.44888547" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.4458109" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28900847" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29658386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1525974" sideWeight="0.5511145" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10299769" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -593,6 +712,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/p4ExternalAjaxData/jsonpUsingAngular.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/p6Services/HelloAngularServices.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -607,20 +734,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/p3AppRouting/SPLIT_FILES_ControllersAndTemplates_DisplayListAndFormADD_WithRoutes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/p4ExternalAjaxData/jsonpUsingAngular.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/p6Services/HelloAngularServices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="54" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -654,20 +832,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -701,20 +881,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -966,23 +1148,106 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/13ded7a/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/.SQLEX.TEST">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5625">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <marker date="1452174523914" expanded="true" signature="0:18" placeholder="select * fro..TEST..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9</OriginalElement>
+          <nodes>
+            <node x="623.0" y="1267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOME_O</node>
+            <node x="438.0" y="999.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTQ</node>
+            <node x="284.5" y="243.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRINTER</node>
+            <node x="573.7878404053198" y="84.39444796284567">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP</node>
+            <node x="-25.5" y="991.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.CLASSES</node>
+            <node x="661.5" y="439.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.COMPANY</node>
+            <node x="903.0" y="1267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.INCOME_O</node>
+            <node x="-25.5" y="1255.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.INCOME</node>
+            <node x="-15.5" y="-20.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.LAPTOP</node>
+            <node x="748.5" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTV</node>
+            <node x="1208.0" y="1279.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TEST</node>
+            <node x="989.0" y="-0.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASSENGER</node>
+            <node x="378.5" y="775.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB</node>
+            <node x="-15.5" y="459.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PC</node>
+            <node x="1011.0" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOMES</node>
+            <node x="6.0" y="787.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.SHIPS</node>
+            <node x="1090.59383576103" y="284.22176483006126">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP</node>
+            <node x="294.5" y="1255.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOME</node>
+            <node x="1.5" y="267.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT</node>
+            <node x="1016.0" y="999.5">c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.BATTLES</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTQ">
+              <point x="0.0" y="64.5" />
+              <point x="0.0" y="-40.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRINTER" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+              <point x="-115.5" y="-0.0" />
+              <point x="118.5" y="-0.0" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PC" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+              <point x="0.0" y="-100.5" />
+              <point x="0.0" y="52.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.OUTCOMES" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.BATTLES">
+              <point x="0.0" y="52.5" />
+              <point x="0.0" y="-40.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.COMPANY">
+              <point x="0.0" y="100.5" />
+              <point x="0.0" y="-40.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.LAPTOP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PRODUCT">
+              <point x="0.0" y="100.5" />
+              <point x="0.0" y="-52.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASSENGER">
+              <point x="0.0" y="-64.5" />
+              <point x="0.0" y="40.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.PASS_IN_TRIP" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP">
+              <point x="-116.0" y="-0.0" />
+              <point x="146.0" y="-0.0" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.SHIPS" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.CLASSES">
+              <point x="0.0" y="52.5" />
+              <point x="0.0" y="-88.5" />
+            </edge>
+            <edge source="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTB" target="c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.UTV">
+              <point x="141.5" y="-0.0" />
+              <point x="-91.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6714386959603118" x="923.8151783829428" y="396.2703187671522" />
+          <SelectedNodes>
+            <node>c36e07aa-0bd9-4ca0-9da8-a9f612dca1b9.table:SQLEX.TRIP</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>

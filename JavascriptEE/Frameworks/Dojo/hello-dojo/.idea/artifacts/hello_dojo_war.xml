@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hello-dojo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="hello-dojo.war">
+      <element id="artifact" artifact-name="hello-dojo:war exploded" />
+    </root>
+  </artifact>
+</component>
