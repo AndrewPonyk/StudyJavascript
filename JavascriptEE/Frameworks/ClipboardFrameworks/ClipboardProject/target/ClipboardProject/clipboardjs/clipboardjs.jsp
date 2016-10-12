@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="clipboard1.5.12.js"></script>
+    <script src="clipboardjs_without_define.js"></script>
 </head>
 
 <body>
