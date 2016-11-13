@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="require-youtube-tuts:war exploded">
+    <output-path>$PROJECT_DIR$/target/require-youtube-tuts</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="require-youtube-tuts" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/require-youtube-tuts/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="require-youtube-tuts/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../h5ive-master/core.h5ive.js"></script>
+    <script src="../h5ive-master/usermedia.h5ive.js"></script>
+</head>
+<body>
+<video id="mycam" width="500" height="500">
+
+</video>
+<script>
+    h5.userMedia({video: true}).
+    stream(function(src){
+        var video = document.getElementById("mycam");
+        video.src = src;
+        video.play();
+    })
+</script>
+</body>
+</html>

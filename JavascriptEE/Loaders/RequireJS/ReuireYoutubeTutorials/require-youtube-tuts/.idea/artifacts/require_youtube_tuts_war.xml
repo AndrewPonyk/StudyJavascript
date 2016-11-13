@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="require-youtube-tuts:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="require-youtube-tuts.war">
+      <element id="artifact" artifact-name="require-youtube-tuts:war exploded" />
+    </root>
+  </artifact>
+</component>

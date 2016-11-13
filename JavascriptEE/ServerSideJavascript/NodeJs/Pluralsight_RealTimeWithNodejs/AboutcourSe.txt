@@ -1,0 +1,4 @@
+Course from 2015
+
+First opinion : great! 
+(intro to HTML5 features, intro to NodeJS, some info about Gulp and Grunt, Socket.IO intro, WebRTC intro);

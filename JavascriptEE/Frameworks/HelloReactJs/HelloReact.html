@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello react js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-with-addons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="signin.js"></script>
+</head>
+<body>
+React js
+<h3>I used this link(http://babeljs.io/repl/) to generate js from jsx</h3>
+<div id="container">
+
+</div>
+
+<div id="appContainer"></div>
+
+<script>
+    var MyComponent = React.createClass({
+        render: function () {
+            return React.createElement("div", null, "My Component")
+        }
+    });
+    ReactDOM.render(React.createElement(MyComponent), document.getElementById("container"));
+    ReactDOM.render(React.createElement(SignIn), document.getElementById("appContainer"));
+</script>
+
+</body>
+</html>
