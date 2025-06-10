@@ -55,12 +55,14 @@ function TableComponent() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => (
-            <tr key={index}>
+
+          {rows.map(function (row, index) {
+
+            return <tr key={index}>
               <td>{row.col1}</td>
               <td>{row.col2}</td>
             </tr>
-          ))}
+          })}
           {rows.length === 0 &&
             <tr>
               <td colSpan="2">No rows yet. Click "Add Row" to begin.</td>
@@ -68,7 +70,7 @@ function TableComponent() {
           }
         </tbody>
       </table>
-      {rows.length < 1 && <h2 style={{color:"red"}}>table is empty</h2>}
+      {rows.length < 1 && <h2 style={{color:"red"}}>Table is EMpty</h2>}
     </div>
   );
 }
