@@ -1,7 +1,7 @@
 // src/TableComponent.jsx
 import {useState} from 'react';
 
-function TableComponent() {
+function TableComponent({color}) { /// Destructure the 'color' prop correctly !!!
   const [rows, setRows] = useState([]);
   const [showInputs, setShowInputs] = useState(false);
   const [input1, setInput1] = useState("");
@@ -23,7 +23,6 @@ function TableComponent() {
       setShowInputs(false);
     }
   }
-
   return (
     <div>
       <h2>My Dynamic Table</h2>
@@ -47,7 +46,8 @@ function TableComponent() {
           <button type="submit">Submit</button>
         </form>
       )}
-      <table>
+
+      <table data-attr1={color} style={{"backgroundColor": color}} >
         <thead>
           <tr>
             <th>Header 1</th>

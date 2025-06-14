@@ -9,7 +9,7 @@ function App() {
 
     return (
         <>
-            <TableComponent/>
+            <TableComponent color="red"/>
             <div className="card">
                 <button onClick={() => {
                     setCount(count + 1)
